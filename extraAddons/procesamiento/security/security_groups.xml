@@ -1,0 +1,21 @@
+<odoo>
+    <!-- Categoría de Configuración -->
+    <record id="module_category_configuration" model="ir.module.category">
+        <field name="name">Configuración</field>
+        <field name="sequence">10</field>
+    </record>
+
+    <!-- Grupo para usuarios normales -->
+    <record id="group_normal_user" model="res.groups">
+        <field name="name">Usuario Normal</field>
+        <field name="category_id" ref="module_category_configuration"/>
+    </record>
+
+    <!-- Grupo para administradores de configuración -->
+    <record id="group_config_admin" model="res.groups">
+        <field name="name">Administrador de Configuración</field>
+        <field name="category_id" ref="module_category_configuration"/>
+    </record>
+
+    
+</odoo>

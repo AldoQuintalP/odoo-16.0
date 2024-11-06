@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Vista Tree modelo configuración cliente  -->
+    <record id="view_cliente_configuracion_tree" model="ir.ui.view">
+        <field name="name">cliente.configuracion.tree</field>
+        <field name="model">cliente.configuracion</field>
+        <field name="arch" type="xml">
+            <tree string="Configuración del Cliente">
+                <field name="nombre"/>
+                <field name="num_cliente"/>
+                <field name="branch"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Vista Formulario -->
+    <record id="view_cliente_configuracion_form" model="ir.ui.view">
+        <field name="name">cliente.configuracion.form</field>
+        <field name="model">cliente.configuracion</field>
+        <field name="arch" type="xml">
+            <form string="Configuración del Cliente">
+                <header>
+                    <button name="action_generar_json" string="Generar JSON" type="object" class="btn-primary" />
+                    <!-- <button name="cargar_json_a_odoo" string="Leer JSON" type="object" class="btn-primary" />   Descomentar para leer json tarea programada con cron en construcción-->
+                </header>
+                <sheet>
+                    <div class="o-form-buttonbox oe_button_box position-relative text-end o_full">
+                            <button name="action_open_config" type="object"
+                                string="Configuración"
+                                class="btn oe_stat_button btn-light flex-shrink-0 mb-0 py-0 border-0 border-start border-bottom rounded-0 text-start text-nowrap text-capitalize"
+                                icon="fa-gears"/>
+                            <!-- Añadir aquí otros botones si es necesario -->
+                    </div>
+                    <group>
+                        <field name="nombre"/>
+                        <field name="num_cliente"/>
+                        <field name="branch"/>
+                    </group>
+                    <group string="Carga Cliente">
+                        <field name="archivo_zip" filename="nombre_archivo"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    
+
+    <record id="view_cliente_contenido_archivo_form" model="ir.ui.view">
+        <field name="name">cliente.contenido.archivo.form</field>
+        <field name="model">cliente.configuracion</field>
+        <field name="arch" type="xml">
+            <form string="Contenido del Archivo" create="false" edit="false">
+                <sheet>
+                    <group>
+                        <h3><t t-esc="nombre_archivo"/></h3>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <t t-foreach="contenido_archivo.split('\n')[0].split('|')" t-as="header">
+                                        <th><t t-esc="header"/></th>
+                                    </t>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="contenido_archivo.split('\n')[1:]" t-as="fila">
+                                    <tr>
+                                        <t t-foreach="fila.split('|')" t-as="columna">
+                                            <td><t t-esc="columna"/></td>
+                                        </t>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                    </group>
+                </sheet>
+                <footer>
+                    <button string="Cerrar" class="btn-primary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+    
+    
+    
+
+     <!-- Vista Formulario -->
+    <record id="view_configuracion_cliente_form" model="ir.ui.view">
+        <field name="name">configuracion.cliente.form</field>
+        <field name="model">configuracion.cliente</field>
+        <field name="arch" type="xml">
+            <form string="Configuración Cliente">
+                <sheet>
+                    <group>
+                        <field name="nombre" readonly="1"/>
+                        <field name="num_cliente" readonly="1"/>
+                        <field name="branch" readonly="1"/>
+                        <field name="dms_id"/>
+                        <field name="reportes_dms_ids" 
+                            widget="many2many_tags" 
+                            domain="[('nombre_dms_origen', '=', dms_id)]" 
+                            options="{'no_create': True, 'no_create_edit': True}"
+                            attrs="{'invisible': [('dms_id', '=', False)], 
+                                    'required': [('dms_id', '!=', False)]}"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Vista Tree para Configuracion Cliente -->
+    <record id="view_configuracion_cliente_tree" model="ir.ui.view">
+        <field name="name">configuracion.cliente.tree</field>
+        <field name="model">configuracion.cliente</field>
+        <field name="arch" type="xml">
+            <tree string="Reportes">
+                <field name="nombre"/>
+                <field name="num_cliente"/>
+                <field name="branch"/>
+                <field name="dms_id"/>
+                <field name="reportes_dms_ids" widget="many2many_tags"/>
+            </tree>
+        </field>
+    </record>
+
+    
+
+    
+    <record id="action_cliente_configuracion" model="ir.actions.act_window">
+        <field name="name">Configuración del Cliente</field>
+        <field name="res_model">cliente.configuracion</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menú para Configuración del Cliente -->
+    <menuitem id="menu_cliente_configuracion" parent="menu_mi_app_root" name="Clientes" action="action_cliente_configuracion" sequence="20"/>
+
+
+
+</odoo>

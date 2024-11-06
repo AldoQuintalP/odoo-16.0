@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_res_config_settings_inherit_clients_folder" model="ir.ui.view">
+        <field name="name">res.config.settings.inherit.clients_folder</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('settings')]" position="inside">
+                <div class="app_settings_block"
+                     data-string="Gestión de Clientes"
+                     string="Gestión de Clientes"
+                     data-key="clients_folder">
+                     <h2><i class="fa fa-users" style="margin-right: 8px;"></i>Configuración de directorios</h2>
+                     <div class="row mt16 o_settings_container">
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_left_pane"/>
+                            <div class="o_setting_right_pane">
+                                <span class="o_form_label">Ruta de la carpeta CLIENTS</span>
+                                <div class="text-muted content-group mt16">
+                                    <field name="clients_folder_path" style="width: 150%;"/>
+                                </div>
+                                <span class="o_form_label">Ruta de la 2-Working</span>
+                                <div class="text-muted content-group mt16">
+                                    <field name="working_folder_path" style="width: 150%;"/>
+                                </div>
+                                <span class="o_form_label">Ruta de la carpeta 3-Sandbox</span>
+                                <div class="text-muted content-group mt16">
+                                    <field name="sandbox_folder_path" style="width: 150%;"/>
+                                </div>
+                                <span class="o_form_label">Ruta Python procesamiento</span>
+                                <div class="text-muted content-group mt16">
+                                    <field name="python_path" style="width: 150%;"/>
+                                </div>
+                                <span class="o_form_label">Host</span>
+                                <div class="text-muted content-group mt16">
+                                    <field name="host" style="width: 150%;"/>
+                                </div>
+                                <span class="o_form_label">Usuario BD</span>
+                                <div class="text-muted content-group mt16">
+                                    <field name="user" style="width: 150%;"/>
+                                </div>
+                                <span class="o_form_label">Contraseña</span>
+                                <div class="text-muted content-group mt16">
+                                    <field name="password" style="width: 150%;"/>
+                                </div>
+                                <span class="o_form_label">Nombre de la Base</span>
+                                <div class="text-muted content-group mt16">
+                                    <field name="bd_name" style="width: 150%;"/>
+                                </div>
+
+                                <div class="mt16">
+                                    <button name="action_generar_json" type="object" string=" Generar JSON" class="btn-primary fa fa-gears"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="res_config_settings_action_clients_folder" model="ir.actions.act_window">
+        <field name="name">Configuración de la carpeta CLIENTS</field>
+        <field name="res_model">res.config.settings</field>
+        <field name="view_mode">form</field>
+        <field name="target">inline</field>
+        <field name="context">{'module': 'my_module'}</field>
+    </record>
+
+    <record id="clients_management_menu_root" model="ir.ui.menu">
+        <field name="name">Gestión de Clientes</field>
+        <field name="sequence" eval="1"/>
+        <field name="web_icon">procesamiento, /static/src/img/odoo_icon.png</field>
+    </record>
+      
+
+</odoo>

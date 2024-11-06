@@ -1,0 +1,28 @@
+<odoo>
+    <!-- Plantilla para mostrar la validación del archivo -->
+    <template id="template_file_upload">
+        <t t-if="cliente_exists and branch_exists">
+            <div class="alert alert-success">
+                <i class="fa fa-check-circle" style="color: green;"></i> El cliente se encuentra registrado.
+            </div>
+            <div class="alert alert-success">
+                <i class="fa fa-check-circle" style="color: green;"></i> La sucursal se encuentra registrada.
+            </div>
+            <t t-if="is_today">
+                <div class="alert alert-success">
+                    <i class="fa fa-check-circle" style="color: green;"></i> El paquete es del día de hoy.
+                </div>
+            </t>
+            <t t-if="not is_today">
+                <div class="alert alert-warning">
+                    <i class="fa fa-exclamation-circle" style="color: orange;"></i> El paquete no es del día de hoy.
+                </div>
+            </t>
+        </t>
+        <t t-if="not cliente_exists or not branch_exists">
+            <div class="alert alert-danger">
+                <i class="fa fa-times-circle" style="color: red;"></i> El cliente o la sucursal no se encuentran registrados.
+            </div>
+        </t>
+    </template>
+</odoo>

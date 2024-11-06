@@ -1,0 +1,138 @@
+{
+    "name": "312",
+    "reportes": [
+        "INVUSA01"
+    ],
+    "columnas_esperadas": {
+        "INVUSA01": {
+            "columnas": [
+                "*F1*",
+                "Vin",
+                "NumeroInventario",
+                "Ano",
+                "Marca",
+                "Modelo",
+                "Version",
+                "Color",
+                "Interior",
+                "Costo$",
+                "Isan$",
+                "CostoCompra$",
+                "FechaCompra",
+                "Status",
+                "TipoCompra",
+                "Date (computed)",
+                "Dias (computed)"
+            ],
+            "columnas_export": [
+                "Date (computed)",
+                "Dias (computed)",
+                "Costo$",
+                "Isan$",
+                "Modelo",
+                "TipoCompra",
+                "Vin",
+                "CostoCompra$",
+                "FechaCompra",
+                "Ano",
+                "Version",
+                "NumeroInventario",
+                "Interior",
+                "Status",
+                "F1",
+                "Marca",
+                "Color"
+            ],
+            "formulas": {
+                "F1": "LimpiaTexto(F1)",
+                "Vin": "LimpiaTexto(Vin)",
+                "NumeroInventario": "LimpiaTexto(NumeroInventario)",
+                "Ano": "LimpiaTexto(Ano)",
+                "Marca": "LimpiaTexto(Marca)",
+                "Modelo": "LimpiaTexto(Modelo)",
+                "Version": "LimpiaTexto(Version)",
+                "Color": "LimpiaTexto(Color)",
+                "Interior": "LimpiaTexto(Interior)",
+                "Costo$": "LimpiaCodigos(Costo$)",
+                "Isan$": "LimpiaCodigos(Isan$)",
+                "CostoCompra$": "LimpiaCodigos(CostoCompra$)",
+                "FechaCompra": false,
+                "Status": "LimpiaTexto(Status)",
+                "TipoCompra": "LimpiaTexto(TipoCompra)",
+                "Date (computed)": "Ctod(\"d/m/y\")",
+                "Dias (computed)": "Date - FechaCompra"
+            },
+            "data_types": {
+                "F1": {
+                    "tipo": "varchar",
+                    "length": 255
+                },
+                "Vin": {
+                    "tipo": "varchar",
+                    "length": 50
+                },
+                "NumeroInventario": {
+                    "tipo": "varchar",
+                    "length": 50
+                },
+                "Ano": {
+                    "tipo": "varchar",
+                    "length": 50
+                },
+                "Marca": {
+                    "tipo": "varchar",
+                    "length": 50
+                },
+                "Modelo": {
+                    "tipo": "varchar",
+                    "length": 50
+                },
+                "Version": {
+                    "tipo": "varchar",
+                    "length": 50
+                },
+                "Color": {
+                    "tipo": "varchar",
+                    "length": 50
+                },
+                "Interior": {
+                    "tipo": "varchar",
+                    "length": 50
+                },
+                "Costo$": {
+                    "tipo": "decimal",
+                    "length": "18, 2"
+                },
+                "Isan$": {
+                    
+                    "tipo": "decimal",
+                    "length": "18, 2"
+                },
+                "CostoCompra$": {
+                    "tipo": "decimal",
+                    "length": "18, 2"
+                },
+                "FechaCompra": {
+                    "tipo": "date",
+                    "length": null
+                },
+                "Status": {
+                    "tipo": "varchar",
+                    "length": 50
+                },
+                "TipoCompra": {
+                    "tipo": "varchar",
+                    "length": 50
+                },
+                "Date": {
+                    "tipo": "date",
+                    "length": null
+                },
+                "Dias": {
+                    "tipo": "date",
+                    "length": null
+                }
+            }
+        }
+    }
+}

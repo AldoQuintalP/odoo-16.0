@@ -1,0 +1,256 @@
+{
+    "name": "MMundial",
+    "reportes": [
+        "VTANUE01"
+    ],
+    "columnas_esperadas": {
+        "VTANUE01": {
+            "columnas": [
+                "FechaFactura",
+                "Factura",
+                "Vin",
+                "NumeroInventario",
+                "TipoVenta",
+                "TipoPago",
+                "Venta$",
+                "Costo$",
+                "Isan$",
+                "VentaTotal$",
+                "Ano",
+                "Marca",
+                "Modelo",
+                "Color",
+                "Interior",
+                "NumeroVendedor",
+                "NombreVendedor",
+                "FechaCompra",
+                "FechaEntrega",
+                "RFC",
+                "NumeroCliente",
+                "TipoCliente",
+                "NombreCliente",
+                "Direccion",
+                "Telefono",
+                "Celular1",
+                "CP",
+                "email",
+                "placas",
+                "NuevoUsado",
+                "Ubicacion",
+                "Celular2",
+                "CostoAdicional",
+                "Date"
+            ],
+            "columnas_export": [
+                "FechaFactura",
+                "Date",
+                "Factura",
+                "Vin",
+                "NumeroInventario",
+                "TipoVenta",
+                "TipoPago",
+                "Venta$",
+                "Costo$",
+                "Isan$",
+                "VentaTotal$",
+                "Ano",
+                "Marca",
+                "Modelo",
+                "Color",
+                "Interior",
+                "NumeroVendedor",
+                "NombreVendedor",
+                "FechaCompra",
+                "FechaEntrega",
+                "RFC",
+                "NumeroCliente",
+                "TipoCliente",
+                "NombreCliente",
+                "Direccion",
+                "Telefono",
+                "Celular1",
+                "CP",
+                "email",
+                "placas",
+                "NuevoUsado",
+                "Ubicacion",
+                "Celular2",
+                "CostoAdicional"
+            ],
+            "formulas": {
+                "FechaFactura": false,
+                "Factura": false,
+                "Vin": false,
+                "NumeroInventario": false,
+                "TipoVenta": false,
+                "TipoPago": false,
+                "Venta$": false,
+                "Costo$": false,
+                "Isan$": false,
+                "VentaTotal$": false,
+                "Ano": false,
+                "Marca": false,
+                "Modelo": false,
+                "Color": false,
+                "Interior": false,
+                "NumeroVendedor": false,
+                "NombreVendedor": false,
+                "FechaCompra": false,
+                "FechaEntrega": false,
+                "RFC": false,
+                "NumeroCliente": false,
+                "TipoCliente": false,
+                "NombreCliente": false,
+                "Direccion": false,
+                "Telefono": false,
+                "Celular1": false,
+                "CP": false,
+                "email": false,
+                "placas": false,
+                "NuevoUsado": false,
+                "Ubicacion": false,
+                "Celular2": false,
+                "CostoAdicional": false,
+                "Date": "FechaFactura - FechaEntrega"
+            },
+            "data_types": {
+                "FechaFactura": {
+                    "tipo": "date",
+                    "length": null
+                },
+                "Factura": {
+                    "tipo": "date",
+                    "length": null
+                },
+                "Vin": {
+                    "tipo": "character varying",
+                    "length": 255
+                },
+                "NumeroInventario": {
+                    "tipo": "character varying",
+                    "length": 255
+                },
+                "TipoVenta": {
+                    "tipo": "character varying",
+                    "length": 255
+                },
+                "TipoPago": {
+                    "tipo": "character varying",
+                    "length": 255
+                },
+                "Venta$": {
+                    "tipo": "character varying",
+                    "length": 255
+                },
+                "Costo$": {
+                    "tipo": "character varying",
+                    "length": 255
+                },
+                "Isan$": {
+                    "tipo": "character varying",
+                    "length": 255
+                },
+                "VentaTotal$": {
+                    "tipo": "character varying",
+                    "length": 255
+                },
+                "Ano": {
+                    "tipo": "character varying",
+                    "length": 255
+                },
+                "Marca": {
+                    "tipo": "character varying",
+                    "length": 255
+                },
+                "Modelo": {
+                    "tipo": "character varying",
+                    "length": 255
+                },
+                "Color": {
+                    "tipo": "character varying",
+                    "length": 255
+                },
+                "Interior": {
+                    "tipo": "character varying",
+                    "length": 255
+                },
+                "NumeroVendedor": {
+                    "tipo": "character varying",
+                    "length": 255
+                },
+                "NombreVendedor": {
+                    "tipo": "character varying",
+                    "length": 255
+                },
+                "FechaCompra": {
+                    "tipo": "date",
+                    "length": null
+                },
+                "FechaEntrega": {
+                    "tipo": "date",
+                    "length": null
+                },
+                "RFC": {
+                    "tipo": "character varying",
+                    "length": 255
+                },
+                "NumeroCliente": {
+                    "tipo": "character varying",
+                    "length": 255
+                },
+                "TipoCliente": {
+                    "tipo": "character varying",
+                    "length": 255
+                },
+                "NombreCliente": {
+                    "tipo": "character varying",
+                    "length": 255
+                },
+                "Direccion": {
+                    "tipo": "character varying",
+                    "length": 255
+                },
+                "Telefono": {
+                    "tipo": "character varying",
+                    "length": 255
+                },
+                "Celular1": {
+                    "tipo": "character varying",
+                    "length": 255
+                },
+                "CP": {
+                    "tipo": "character varying",
+                    "length": 255
+                },
+                "email": {
+                    "tipo": "character varying",
+                    "length": 255
+                },
+                "placas": {
+                    "tipo": "character varying",
+                    "length": 255
+                },
+                "NuevoUsado": {
+                    "tipo": "character varying",
+                    "length": 255
+                },
+                "Ubicacion": {
+                    "tipo": "character varying",
+                    "length": 255
+                },
+                "Celular2": {
+                    "tipo": "character varying",
+                    "length": 255
+                },
+                "CostoAdicional": {
+                    "tipo": "character varying",
+                    "length": 255
+                },
+                "Date": {
+                    "tipo": "date",
+                    "length": null
+                }
+            }
+        }
+    }
+}

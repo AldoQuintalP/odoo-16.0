@@ -1,0 +1,831 @@
+FACTURA|FECHAFACTURA|TIPOPROVEEDOR|NUMEROPROVEEDOR|NOMBREPROVEEDOR|TIPOCOMPRA|NUMEROPARTE|DESCRIPCION|CANTIDAD|COSTOUNITARIO|COSTO
+37958640       |30/09/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |NIMEXU03Q1DD        |LIMPIADR SIST F               |180|153.92|27705.60
+37958640       |30/09/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |NITROTAP01DD        |NITRO SERV/TAPO               |50|281.20|14060.00
+37961541       |30/09/24|OTROS                         |6F        |NR FINANCE MEXICO SA DE CV    |6                             |NMXCNGEGR151        |GARANTIA EXTENDIDA            |1|4048.24|4048.24
+37969043       |30/09/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |546116KG0A          |ESTABILIZADOR D               |1|2789.59|2789.59
+37969140       |30/09/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |10120ZT70J          |ANTICONGELANTE                |48|69.41|3331.68
+37969140       |30/09/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |11720ET00A          |CORREA VENT/BAN               |1|521.24|521.24
+37969140       |30/09/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |117201KT0A          |BANDA VENT/ALTE               |3|633.90|1901.70
+37969140       |30/09/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |15208ED50A          |FILTRO ACEITE                 |3|132.89|398.67
+37969140       |30/09/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |1654602N01          |FILTRO DE AIRE                |2|528.96|1057.92
+37969140       |30/09/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |165464JM1A          |FILTRO DE AIRE                |20|200.34|4006.80
+37969140       |30/09/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |278915RB0C          |FILTRO CAJA DE                |20|260.94|5218.80
+37969140       |30/09/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |284195FA2B          |CAMARA VISTA LA               |2|7197.00|14394.00
+37969140       |30/09/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |3N3E16RN0A          |TAPETES USO RUD               |1|833.33|833.33
+37969140       |30/09/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |3N3Q8A004GE2        |NCF 4G 2A SERV                |3|9019.50|27058.50
+37969140       |30/09/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |320018J29J          |ACEIT TM 75W85                |16|314.96|5039.36
+37969140       |30/09/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |805015EF1A          |CNTRL REMOT DE                |1|589.76|589.76
+37969499       |30/09/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |D10606LE0A          |KIT BALAT FRENO               |4|1105.24|4420.96
+37969499       |30/09/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |D40606LA0A          |KIT BALAT DISC                |3|1177.77|3533.31
+37969499       |30/09/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |E61104KH8A          |AMORTIGUADOR DE               |2|1264.79|2529.58
+37969499       |30/09/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |F31019LEMA          |VISTA DEL IZQ                 |1|1743.91|1743.91
+37969499       |30/09/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |H0564VS52A          |LLAVE SIN LABRA               |1|1088.16|1088.16
+37969499       |30/09/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |H06013TA1A          |CILINDRO PUERTA               |2|485.36|970.72
+37969499       |30/09/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |NIMEXSATRT3         |SERV ADD RT 3 A               |6|9754.72|58528.32
+37969499       |30/09/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |NIMEXT7A00AF        |ESTRIBOS LAT OF               |1|7470.03|7470.03
+37969499       |30/09/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |NIMEX4KH02AF        |TUMBABURROS CUB               |1|7797.12|7797.12
+37969499       |30/09/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |QCVT1LTNS3          |ACEITE CVT 946M               |144|256.71|36966.24
+37969499       |30/09/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |11220EL50A          |AISLADOR DE MOT               |1|1019.84|1019.84
+37969499       |30/09/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |11920VN20A          |BANDA COMPRESOR               |1|211.96|211.96
+37969499       |30/09/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |1654602N01          |FILTRO DE AIRE                |1|528.96|528.96
+37969499       |30/09/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |170403SH0F          |BOMBA COMPLETA-               |1|4831.23|4831.23
+37969499       |30/09/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |2626189949          |BULBO LAMPARA A               |10|74.32|743.20
+37969499       |30/09/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |262728992C          |BULBO                         |2|23.13|46.26
+37969499       |30/09/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |272261HK0A          |CNTRL/AMPL-VENT               |1|942.84|942.84
+37969499       |30/09/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |288904KH0A          |PLUMA LIMP PARA               |2|228.31|456.62
+37969499       |30/09/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |3N3Q8A004GE2        |NCF 4G 2A SERV                |10|9019.50|90195.00
+37969499       |30/09/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |3200500QAEKT        |INTERRUPTOR DE                |1|873.19|873.19
+37969499       |30/09/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |402066LE0A          |ROTOR FRENO DIS               |2|649.69|1299.38
+37969499       |30/09/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |546139ES0A          |BUJE ESTABILIZA               |10|52.58|525.80
+37969499       |30/09/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |620226EM0J          |FASCIA KIT FRON               |1|1124.83|1124.83
+37969499       |30/09/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |620906EM0A          |ABSORB ENERGIA                |1|269.71|269.71
+37969499       |30/09/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |788104JB0A          |JGO LODERAS TRA               |1|311.36|311.36
+37969499       |30/09/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |788114JB0A          |JGO LODERAS TRA               |1|311.36|311.36
+37969499       |30/09/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |80644EL10A          |CBTA MANIJA EXT               |1|83.18|83.18
+37969499       |30/09/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |828304AF2A          |SELLO HULE PTA                |1|327.90|327.90
+37983684       |30/09/24|OTROS                         |6F        |NR FINANCE MEXICO SA DE CV    |6                             |NMXCNGEGR141        |GARANTIA EXTENDIDA            |1|2487.46|2487.46
+37986498       |30/09/24|OTROS                         |F1        |GOLFO MOTRIZ                  |AJ                            |NIMEXPULSMAF        |PORTAEQUIPJEPUL               |1|12553.16|12553.16
+38003747       |02/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |CT2055017PDD        |LLACONT 205/50R               |4|2750.15|11000.60
+38020357       |02/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |KP71000150          |EMPAQUE LIQUIDO               |1|918.25|918.25
+38020399       |02/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |24410LN3AG          |BATERIA LN3 AGM               |1|3851.50|3851.50
+38020467       |02/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |24410H5EFB          |BATERIA 510 60                |3|2665.37|7996.11
+38020467       |02/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |24410ZW40C          |BATERIA N17X                  |4|2058.10|8232.40
+38020633       |02/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |24410LN3AG          |BATERIA LN3 AGM               |1|3851.50|3851.50
+38020743       |02/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |KP71000150          |EMPAQUE LIQUIDO               |1|918.25|918.25
+38020853       |02/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |24410ZW40C          |BATERIA N17X                  |5|2058.10|10290.50
+38026723       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |MA1657014RDD        |LLANMAMARCH 165               |8|1476.98|11815.84
+38026723       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |MA1856515RDD        |LLANMAVERSA 185               |2|1803.44|3606.88
+38036340       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |265563AW0A          |PORTAFOCO DIREC               |1|221.35|221.35
+38036340       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |938499BU0A          |GOMA TOPE                     |2|143.57|287.14
+38037194       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |3N3E15E40A          |TAPETES USO RUD               |1|1294.73|1294.73
+38037194       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |3N3E16RN0A          |TAPETES USO RUD               |1|833.33|833.33
+38037194       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |G68E05RY0B          |FALDON LATERAL                |1|6517.33|6517.33
+38037194       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |K60105RY0B          |BUMPER DELANTER               |1|6972.26|6972.26
+38037194       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |NIMEXPORPL          |PORTAPLACAS                   |2|518.37|1036.74
+38037194       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |T99J26RR0A          |LODERAS FRONTAL               |1|555.73|555.73
+38037194       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |T99J26RR0D          |LODERAS TRASERA               |1|570.66|570.66
+38037194       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |T99R16RR0D          |BARRAS PARA TEC               |1|6440.29|6440.29
+38037383       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |1654602N01          |FILTRO DE AIRE                |9|528.96|4760.64
+38038010       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |D10604KH0C          |KIT BALAT FREN/               |2|1634.01|3268.02
+38038010       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |D10605RB0B          |KIT BALAT FREN/               |2|1322.53|2645.06
+38038010       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |D10606LE0A          |KIT BALAT FRENO               |3|1105.24|3315.72
+38038010       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |D40604KH3A          |BALATAS TRAS                  |2|1791.67|3583.34
+38038010       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |KLD3180902DL        |ACEITE HYPOID                 |95|333.80|31711.00
+38038010       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |LTMR15RB00          |BARRAS DE TECHO               |1|3050.00|3050.00
+38038010       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |NIMEXPORPL          |PORTAPLACAS                   |1|518.37|518.37
+38038010       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |NIMEXSATRT3         |SERV ADD RT 3 A               |2|9754.72|19509.44
+38038010       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |NIMEX4KH00AF        |TUMBABURROS DEP               |1|5372.30|5372.30
+38038010       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |NIMEX4KH02AF        |TUMBABURROS CUB               |3|7797.12|23391.36
+38038010       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |T99C35EE0A          |Tapete de cajue               |2|1217.28|2434.56
+38038010       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |00000215R0          |LIQ FREN DOT3 3               |24|57.61|1382.64
+38038010       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |10120ZT70J          |ANTICONGELANTE                |36|69.41|2498.76
+38038010       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |112106LB0D          |AISL MONT MOTOR               |1|2339.10|2339.10
+38038010       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |112201HA0B          |AISL/MONT/MOT/I               |1|468.37|468.37
+38038010       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |113609HL0B          |VARILLA TORQUE                |1|1094.07|1094.07
+38038010       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |11720F4001          |BANDA VENTILADO               |2|137.25|274.50
+38038010       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |117201KT0A          |BANDA VENT/ALTE               |5|633.90|3169.50
+38038010       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |117204JM0A          |BANDA VENT/ALTE               |2|635.05|1270.10
+38038010       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |117205RB0A          |BANDA VENT/ALTE               |1|520.34|520.34
+38038010       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |118105H71A          |VbLVULA CONTROL               |1|392.93|392.93
+38038010       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |11950VN20A          |BANDA DIRECCION               |1|221.18|221.18
+38038010       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |135101KT0A          |JUNTA ACEITE CI               |1|111.77|111.77
+38038010       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |15208ED50A          |FILTRO ACEITE                 |2|132.89|265.78
+38038010       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |1520865F0E          |FILTRO ACEITE                 |60|165.66|9939.60
+38038010       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |1654602N01          |FILTRO DE AIRE                |5|528.96|2644.80
+38038010       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |165461HK0J          |FILTRO DE AIRE                |6|297.71|1786.26
+38038010       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |165464BA1J          |FILTRO DE AIRE                |17|451.99|7683.83
+38038010       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |165464JM1A          |FILTRO DE AIRE                |20|200.34|4006.80
+38038010       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |165465RB1A          |FILTRO DE AIRE                |12|265.01|3180.12
+38038010       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |21200EA000          |TERMOSTATO                    |1|463.55|463.55
+38038010       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |22401ED71B          |BUJIA                         |16|521.01|8336.16
+38038010       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |224011HC1B          |BUJIA                         |8|145.88|1167.04
+38038010       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |224485RB0A          |BOBINA ENCENDID               |4|386.85|1547.40
+38038010       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |23731ED03A          |SENSOR POS CIGU               |1|152.64|152.64
+38038010       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |242686KE0A          |AISLADOR                      |1|205.35|205.35
+38038010       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |243407F000          |CONECTOR                      |1|242.41|242.41
+38038010       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |262728992C          |BULBO                         |5|23.13|115.65
+38038010       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |265504KH0A          |LAMP/DIRECCIONA               |1|1222.35|1222.35
+38038010       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |27277VX01A          |KIT FILTRO AIRE               |2|359.42|718.84
+38038010       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |272771KK0C          |FILTRO AIRE ACO               |15|191.40|2871.00
+38038010       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |272773DF0B          |FILTRO AIRE                   |6|140.16|840.96
+38038010       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |272773JC1C          |FILTRO AIRE                   |1|360.31|360.31
+38038010       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |272775JJ0B          |FILTRO AIRE ACO               |20|213.30|4266.00
+38038010       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |272775NA0A          |FILTRO AIRE ACO               |10|285.71|2857.10
+38038010       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |278915RB0C          |FILTRO CAJA DE                |20|260.94|5218.80
+38038010       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |28890ZR81A          |ESCOBILLA LIMPI               |2|198.21|396.42
+38038010       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |288901PA0A          |PLUMA LIMP PARA               |2|225.62|451.24
+38038010       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |288904KH0A          |PLUMA LIMP PARA               |1|259.86|259.86
+38038010       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |288904KH1A          |PLUMA LIMP PARA               |1|228.31|228.31
+38038010       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |288905EF0B          |HOJA LIMP PARAB               |1|233.97|233.97
+38038010       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |3N3E143010          |TAPETES DE HULE               |5|745.20|3726.00
+38038010       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |3N3E15EF0A          |JUEGO DE TAPETE               |5|758.11|3790.55
+38038010       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |3N3Q8A004GE3        |NCF 4G 3A SERV                |1|14307.87|14307.87
+38038010       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |30100JR50A          |DISCO DE CLUTCH               |1|3729.74|3729.74
+38038010       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |302104JM0A          |CUBIERTA CLUTCH               |1|2417.87|2417.87
+38038010       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |3050269F1A          |BALERO LIBERA C               |1|633.94|633.94
+38038010       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |313973JX0A          |EMPAQUE CARTER                |1|409.95|409.95
+38038010       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |320018J29J          |ACEIT TM 75W85                |16|314.96|5039.36
+38038010       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |3200500QAEKT        |INTERRUPTOR DE                |2|873.19|1746.38
+38038010       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |381894GD0A          |SELL/ACEITE PI&               |1|114.29|114.29
+38038010       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |403155EF0B          |CUBRTA DISC                   |4|186.90|747.60
+38038010       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |540509VC0A          |EXTREMO PARACHO               |2|69.33|138.66
+38038010       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |543204CL0B          |AISLADR/MONT/AM               |2|907.73|1815.46
+38038010       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |546184KH0A          |VAR/CONECC-ESTA               |1|186.69|186.69
+38038010       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |546684KH0A          |VAR/CONECC-ESTA               |1|186.57|186.57
+38038010       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |622224JA2B          |SOPRT-DEF/DEL-L               |1|37.65|37.65
+38038010       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |622259LE0A          |SOP PARACHOQ LA               |1|12.04|12.04
+38038010       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |638405EF0A          |PROTEC SALPICAD               |1|507.25|507.25
+38038010       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |806409AN0A          |MANIJA EXTER/PR               |1|733.59|733.59
+38039328       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |D40603VA0B          |JGO-BALATAS FRE               |1|1095.66|1095.66
+38039328       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |NIMEXSATRT2         |SERV ADD RT 2 A               |7|6661.13|46627.91
+38039328       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |NIMEXSATRT3         |SERV ADD RT 3 A               |2|9754.72|19509.44
+38039328       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |112106LB0D          |AISL MONT MOTOR               |2|2339.10|4678.20
+38039328       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |112201KG0A          |AISL/MONT/MOT/I               |1|968.28|968.28
+38039328       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |118106N202          |VALVULA CONTROL               |1|663.09|663.09
+38039328       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |132644JM0C          |CUBRTA VAL BALA               |1|491.21|491.21
+38039328       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |132703TS0A          |EMPAQ/TAP BALAN               |1|273.84|273.84
+38039328       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |135101KT0A          |JUNTA ACEITE CI               |1|111.77|111.77
+38039328       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |1520865F0E          |FILTRO ACEITE                 |60|165.66|9939.60
+38039328       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |164397S01E          |ABRAZADERA                    |1|33.92|33.92
+38039328       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |170405RB0A          |BOMBA COMPLETA-               |1|3851.25|3851.25
+38039328       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |175715L30B          |ABRAZADERA INYE               |4|20.42|81.68
+38039328       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |210824JM1B          |ACOPLAMIENTO VE               |1|4616.22|4616.22
+38039328       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |276753VE0A          |AMPLIFICADOR                  |1|299.54|299.54
+38039328       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |288905EF0B          |HOJA LIMP PARAB               |1|233.97|233.97
+38039328       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |3N3Q8A004GE2        |NCF 4G 2A SERV                |4|9019.50|36078.00
+38039328       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |3N3Q8A004GE3        |NCF 4G 3A SERV                |1|14307.87|14307.87
+38039328       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |3N3W25RB0A          |TUERCA DE SEGUR               |2|631.44|1262.88
+38039328       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |30100JR50A          |DISCO DE CLUTCH               |1|3729.74|3729.74
+38039328       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |302104JM0A          |CUBIERTA CLUTCH               |1|2417.87|2417.87
+38039328       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |432101HL0A          |BALERO INT/EJE                |1|2346.73|2346.73
+38039328       |03/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2R                            |805015EF1A          |CNTRL REMOT DE                |1|589.76|589.76
+38040650       |03/10/24|OTROS                         |69887     |RIGO MEXICO                   |3                             |INSUMOLMOT          |INSUMO LAVADO #2              |100|26.07|2607.00
+38045930       |03/10/24|OTROS                         |6F        |NR FINANCE MEXICO SA DE CV    |6                             |NMXCNGEGR161        |GARANTIA EXTENDIDA            |1|6117.29|6117.29
+38062100       |04/10/24|OTROS                         |6F        |NR FINANCE MEXICO SA DE CV    |6                             |NMXCNGEGR241        |GARANTIA EXTENDIDA            |1|3770.58|3770.58
+38062640       |04/10/24|OTROS                         |F1        |GOLFO MOTRIZ                  |AJ                            |NMEXEXPRESSS        |NMEX/EXPRESSSER               |20|0.01|0.20
+38092020       |05/10/24|OTROS                         |6F        |NR FINANCE MEXICO SA DE CV    |6                             |NMXCNGEGR141        |GARANTIA EXTENDIDA            |1|2487.46|2487.46
+38125220       |08/10/24|OTROS                         |6F        |NR FINANCE MEXICO SA DE CV    |6                             |NMXCNGEGR141        |GARANTIA EXTENDIDA            |1|2487.46|2487.46
+38125540       |08/10/24|OTROS                         |6F        |NR FINANCE MEXICO SA DE CV    |6                             |NMXCNGEGR151        |GARANTIA EXTENDIDA            |1|4048.24|4048.24
+38125914       |08/10/24|OTROS                         |6F        |NR FINANCE MEXICO SA DE CV    |6                             |NMXCNGEGR141        |GARANTIA EXTENDIDA            |1|2487.46|2487.46
+38146501       |09/10/24|OTROS                         |69887     |RIGO MEXICO                   |3                             |INSUMOLMOT          |INSUMO LAVADO #2              |100|26.07|2607.00
+38151461       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |117201KT0A          |BANDA VENT/ALTE               |5|633.90|3169.50
+38151461       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |15208ED50A          |FILTRO ACEITE                 |8|132.89|1063.12
+38151461       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |165465RB1A          |FILTRO DE AIRE                |9|265.01|2385.09
+38151461       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |22401ED71B          |BUJIA                         |1|521.01|521.01
+38151461       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |224011HC1B          |BUJIA                         |8|145.88|1167.04
+38151461       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |27277VX01A          |KIT FILTRO AIRE               |19|359.42|6828.98
+38151461       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |288905EF0A          |HOJA LIMP PARAB               |2|324.48|648.96
+38151641       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |2263044B20          |MOD/CNTRL TEMP/               |1|928.82|928.82
+38151641       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |282151FC0B          |VARILLA ANTENA                |1|500.40|500.40
+38151641       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |407006LB0A          |SENSOR PRESION                |1|459.25|459.25
+38151641       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |543251KA0A          |BALERO AMORTIGU               |3|335.09|1005.27
+38151641       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |963651HK5A          |LUNA ESPEJO DER               |1|217.93|217.93
+38151830       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |24410ZW40C          |BATERIA N17X                  |3|2058.10|6174.30
+38152051       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |214819KZ1A          |SHROUD ASSY W M               |1|1848.49|1848.49
+38152141       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |955204KH0E          |2DO AISLADR-MON               |1|291.75|291.75
+38152283       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |00000215R0          |LIQ FREN DOT3 3               |144|57.61|8295.84
+38152283       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |10120ZT70J          |ANTICONGELANTE                |84|69.41|5830.44
+38152283       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |165461HK0J          |FILTRO DE AIRE                |18|297.71|5358.78
+38152283       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |165464JM1A          |FILTRO DE AIRE                |20|200.34|4006.80
+38152283       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |272771KK0C          |FILTRO AIRE ACO               |25|200.97|5024.25
+38152451       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |3N3Q8A004GE2        |NCF 4G 2A SERV                |3|9019.50|27058.50
+38152492       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |B8599C2032          |BATERIA LLAVE I               |3|112.64|337.92
+38152492       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |D10601HL0B          |KIT BALAT FREN/               |2|1178.05|2356.10
+38152492       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |D10609BT0C          |KIT BALAT FREN                |1|1709.22|1709.22
+38152492       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |D10801VA0K          |JGO/LAMINAS FRE               |1|2241.74|2241.74
+38152492       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |H05616EM0C          |LLAVE MAESTRA                 |1|941.41|941.41
+38152492       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |T99C35EE0A          |Tapete de cajue               |2|1290.20|2580.40
+38152492       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |00000215R0          |LIQ FREN DOT3 3               |24|57.61|1382.64
+38152492       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |01125E6091          |TORN/CAMARA ACE               |4|17.36|69.44
+38152492       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |11720JG30B          |BANDA VENT/ALTE               |1|1522.24|1522.24
+38152492       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |11925MA00B          |POLEA TENS/COMP               |1|1660.10|1660.10
+38152492       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |119254JM0A          |POLEA TENSORA                 |1|707.33|707.33
+38152492       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |11955JA00C          |TENSOR AUTOMATI               |1|1347.29|1347.29
+38152492       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |130706LB0A          |TENSIONADOR CAD               |1|419.09|419.09
+38152492       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |132644JM0C          |CUBRTA VAL BALA               |1|491.21|491.21
+38152492       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |161193AB1E          |CAMARA ACELERAC               |1|1032.39|1032.39
+38152492       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |165461HK0J          |FILTRO DE AIRE                |12|297.71|3572.52
+38152492       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |165465RB1A          |FILTRO DE AIRE                |10|265.01|2650.10
+38152492       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |21200EA000          |TERMOSTATO                    |1|477.46|477.46
+38152492       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |22401ED71B          |BUJIA                         |10|521.01|5210.10
+38152492       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |22693ZX70A          |SENSOR DE AIRE                |2|2157.99|4315.98
+38152492       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |25560EL00C          |INTERRUPTOR DE                |1|1911.41|1911.41
+38152492       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |260104KU0D          |LAMP ASSY-HEAD,               |1|2081.00|2081.00
+38152492       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |260604KU0B          |FARO IZQUIERDO                |1|1950.25|1950.25
+38152492       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |261508995F          |LAMP/NIEBLA DER               |1|2213.37|2213.37
+38152492       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |261558995F          |LAMP/NIEBLA IZQ               |1|2213.37|2213.37
+38152492       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |27277VX01A          |KIT FILTRO AIRE               |1|370.20|370.20
+38152492       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |276753VE0A          |AMPLIFICADOR                  |1|299.54|299.54
+38152492       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |28215JG40B          |VARILLA ANTENA                |1|684.96|684.96
+38152492       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |288903SG0C          |PLUMA LIMP PARA               |1|269.69|269.69
+38152492       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |288904KH1A          |PLUMA LIMP PARA               |1|228.31|228.31
+38152492       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |288905EF0A          |HOJA LIMP PARAB               |1|324.48|324.48
+38152492       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |3N3E15EF0A          |JUEGO DE TAPETE               |2|758.11|1516.22
+38152492       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |3N3E16KH0A          |TAPETE HULE FRO               |2|775.04|1550.08
+38152492       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |301005RB0A          |DISCO DE CLUTCH               |1|1620.93|1620.93
+38152492       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |302105RB0A          |CUBIERTA CLUTCH               |1|2648.03|2648.03
+38152492       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |320018J29J          |ACEIT TM 75W85                |16|314.96|5039.36
+38152492       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |403005EF0E          |RUEDA DISCO                   |1|721.83|721.83
+38152492       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |41001ZP42A          |ZAPATA/DE/D/S-C               |1|7645.18|7645.18
+38152492       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |41011ZP42A          |ZAPATA/DE/I/S-C               |1|7645.18|7645.18
+38152492       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |488106LB1A          |COLUMNA MECANIS               |1|3175.83|3175.83
+38152492       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |497204JM0B          |MANG/TUBO PRES/               |1|2799.28|2799.28
+38152492       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |543255FA0A          |BALERO AMORTIGU               |1|281.84|281.84
+38152492       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |550321HJ0A          |ASIENT/INF/RESO               |2|157.63|315.26
+38152492       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |622255EE0A          |SOP PARACHOQ LA               |1|67.63|67.63
+38152492       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |623106KH0A          |PARILLA DELANTE               |1|1590.19|1590.19
+38152492       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |638405EF0A          |PROTEC SALPICAD               |1|507.25|507.25
+38152492       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |685205EF0A          |CUBIERTA GUANTE               |1|675.79|675.79
+38152492       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |805016FP0A          |CNTRL-REMOT/DE-               |1|1498.50|1498.50
+38154500       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |E62109LK1A          |AMORTIGUADOR TR               |2|1038.27|2076.54
+38154500       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |H06013TA1A          |CILINDRO PUERTA               |1|499.92|499.92
+38154500       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |NIMEXPORPL          |PORTAPLACAS                   |1|518.37|518.37
+38154500       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |QCVT1LTNS3          |ACEITE CVT 946M               |36|256.71|9241.56
+38154500       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |1520865F0E          |FILTRO ACEITE                 |60|165.66|9939.60
+38154500       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |288904KH1A          |PLUMA LIMP PARA               |3|228.31|684.93
+38154500       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |302104JM0A          |CUBIERTA CLUTCH               |1|2490.41|2490.41
+38154500       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |546139ES0A          |BUJE ESTABILIZA               |10|52.58|525.80
+38154500       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |546185RB0A          |VAR/CONECC-ESTA               |7|143.47|1004.29
+38154500       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |92473N823A          |SEGURO COLECTOR               |3|62.53|187.59
+38156213       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |NIMEXU03Q1DD        |LIMPIADR SIST F               |180|153.92|27705.60
+38156213       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |NIMEXU03Q2DD        |LIMP CUE DE ACE               |48|129.97|6238.56
+38156213       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |NIMEXU03Q9DD        |LIMP INYECTORES               |24|166.75|4002.00
+38156213       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |NIMEXU04Q6DD        |SHAMP LIMPIA PA               |540|29.61|15989.40
+38156213       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |NIMEXU8Q10DD        |PROTECT TERMINA               |480|109.20|52416.00
+38166115       |09/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |NITROTAP01DD        |NITRO SERV/TAPO               |150|281.20|42180.00
+38166597       |09/10/24|OTROS                         |69887     |RIGO MEXICO                   |3                             |INSUMOLMOT          |INSUMO LAVADO #2              |500|26.07|13035.00
+38166597       |09/10/24|OTROS                         |69887     |RIGO MEXICO                   |3                             |OTREFR134A          |GAS REF 134A                  |1|3222.82|3222.82
+38167104       |09/10/24|OTROS                         |69887     |RIGO MEXICO                   |D3                            |INSUMOLMOT          |INSUMO LAVADO #2              |-100|26.07|-2607.00
+38167115       |09/10/24|OTROS                         |69887     |RIGO MEXICO                   |D3                            |INSUMOLMOT          |INSUMO LAVADO #2              |-100|26.07|-2607.00
+38167132       |09/10/24|OTROS                         |69887     |RIGO MEXICO                   |D3                            |INSUMOLMOT          |INSUMO LAVADO #2              |-100|26.07|-2607.00
+38174445       |09/10/24|OTROS                         |6F        |NR FINANCE MEXICO SA DE CV    |D6                            |NMXCNGEGR151        |GARANTIA EXTENDIDA            |-1|4048.24|-4048.24
+38182576       |10/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |CT2055516RDD        |LLANVOVERSA 205               |4|1943.97|7775.88
+38182576       |10/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |CT20560R16DD        |LLA KICKS 20560               |4|2125.32|8501.28
+38182576       |10/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |EMG20W50VADD        |ACE MINE GA VA                |4|406.71|1626.84
+38182576       |10/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |EML15W40SNDD        |AC 946 ML 15W40               |120|121.96|14635.20
+38182576       |10/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |EML5W3TA7BDD        |AC 946 ML 5W30                |120|144.82|17378.40
+38182576       |10/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |EMPVN20WSNDD        |PROMOVERNPD23 2               |100|495.51|49551.00
+38182576       |10/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |EMT103TA7CDL        |LIT TALLER 10W3               |2080|121.54|252803.20
+38189934       |10/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |CT20555R17DD        |LLA KICKS 20555               |5|3000.70|15003.50
+38195952       |10/10/24|OTROS                         |6F        |NR FINANCE MEXICO SA DE CV    |6                             |NMXCNGEGR141        |GARANTIA EXTENDIDA            |1|2487.46|2487.46
+38197887       |10/10/24|OTROS                         |F1        |GOLFO MOTRIZ                  |AJ                            |118261HK0A          |MANG/VENTILACIO               |-1|63.28|-63.28
+38197887       |10/10/24|OTROS                         |F1        |GOLFO MOTRIZ                  |AJ                            |118261HK5A          |MANG/VENTILACIO               |1|58.47|58.47
+38197887       |10/10/24|OTROS                         |F1        |GOLFO MOTRIZ                  |AJ                            |403424AF2A          |ORNAMENTO RUEDA               |2|77.38|154.76
+38197887       |10/10/24|OTROS                         |F1        |GOLFO MOTRIZ                  |AJ                            |403426TA1A          |ORNAMENTO DISC                |-2|69.34|-138.68
+38197887       |10/10/24|OTROS                         |F1        |GOLFO MOTRIZ                  |AJ                            |243407F000          |CONECTOR                      |1|242.41|242.41
+38197887       |10/10/24|OTROS                         |F1        |GOLFO MOTRIZ                  |AJ                            |243407F003          |CONECTOR                      |-1|258.59|-258.59
+38197887       |10/10/24|OTROS                         |F1        |GOLFO MOTRIZ                  |AJ                            |CT20560R16DD        |LLA KICKS 20560               |1|2125.32|2125.32
+38197887       |10/10/24|OTROS                         |F1        |GOLFO MOTRIZ                  |AJ                            |MA195515CRDD        |LLANMANP300 195               |-1|2539.82|-2539.82
+38201461       |10/10/24|OTROS                         |6F        |NR FINANCE MEXICO SA DE CV    |6                             |NMXCNGEGR141        |GARANTIA EXTENDIDA            |1|2487.46|2487.46
+38214587       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |27277VX01A          |KIT FILTRO AIRE               |9|370.20|3331.80
+38214587       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |272775NA0A          |FILTRO AIRE ACO               |13|285.71|3714.23
+38214587       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |3N3T76KH0A          |BARRA DEPT                    |2|8042.24|16084.48
+38215110       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |F31014KGMA          |SALPIDERA DEL I               |1|2712.85|2712.85
+38215110       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |T99D35EE0A          |Deflector de ve               |1|3740.46|3740.46
+38215110       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |T99J26LB4A          |FR SPLASH GUARD               |1|1179.95|1179.95
+38215110       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |T99J26LB4A          |FR SPLASH GUARD               |1|1083.32|1083.32
+38215110       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |119271HC0D          |POLEA TENSORA                 |1|1182.58|1182.58
+38215110       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |119551KC0A          |TENSIONADOR AUT               |1|1441.37|1441.37
+38215110       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |130704E102          |TENSOR                        |1|1398.34|1398.34
+38215110       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |1307053F16          |TENSOR CADENA                 |1|1391.41|1391.41
+38215110       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |21304JA00A          |ANILLO GOMA                   |1|32.61|32.61
+38215110       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |272109KC1A          |SOPLADOR AIRE A               |1|8337.87|8337.87
+38215110       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |28215JG40B          |VARILLA ANTENA                |1|684.96|684.96
+38215110       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |3N3B26LE0A          |PROT CAJUELA TR               |1|590.18|590.18
+38215110       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |301005RB0A          |DISCO DE CLUTCH               |1|1620.93|1620.93
+38215110       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |302105RB0A          |CUBIERTA CLUTCH               |1|2648.03|2648.03
+38215110       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |306105FA1C          |CILIND/MAEST/D-               |1|1320.01|1320.01
+38215110       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |3062000Q1T          |CILIND OPERAC D               |1|5219.77|5219.77
+38215110       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |30660BC00A          |VALANCIN CLUTCH               |1|681.79|681.79
+38215110       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |30850BC30A          |TUBO DE CLUTCH                |1|365.02|365.02
+38215110       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |320056KB0A          |INTERRUPT LAMP                |1|381.06|381.06
+38215110       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |320066KB0A          |INTERRUP POS NE               |1|303.15|303.15
+38215110       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |381644KD3A          |FLECHA EJE TRAS               |1|4721.48|4721.48
+38215110       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |805005EF0A          |CNTRL-REMOT/DE-               |1|540.61|540.61
+38215110       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |849025EE0A          |ALFOMBRA PISO E               |1|1597.28|1597.28
+38215110       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |92470HC050          |JUNTA TORICA                  |10|92.40|924.00
+38215110       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |92473N823A          |SEGURO COLECTOR               |1|62.53|62.53
+38215110       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |963024JS0A          |ESPEJO PUERTA I               |1|1108.59|1108.59
+38221155       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |F31014KGMA          |SALPIDERA DEL I               |1|2712.85|2712.85
+38221155       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |T99D35EE0A          |Deflector de ve               |1|3740.46|3740.46
+38221155       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |T99J26LB4A          |FR SPLASH GUARD               |1|1179.95|1179.95
+38221155       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |T99J26LB4B          |RR SPLASH GUARD               |1|1083.32|1083.32
+38221155       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |119271HC0D          |POLEA TENSORA                 |1|1182.58|1182.58
+38221155       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |119551KC0A          |TENSIONADOR AUT               |1|1441.37|1441.37
+38221155       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |130704E102          |TENSOR                        |1|1398.34|1398.34
+38221155       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |1307053F16          |TENSOR CADENA                 |1|1391.41|1391.41
+38221155       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |21304JA00A          |ANILLO GOMA                   |1|32.61|32.61
+38221155       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |272109KC1A          |SOPLADOR AIRE A               |1|8337.87|8337.87
+38221155       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |28215JG40B          |VARILLA ANTENA                |1|684.96|684.96
+38221155       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |3N3B26LE0A          |PROT CAJUELA TR               |1|590.18|590.18
+38221155       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |301005RB0A          |DISCO DE CLUTCH               |1|1620.93|1620.93
+38221155       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |302105RB0A          |CUBIERTA CLUTCH               |1|2648.03|2648.03
+38221155       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |306105FA1C          |CILIND/MAEST/D-               |1|1320.01|1320.01
+38221155       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |3062000Q1T          |CILIND OPERAC D               |1|5219.77|5219.77
+38221155       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |30660BC00A          |VALANCIN CLUTCH               |1|681.79|681.79
+38221155       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |30850BC30A          |TUBO DE CLUTCH                |1|365.02|365.02
+38221155       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |320056KB0A          |INTERRUPT LAMP                |1|381.06|381.06
+38221155       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |320066KB0A          |INTERRUP POS NE               |1|303.15|303.15
+38221155       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |381644KD3A          |FLECHA EJE TRAS               |1|4721.48|4721.48
+38221155       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |805005EF0A          |CNTRL-REMOT/DE-               |1|540.61|540.61
+38221155       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |849025EE0A          |ALFOMBRA PISO E               |1|1597.28|1597.28
+38221155       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |92470HC050          |JUNTA TORICA                  |10|92.40|924.00
+38221155       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |92473N823A          |SEGURO COLECTOR               |1|62.53|62.53
+38221155       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |963024JS0A          |ESPEJO PUERTA I               |1|1108.59|1108.59
+38221470       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |D2                            |F31014KGMA          |SALPIDERA DEL I               |-1|2712.85|-2712.85
+38221470       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |D2                            |T99D35EE0A          |Deflector de ve               |-1|3740.46|-3740.46
+38221470       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |D2                            |T99J26LB4A          |FR SPLASH GUARD               |-1|1179.95|-1179.95
+38221470       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |D2                            |T99J26LB4A          |FR SPLASH GUARD               |-1|1083.32|-1083.32
+38221470       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |D2                            |119271HC0D          |POLEA TENSORA                 |-1|1182.58|-1182.58
+38221470       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |D2                            |119551KC0A          |TENSIONADOR AUT               |-1|1441.37|-1441.37
+38221470       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |D2                            |130704E102          |TENSOR                        |-1|1398.34|-1398.34
+38221470       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |D2                            |1307053F16          |TENSOR CADENA                 |-1|1391.41|-1391.41
+38221470       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |D2                            |21304JA00A          |ANILLO GOMA                   |-1|32.61|-32.61
+38221470       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |D2                            |272109KC1A          |SOPLADOR AIRE A               |-1|8337.87|-8337.87
+38221470       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |D2                            |28215JG40B          |VARILLA ANTENA                |-1|684.96|-684.96
+38221470       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |D2                            |3N3B26LE0A          |PROT CAJUELA TR               |-1|590.18|-590.18
+38221470       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |D2                            |301005RB0A          |DISCO DE CLUTCH               |-1|1620.93|-1620.93
+38221470       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |D2                            |302105RB0A          |CUBIERTA CLUTCH               |-1|2648.03|-2648.03
+38221470       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |D2                            |306105FA1C          |CILIND/MAEST/D-               |-1|1320.01|-1320.01
+38221470       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |D2                            |3062000Q1T          |CILIND OPERAC D               |-1|5219.77|-5219.77
+38221470       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |D2                            |30660BC00A          |VALANCIN CLUTCH               |-1|681.79|-681.79
+38221470       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |D2                            |30850BC30A          |TUBO DE CLUTCH                |-1|365.02|-365.02
+38221470       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |D2                            |320056KB0A          |INTERRUPT LAMP                |-1|381.06|-381.06
+38221470       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |D2                            |320066KB0A          |INTERRUP POS NE               |-1|303.15|-303.15
+38221470       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |D2                            |381644KD3A          |FLECHA EJE TRAS               |-1|4721.48|-4721.48
+38221470       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |D2                            |805005EF0A          |CNTRL-REMOT/DE-               |-1|540.61|-540.61
+38221470       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |D2                            |849025EE0A          |ALFOMBRA PISO E               |-1|1597.28|-1597.28
+38221470       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |D2                            |92470HC050          |JUNTA TORICA                  |-10|92.40|-924.00
+38221470       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |D2                            |92473N823A          |SEGURO COLECTOR               |-1|62.53|-62.53
+38221470       |11/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |D2                            |963024JS0A          |ESPEJO PUERTA I               |-1|1108.59|-1108.59
+38257132       |14/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |117203XN0C          |CORREA VENTILAD               |1|943.97|943.97
+38257132       |14/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |119553XN0C          |TENSOR AUTOMATI               |1|2912.45|2912.45
+38257132       |14/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |3N3T76KH0A          |BARRA DEPT                    |1|8042.24|8042.24
+38257132       |14/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |3N3T76KH0A          |BARRA DEPT                    |1|8042.24|8042.24
+38260982       |14/10/24|OTROS                         |6F        |NR FINANCE MEXICO SA DE CV    |6                             |NMXCNGEGR141        |GARANTIA EXTENDIDA            |1|2487.46|2487.46
+38261361       |14/10/24|OTROS                         |6F        |NR FINANCE MEXICO SA DE CV    |6                             |NMXCNGEGR141        |GARANTIA EXTENDIDA            |1|2487.46|2487.46
+38298216       |15/10/24|OTROS                         |6F        |NR FINANCE MEXICO SA DE CV    |6                             |NMXCNGEGR141        |GARANTIA EXTENDIDA            |1|2487.46|2487.46
+38303728       |15/10/24|OTROS                         |6F        |NR FINANCE MEXICO SA DE CV    |6                             |NMXCNGEGR141        |GARANTIA EXTENDIDA            |1|2487.46|2487.46
+38307780       |15/10/24|OTROS                         |6F        |NR FINANCE MEXICO SA DE CV    |6                             |NMXCNGEGR141        |GARANTIA EXTENDIDA            |1|2487.46|2487.46
+38333696       |16/10/24|OTROS                         |6F        |NR FINANCE MEXICO SA DE CV    |6                             |NMXCNGEGR141        |GARANTIA EXTENDIDA            |1|2487.46|2487.46
+38334041       |16/10/24|OTROS                         |6F        |NR FINANCE MEXICO SA DE CV    |6                             |NMXCNGEGR141        |GARANTIA EXTENDIDA            |1|2487.46|2487.46
+38334430       |16/10/24|OTROS                         |6F        |NR FINANCE MEXICO SA DE CV    |6                             |NMXCNGEGR141        |GARANTIA EXTENDIDA            |1|2487.46|2487.46
+38343300       |17/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |24410H5EFB          |BATERIA 510 60                |3|2718.68|8156.04
+38343300       |17/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |24410H5L2R          |BATERIA 550 63                |4|2315.61|9262.44
+38343300       |17/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |24410LN3AG          |BATERIA LN3 AGM               |1|3851.50|3851.50
+38343300       |17/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |24410ZW40C          |BATERIA N17X                  |19|2058.10|39103.90
+38349756       |17/10/24|OTROS                         |69887     |RIGO MEXICO                   |3                             |NCIRLAVAD19         |PREVIA NUEVO / PREVIA SEMINUEV|200|41.56|8312.00
+38350202       |17/10/24|OTROS                         |69887     |RIGO MEXICO                   |3                             |INSUMOLMOT          |INSUMO LAVADO #2              |500|26.07|13035.00
+38370181       |18/10/24|OTROS                         |6F        |NR FINANCE MEXICO SA DE CV    |6                             |NMXCNGEGR241        |GARANTIA EXTENDIDA            |1|3770.58|3770.58
+38371375       |18/10/24|OTROS                         |6F        |NR FINANCE MEXICO SA DE CV    |6                             |NMXCNGEGR141        |GARANTIA EXTENDIDA            |1|2487.46|2487.46
+38393589       |19/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |24410ZW40C          |BATERIA N17X                  |1|2058.10|2058.10
+38393671       |19/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |165464BA1J          |FILTRO DE AIRE                |3|451.99|1355.97
+38393766       |19/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |21410VM50A          |RADIADOR                      |1|3743.03|3743.03
+38393894       |19/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |1102601M02          |ARANDELA CARTER               |200|23.58|4716.00
+38393894       |19/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |110444JM1A          |EMPAQUE CAB/CIL               |1|560.90|560.90
+38393894       |19/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |112101HS0A          |AISL/MONT/MOT/C               |1|4117.35|4117.35
+38393894       |19/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |112106LB0D          |AISL MONT MOTOR               |1|2339.10|2339.10
+38393894       |19/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |112201HA0B          |AISL/MONT/MOT/I               |2|482.42|964.84
+38393894       |19/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |113605US0A          |VARILLA TORQUE                |1|965.06|965.06
+38393894       |19/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |117203SG0A          |BANDA VENT/ALTE               |2|742.84|1485.68
+38393894       |19/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |117204JM0A          |BANDA VENT/ALTE               |1|654.10|654.10
+38393894       |19/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |117205RB0A          |BANDA VENT/ALTE               |1|535.95|535.95
+38393894       |19/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |117205TU0A          |CORREA VENTILAD               |1|506.45|506.45
+38393894       |19/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |118261HK0A          |MANG/VENTILACIO               |1|63.28|63.28
+38393894       |19/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |132701KT0A          |EMPAQ/TAPA DE M               |2|264.48|528.96
+38393894       |19/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |132703TS0A          |EMPAQ/TAP BALAN               |2|282.06|564.12
+38393894       |19/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |132705TA0A          |JUNTA TAPA DE V               |1|326.45|326.45
+38393894       |19/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |140351HK0A          |EMPAQUE DE MULT               |1|344.64|344.64
+38393894       |19/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |15208BN30A          |FILTRO ACEITE                 |10|164.10|1641.00
+38393894       |19/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |1520865F0E          |FILTRO ACEITE                 |240|165.66|39758.40
+38393894       |19/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |161193AB1E          |CAMARA ACELERAC               |1|1032.39|1032.39
+38393894       |19/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |1654630P0J          |CARTUCHO FILTRO               |10|205.09|2050.90
+38393894       |19/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |165464JM1A          |FILTRO DE AIRE                |39|200.34|7813.26
+38393894       |19/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |170405EF0A          |BOMBA COMPLETA                |1|2074.54|2074.54
+38393894       |19/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |17342EA000          |EMPAQUE MED GAS               |1|404.85|404.85
+38393894       |19/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |201001HK6B          |MOFLE PRINC/ESC               |1|1470.73|1470.73
+38393894       |19/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |212000C82A          |TERMOSTATO                    |1|355.39|355.39
+38393894       |19/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |21712F4100          |TAPON TANQUE RE               |10|10.63|106.30
+38393894       |19/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |22401CK81B          |BUJIA                         |10|265.17|2651.70
+38393894       |19/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |226307Y000          |SENSOR AGUA                   |1|137.76|137.76
+38393894       |19/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |231006LB0A          |ALTERNADOR                    |1|5834.90|5834.90
+38393894       |19/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |253003RA0A          |INTERRUP/CANCEL               |1|607.16|607.16
+38393894       |19/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |25320AX00C          |INTERRUPTOR LUZ               |1|649.52|649.52
+38393894       |19/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |2591A6KH1A          |CONTROLLER ASSY               |1|20720.60|20720.60
+38393894       |19/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |265455EE0A          |LAMPARA TRAS SU               |1|1640.90|1640.90
+38393894       |19/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |265506LB0A          |LAMPARA TRAS CO               |1|1690.83|1690.83
+38393894       |19/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |272105RB1B          |SOPLADOR AIRE A               |1|8657.06|8657.06
+38393894       |19/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |285E34CB1C          |INTERR LLAVE IN               |1|1622.89|1622.89
+38393894       |19/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |3N3Q8A004GE2        |NCF 4G 2A SERV                |4|9019.50|36078.00
+38393894       |19/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |3N3W76KH0B          |ALARMA KIT SC                 |2|2066.01|4132.02
+38393894       |19/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |3062000Q1T          |CILIND OPERAC D               |2|5219.77|10439.54
+38393894       |19/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |3062000Q2B          |CILIND OPERAC D               |2|1059.80|2119.60
+38393894       |19/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |383204JA0A          |GASKET-GEAR CAR               |1|387.44|387.44
+38393894       |19/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |4654009G00          |PEDAL EMBRAGUE                |1|1276.39|1276.39
+38393894       |19/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |4657186G00          |RESORTE RETORNO               |1|311.98|311.98
+38393894       |19/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |491807S000          |TANQUE LIQ DIR                |1|2392.50|2392.50
+38393894       |19/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |49710VN11A          |JGO MANG Y TUBO               |1|3182.20|3182.20
+38393894       |19/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |497177S000          |MANGUERA SUCCIO               |1|809.52|809.52
+38393894       |19/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |497257S004          |MANG RETORNO DI               |1|366.14|366.14
+38393894       |19/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |497292J00C          |ABRAZADERA                    |2|57.50|115.00
+38393894       |19/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |497292J01B          |ABRAZADERA                    |2|45.98|91.96
+38393894       |19/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |54618JX00A          |CONECTOR BARRA                |2|413.92|827.84
+38393894       |19/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |767495EF0B          |PROT TR ALOJ LL               |1|860.07|860.07
+38393894       |19/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |788275RB0B          |CERRADURA TAPA                |1|76.45|76.45
+38393894       |19/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |806409AN0A          |MANIJA EXTER/PR               |1|733.59|733.59
+38393894       |19/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |828314AF2A          |SELLO HULE PTA                |1|809.01|809.01
+38393894       |19/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |868435RL8A          |BUCLE CINT DEL                |1|368.58|368.58
+38393894       |19/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |905501HM0A          |ACTUADOR PUERTA               |1|1313.36|1313.36
+38393894       |19/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |908905EA0A          |EMBLEMA TRASERO               |1|613.35|613.35
+38393894       |19/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |964005EF1A          |VISERA DERECHA                |1|555.32|555.32
+38395976       |19/10/24|OTROS                         |6F        |NR FINANCE MEXICO SA DE CV    |6                             |NMXCNGEGR241        |GARANTIA EXTENDIDA            |1|3770.58|3770.58
+38396030       |19/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |112204JL0C          |AISL/DEL-MONT/M               |2|767.75|1535.50
+38396113       |19/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |620226KH0J          |KIT FASCIA DELA               |1|943.08|943.08
+38406690       |21/10/24|OTROS                         |6F        |NR FINANCE MEXICO SA DE CV    |6                             |NMXCNGEGR141        |GARANTIA EXTENDIDA            |1|2487.46|2487.46
+38407405       |21/10/24|OTROS                         |F1        |GOLFO MOTRIZ                  |AJ                            |T99J16LB6A          |SPOILER TRASERO               |-1|3522.16|-3522.16
+38407405       |21/10/24|OTROS                         |F1        |GOLFO MOTRIZ                  |AJ                            |T99J16LW0A          |SPOILER B51                   |1|5254.23|5254.23
+38407405       |21/10/24|OTROS                         |F1        |GOLFO MOTRIZ                  |AJ                            |288904KH1A          |PLUMA LIMP PARA               |2|228.31|456.62
+38407405       |21/10/24|OTROS                         |F1        |GOLFO MOTRIZ                  |AJ                            |288904KH0A          |PLUMA LIMP PARA               |-2|250.40|-500.80
+38408041       |21/10/24|OTROS                         |F1        |GOLFO MOTRIZ                  |AJ                            |T99J16LW0A          |SPOILER B51                   |-1|5254.23|-5254.23
+38408041       |21/10/24|OTROS                         |F1        |GOLFO MOTRIZ                  |AJ                            |3N3G16LE0A          |CALCOMANIAS NEG               |-1|1279.43|-1279.43
+38413602       |21/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |310F65NA0A          |HARDWARE TRANS                |1|3014.63|3014.63
+38415603       |21/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |1102601M02          |ARANDELA CARTER               |70|23.58|1650.60
+38415692       |21/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |113609VA0A          |VARILLA TORQUE                |1|485.46|485.46
+38415692       |21/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |272776RF0A          |KIT FILTRO AIRE               |3|445.22|1335.66
+38415692       |21/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |277234BU0A          |SENSOR EVAPORAD               |1|320.48|320.48
+38415692       |21/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |3N3W76KH0B          |ALARMA KIT SC                 |1|2066.01|2066.01
+38416614       |21/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |B8599C2025          |BATERIA CONTROL               |5|112.94|564.70
+38416614       |21/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |D10605RB0B          |KIT BALAT FREN/               |2|1322.53|2645.06
+38416614       |21/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |D40605RFMA          |JGO BALATAS FRE               |2|1010.17|2020.34
+38416614       |21/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |KITCLUTD23QR        |KIT DE CLUTCH                 |1|4095.36|4095.36
+38416614       |21/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |T99C26LB1A          |GANCHO PARA BOL               |1|388.66|388.66
+38416614       |21/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |110444JM1A          |EMPAQUE CAB/CIL               |1|560.90|560.90
+38416614       |21/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |112106LB0D          |AISL MONT MOTOR               |1|2339.10|2339.10
+38416614       |21/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |113609VA0A          |VARILLA TORQUE                |1|485.46|485.46
+38416614       |21/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |117203SG0B          |BANDA VENT/ALTE               |1|721.20|721.20
+38416614       |21/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |117204JM0A          |BANDA VENT/ALTE               |1|654.10|654.10
+38416614       |21/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |11955JA00C          |TENSOR AUTOMATI               |1|1347.29|1347.29
+38416614       |21/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |122793HC0B          |SELLO ACEIT/CIG               |1|190.94|190.94
+38416614       |21/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |132701KT0A          |EMPAQ/TAPA DE M               |2|264.48|528.96
+38416614       |21/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |15208BN30A          |FILTRO ACEITE                 |10|164.10|1641.00
+38416614       |21/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |1520865F0E          |FILTRO ACEITE                 |60|165.66|9939.60
+38416614       |21/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |161194AF0A          |CAMARA ACELERAC               |1|1931.32|1931.32
+38416614       |21/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |165464JM1A          |FILTRO DE AIRE                |6|200.34|1202.04
+38416614       |21/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |165465RB1A          |FILTRO DE AIRE                |6|265.01|1590.06
+38416614       |21/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |17342EA000          |EMPAQUE MED GAS               |1|404.85|404.85
+38416614       |21/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |21200ET01A          |TERMOSTATO                    |1|449.56|449.56
+38416614       |21/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |215034KH0C          |MANG/INF-RADIAD               |1|629.52|629.52
+38416614       |21/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |22401ED815          |BUJIA                         |10|318.26|3182.60
+38416614       |21/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |22630JA10A          |SENSOR TEMP ANT               |1|173.84|173.84
+38416614       |21/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |272775JJ0B          |FILTRO AIRE ACO               |10|213.30|2133.00
+38416614       |21/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |278915RB0C          |FILTRO CAJA DE                |10|260.94|2609.40
+38416614       |21/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |28890ZR81A          |ESCOBILLA LIMPI               |3|198.21|594.63
+38416614       |21/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |288901PA0A          |PLUMA LIMP PARA               |3|225.62|676.86
+38416614       |21/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |288905EF0B          |HOJA LIMP PARAB               |1|233.97|233.97
+38416614       |21/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |3N3E15EF0A          |JUEGO DE TAPETE               |1|758.11|758.11
+38416614       |21/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |3N3E16RN0A          |TAPETES USO RUD               |1|833.33|833.33
+38416614       |21/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |3N3F15EF00          |FAROS ANTINIEBL               |1|3256.67|3256.67
+38416614       |21/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |306105FA1C          |CILIND/MAEST/D-               |1|1320.01|1320.01
+38416614       |21/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |3062000Q1T          |CILIND OPERAC D               |1|5219.77|5219.77
+38416614       |21/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |3062000Q2B          |CILIND OPERAC D               |1|1059.80|1059.80
+38416614       |21/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |313973MX0A          |EMPAQUE CARTER                |1|479.64|479.64
+38416614       |21/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |402026KH3A          |MAZA RUEDA DELA               |2|6371.47|12742.94
+38416614       |21/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |402066KG0A          |ROTOR FREN DISC               |1|2287.15|2287.15
+38416614       |21/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |407006LB0A          |SENSOR PRESION                |2|473.03|946.06
+38416614       |21/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |465035RA0B          |PEDAL CLUTCH C/               |1|649.04|649.04
+38416614       |21/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |480805KE2B          |JUNTA INF COLUM               |2|3025.40|6050.80
+38416614       |21/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |54618JX00A          |CONECTOR BARRA                |2|413.92|827.84
+38416614       |21/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |769245EF0A          |RIBETE LAT/TRAS               |1|293.07|293.07
+38416614       |21/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |788273BG0A          |CHAPA TAPA COMB               |1|80.05|80.05
+38416614       |21/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |963024JS0A          |ESPEJO PUERTA I               |1|1108.59|1108.59
+38425933       |21/10/24|OTROS                         |6F        |NR FINANCE MEXICO SA DE CV    |6                             |NMXCNGEGR141        |GARANTIA EXTENDIDA            |1|2487.46|2487.46
+38441417       |22/10/24|OTROS                         |6F        |NR FINANCE MEXICO SA DE CV    |6                             |NMXCNGEGR141        |GARANTIA EXTENDIDA            |1|2487.46|2487.46
+38445110       |22/10/24|OTROS                         |6F        |NR FINANCE MEXICO SA DE CV    |6                             |NMXCNGEGR241        |GARANTIA EXTENDIDA            |1|3770.58|3770.58
+38469326       |23/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |HA2154518RDD        |LLANT 215 45R18               |3|3138.18|9414.54
+38469412       |23/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |D10609BT0C          |KIT BALAT FREN                |1|1709.22|1709.22
+38469412       |23/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |D85204KH0A          |TERMINAL RH                   |1|414.02|414.02
+38469412       |23/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |D86404KH0A          |TERMINAL LH                   |1|414.02|414.02
+38469412       |23/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |H0561C990E          |LLAVE MAESTRA S               |1|425.93|425.93
+38469412       |23/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |T99D35EE0A          |Deflector de ve               |1|3740.46|3740.46
+38469412       |23/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |T99E46CA1A          |TAPETE DE HULE                |1|1312.16|1312.16
+38469412       |23/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |01125E6091          |TORN/CAMARA ACE               |2|17.36|34.72
+38469412       |23/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |111103HC1A          |CARTER DE MOTOR               |1|192.70|192.70
+38469412       |23/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |112104BA0A          |AISL/DER-MONT/M               |1|2345.77|2345.77
+38469412       |23/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |112106LB0D          |AISL MONT MOTOR               |1|2339.10|2339.10
+38469412       |23/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |113503SG0A          |VARILLA TORQUE                |1|1482.55|1482.55
+38469412       |23/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |11720EA200          |BANDA ALTERNADO               |1|459.20|459.20
+38469412       |23/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |117205YE2A          |BAND VENT/ALTER               |1|1017.18|1017.18
+38469412       |23/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |132705RB0C          |EMPAQ/TAPA DE M               |1|46.58|46.58
+38469412       |23/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |22365EB30C          |SENSOR PROPULSO               |1|649.68|649.68
+38469412       |23/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |224488J11C          |BOBINA DE IGNIC               |1|1974.82|1974.82
+38469412       |23/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |226A01KC0A          |SENSOR OXIGENO                |1|2090.96|2090.96
+38469412       |23/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |226807S000          |FLUJOMETRO AIRE               |1|2241.98|2241.98
+38469412       |23/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |2523000Q0J          |RELEVADOR                     |1|904.16|904.16
+38469412       |23/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |253203JA0A          |INTERRUPT/LAMP-               |1|410.04|410.04
+38469412       |23/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |265504KH0A          |LAMP/DIRECCIONA               |1|1222.35|1222.35
+38469412       |23/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |272775JJ0B          |FILTRO AIRE ACO               |52|213.30|11091.60
+38469412       |23/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |277213AA0A          |SENSOR SOL                    |1|1128.37|1128.37
+38469412       |23/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |278915RB0C          |FILTRO CAJA DE                |45|260.94|11742.30
+38469412       |23/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |284425RA3C          |CAMARA VISION T               |1|1230.25|1230.25
+38469412       |23/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |28890ZR81A          |ESCOBILLA LIMPI               |3|198.21|594.63
+38469412       |23/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |288901PA0A          |PLUMA LIMP PARA               |3|225.62|676.86
+38469412       |23/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |288905EF0B          |HOJA LIMP PARAB               |3|233.97|701.91
+38469412       |23/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |288905RB0B          |PLUMA LIMP PARA               |1|625.05|625.05
+38469412       |23/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |3N3B26LE0A          |PROT CAJUELA TR               |1|590.18|590.18
+38469412       |23/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |3N3E15EF0A          |JUEGO DE TAPETE               |8|758.11|6064.88
+38469412       |23/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |3N3E16RN0A          |TAPETES USO RUD               |1|833.33|833.33
+38469412       |23/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |306106LA0C          |CILINDRO MAEST                |1|992.87|992.87
+38469412       |23/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |317261XF00          |FILTRO ACEITE                 |2|179.96|359.92
+38469412       |23/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |3172828X0A          |FILTRO ACEITE                 |1|290.86|290.86
+38469412       |23/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |391006LB0A          |EJE IMPULSOR DE               |1|4923.21|4923.21
+38469412       |23/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |391016LB0A          |EJE IMPULSOR DE               |1|3900.66|3900.66
+38469412       |23/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |402624GA0D          |TUERCA                        |1|84.04|84.04
+38469412       |23/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |40343F4020          |TAPON DE RIN                  |5|42.04|210.20
+38469412       |23/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |540509VC0A          |EXTREMO PARACHO               |2|69.33|138.66
+38469412       |23/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |545592S40A          |DISCO                         |2|115.16|230.32
+38469412       |23/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |550345RB0A          |ASIENT/SUP/RESO               |1|118.88|118.88
+38469412       |23/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |56113EB70A          |ARANDELA ESPECI               |2|15.56|31.12
+38469412       |23/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |622A05RB0H          |CUBRTA SOPOR/DE               |1|17.26|17.26
+38469412       |23/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |628906KH3A          |EMBLEMA DELANTE               |1|601.48|601.48
+38469412       |23/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |769225EF0A          |RIBETE LAT/DEL/               |2|331.72|663.44
+38469412       |23/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |769245RB0A          |RIBETE LART/TRA               |1|202.46|202.46
+38469412       |23/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |806469N00A          |CUBIERTA MANIJA               |1|68.45|68.45
+38469412       |23/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |825009KZ0A          |CNTRL/REM-APER/               |1|1473.23|1473.23
+38469412       |23/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |963024JS0A          |ESPEJO PUERTA I               |1|1108.59|1108.59
+38469412       |23/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |963025EH0A          |ESPEJO PTA IZQ                |1|761.77|761.77
+38469412       |23/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |963736LB0H          |CUBIERTA ESPEJO               |1|101.45|101.45
+38469412       |23/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |99501EB00B          |EST HERRAM STAN               |1|721.11|721.11
+38484045       |23/10/24|OTROS                         |6F        |NR FINANCE MEXICO SA DE CV    |6                             |NMXCNGEGR241        |GARANTIA EXTENDIDA            |1|3770.58|3770.58
+38485250       |23/10/24|OTROS                         |6F        |NR FINANCE MEXICO SA DE CV    |6                             |NMXCNGEGR161        |GARANTIA EXTENDIDA            |1|6117.29|6117.29
+38488434       |23/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |MA25565R17DD        |LLANTA 255 65R1               |2|3915.08|7830.16
+38488584       |23/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |62256EM30A          |VISTA FASCIA FR               |1|137.34|137.34
+38497541       |24/10/24|OTROS                         |F1        |GOLFO MOTRIZ                  |AJ                            |92471N823A          |SELLO O RING                  |1|31.66|31.66
+38506761       |24/10/24|OTROS                         |69887     |RIGO MEXICO                   |3                             |NCIRLAVAD17         |KIT MATERIALES DE SANITIZACIÓN|200|220.00|44000.00
+38509526       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |B8599C2025          |BATERIA CONTROL               |5|112.94|564.70
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |BS18565R15          |LLANTA BRIDGEST               |4|1662.32|6649.28
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |B8599C2032          |BATERIA LLAVE I               |4|112.64|450.56
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |D10601HL0B          |KIT BALAT FREN/               |2|1178.05|2356.10
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |D10603XA0A          |KIT BALAT FREN/               |2|2643.19|5286.38
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |D10604GA0A          |KIT BALAT FREN/               |1|2717.64|2717.64
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |D10605RB0B          |KIT BALAT FREN/               |2|1322.53|2645.06
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |E43026LE1B          |AMORTIGUADOR TR               |1|1690.88|1690.88
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |H06013TA1A          |CILINDRO PUERTA               |2|499.92|999.84
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |KE26089989          |BULBO                         |1|148.27|148.27
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |NIMEXCA1AF          |COMPRESOR AIRE                |10|508.05|5080.50
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |NIMEXPORPL          |PORTAPLACAS                   |2|518.37|1036.74
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |NIMEXSATRT2         |SERV ADD RT 2 A               |12|6661.13|79933.56
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |NIMEXSATRT3         |SERV ADD RT 3 A               |9|9754.72|87792.48
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |NIMEXT54KHAF        |RECEPTOR DE REM               |1|5637.50|5637.50
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |NIMEX4KH01AF        |BARRA PARACHOQ                |2|6055.82|12111.64
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |T99C35EE0A          |Tapete de cajue               |1|1290.20|1290.20
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |T99C36LB0A          |TAPETE HULE CAJ               |2|1009.80|2019.60
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |T99J29ES0A          |SALPICADERAS FR               |2|1623.35|3246.70
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |T99J29ES0B          |SALPICADERAS RR               |2|1446.77|2893.54
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |T99R16RR0D          |BARRAS PARA TEC               |1|6499.70|6499.70
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |112205RA0A          |AISL/MONT/MOT/I               |1|240.88|240.88
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |1181041B02          |VALVULA CONTROL               |1|791.14|791.14
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |165461HK0J          |FILTRO DE AIRE                |6|297.71|1786.26
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |165464JM1A          |FILTRO DE AIRE                |10|200.34|2003.40
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |165465RB1A          |FILTRO DE AIRE                |10|265.01|2650.10
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |22401ED71B          |BUJIA                         |10|521.01|5210.10
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |22401ED815          |BUJIA                         |5|318.26|1591.30
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |224485RB0A          |BOBINA ENCENDID               |11|386.85|4255.35
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |226A04JM1B          |SENSOR OXIGENO                |1|1022.24|1022.24
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |2268000Q0A          |SENS/MASA FLUJO               |1|1512.53|1512.53
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |242686KE0A          |AISLADOR                      |1|205.35|205.35
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |243407F003          |CONECTOR                      |1|279.67|279.67
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |2523000Q0J          |RELEVADOR                     |1|904.16|904.16
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |261508995F          |LAMP/NIEBLA DER               |1|2213.37|2213.37
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |261558995F          |LAMP/NIEBLA IZQ               |1|2213.37|2213.37
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |265504KH0A          |LAMP/DIRECCIONA               |1|1222.35|1222.35
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |272771KK0C          |FILTRO AIRE ACO               |10|200.97|2009.70
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |272773JC1C          |FILTRO AIRE                   |2|360.31|720.62
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |284F15EA0B          |CAMARA VISTA DE               |2|1839.58|3679.16
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |284F16LB0B          |CAMERA ASSY FR                |1|1519.26|1519.26
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |284195FA2B          |CAMARA VISTA LA               |2|7412.91|14825.82
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |284195SA0D          |CAMARA VISTA LA               |3|1799.48|5398.44
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |284426KG0D          |CAMARA VISTA TR               |1|1430.01|1430.01
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |288904CC0C          |PLUMA LIMP PARA               |1|648.49|648.49
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |288904CC1A          |PLUMA LIMP PARA               |1|369.78|369.78
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |288905EF0A          |HOJA LIMP PARAB               |2|324.48|648.96
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |288906LB0A          |HOJA LIMP PARAB               |1|381.91|381.91
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |288906LB1A          |HOJA LIMP PARAB               |1|259.23|259.23
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |3N3E16LE0A          |TAPETES DE HULE               |2|742.34|1484.68
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |3N3Q8A004GE3        |NCF 4G 3A SERV                |1|14307.87|14307.87
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |3N3T16KH4A          |BEDLINER TERMOF               |3|4084.49|12253.47
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |3N3W25RB0A          |TUERCA DE SEGUR               |6|631.44|3788.64
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |3N3W76KH0B          |ALARMA KIT SC                 |1|2066.01|2066.01
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |30100JR50A          |DISCO DE CLUTCH               |1|3841.63|3841.63
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |301005RB0A          |DISCO DE CLUTCH               |1|1620.93|1620.93
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |3050269F1A          |BALERO LIBERA C               |1|652.96|652.96
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |306103VF1B          |CILIND/MAEST/D-               |4|606.10|2424.40
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |308501HM4A          |TUBO DE CLUTCH                |1|496.47|496.47
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |3100141X9J          |ACEITE MATIC D                |16|104.19|1667.04
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |320018J29J          |ACEIT TM 75W85                |64|314.96|20157.44
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |40178AX06D          |TORNILLO                      |1|27.72|27.72
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |402105RB0A          |BALERO RUEDA DE               |1|1204.38|1204.38
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |402624GA0D          |TUERCA                        |2|84.04|168.08
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |403009LB0A          |RIN DE ACERO                  |1|686.90|686.90
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |403155EF0B          |CUBRTA DISC                   |3|186.90|560.70
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |407006LY0B          |SENSOR PRESION                |1|368.79|368.79
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |432064KH0A          |DISCO FRENO TRA               |2|608.42|1216.84
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |432341HA0A          |TAPACUBOS RUEDA               |1|179.52|179.52
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |432524JA0A          |JUNTA ACEITE EJ               |2|111.18|222.36
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |432621HA1A          |TUERC/SEG/BALER               |25|38.52|963.00
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |479501HA0A          |SENSOR ANT-BLOQ               |1|1157.61|1157.61
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |480805KE2A          |JUNTA INF/COLUM               |1|5065.79|5065.79
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |489354P00B          |TORN AISL TERM                |3|9.54|28.62
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |490014KH1D          |MECANISMO DIREC               |1|9171.98|9171.98
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |540501HJ0A          |GOMA TOPE                     |2|212.86|425.72
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |543203VA0A          |AISLAD/MONTA/AM               |4|326.03|1304.12
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |545009KS1D          |HORQUILLA TRANS               |12|719.04|8628.48
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |545015RL1B          |ESLABON IZQ                   |1|1232.27|1232.27
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |545019KS1D          |HORQUILLA TRANS               |16|715.44|11447.04
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |546186LB1A          |VARILLA ESTABLZ               |2|182.58|365.16
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |546686LB1A          |VARILLA ESTABLZ               |2|155.68|311.36
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |668944CL0A          |CUBRTA-PROTEC/D               |1|170.55|170.55
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |668954BA1A          |CUBRTA-PROTEC/D               |1|170.55|170.55
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |803305EF0A          |GOMA CRISTAL CO               |1|368.58|368.58
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |963651HK5A          |LUNA ESPEJO DER               |1|217.93|217.93
+38509631       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |963736LB0H          |CUBIERTA ESPEJO               |1|101.45|101.45
+38512920       |24/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |NANOBIO120DD        |NANOBIOCIDA IND               |500|64.72|32360.00
+38525917       |25/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |14035F4300          |JUNTA MULTIPLE                |1|134.28|134.28
+38525917       |25/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |165461HK0J          |FILTRO DE AIRE                |18|297.71|5358.78
+38526165       |25/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |AF54M1HK0PNW        |FILTRO DE AIRE                |6|69.45|416.70
+38526165       |25/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |BR20560R16          |LLANTA 205 60 R               |2|2775.14|5550.28
+38526165       |25/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |B8599C2032          |BATERIA LLAVE I               |5|112.64|563.20
+38526165       |25/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |KE26089989          |BULBO                         |1|148.27|148.27
+38526165       |25/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |NIMEXPORPL          |PORTAPLACAS                   |2|518.37|1036.74
+38526165       |25/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |NIMEXSATRT3         |SERV ADD RT 3 A               |1|9754.72|9754.72
+38526165       |25/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |T99C35EE0A          |Tapete de cajue               |1|1290.20|1290.20
+38526165       |25/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |0155305933          |TORNILLO VIST C               |40|12.93|517.20
+38526165       |25/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |111103RC0C          |CARTER DE MOTOR               |1|230.18|230.18
+38526165       |25/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |11720F4001          |BANDA VENTILADO               |2|137.25|274.50
+38526165       |25/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |117204JM0A          |BANDA VENT/ALTE               |1|654.10|654.10
+38526165       |25/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |119254JM0A          |POLEA TENSORA                 |1|707.33|707.33
+38526165       |25/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |11950VN20A          |BANDA DIRECCION               |1|221.18|221.18
+38526165       |25/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |119554JM0A          |TENSIONADOR AUT               |1|1604.78|1604.78
+38526165       |25/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |132703TS0A          |EMPAQ/TAP BALAN               |1|282.06|282.06
+38526165       |25/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |161193AB1E          |CAMARA ACELERAC               |1|1032.39|1032.39
+38526165       |25/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |16453ZC30A          |EMPAQUE BBA. LI               |1|270.87|270.87
+38526165       |25/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |165466RA0A          |FILTRO DE AIRE                |2|307.82|615.64
+38526165       |25/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |170406LE0B          |BOMBA COMPLETA                |1|1944.99|1944.99
+38526165       |25/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |173424BA1A          |EMPAQUE MEDIDOR               |1|259.23|259.23
+38526165       |25/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |22401ED815          |BUJIA                         |4|318.26|1273.04
+38526165       |25/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |226A09BT0C          |SENSOR OXIGENO                |1|1896.81|1896.81
+38526165       |25/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |253003JA0A          |INTERRUP/CANCEL               |1|350.66|350.66
+38526165       |25/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |255506RF5B          |INTERRUPT DIREC               |1|979.34|979.34
+38526165       |25/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |260101HL0A          |FARO DERECHO                  |1|1936.16|1936.16
+38526165       |25/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |260601HL0A          |FARO IZQUIERDO                |1|1936.16|1936.16
+38526165       |25/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |265554CA1B          |LAMP DIRECC TRA               |1|966.18|966.18
+38526165       |25/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |272776RF0A          |KIT FILTRO AIRE               |7|445.22|3116.54
+38526165       |25/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |284B73RA3E          |CONTROL IPDM                  |1|3827.11|3827.11
+38526165       |25/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |285E35MR1B          |SW ASSY SMART K               |1|546.20|546.20
+38526165       |25/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |288903SG0C          |PLUMA LIMP PARA               |1|269.69|269.69
+38526165       |25/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |288903SG1B          |PLUMA LIMP PARA               |1|281.31|281.31
+38526165       |25/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |288904KH0A          |PLUMA LIMP PARA               |3|259.86|779.58
+38526165       |25/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |288906LB0A          |HOJA LIMP PARAB               |2|381.91|763.82
+38526165       |25/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |288906LB1A          |HOJA LIMP PARAB               |2|259.23|518.46
+38526165       |25/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |289134CC1A          |TPON-TANQUE LIM               |1|19.97|19.97
+38526165       |25/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |289207S200          |MOTOR LAVADOR                 |1|520.50|520.50
+38526165       |25/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |3N3B26LE0A          |PROT CAJUELA TR               |1|590.18|590.18
+38526165       |25/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |3N3G16LE0A          |CALCOMANIAS NEG               |1|1279.43|1279.43
+38526165       |25/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |31020X428B          |TRANSEJE                      |1|24746.18|24746.18
+38526165       |25/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |360114P00A          |INTERRUPTOR LUZ               |1|157.89|157.89
+38526165       |25/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |40311S3500          |VALVULA AIRE                  |3|27.60|82.80
+38526165       |25/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |410016LE1A          |CALIPER/D/I/S-C               |1|2077.61|2077.61
+38526165       |25/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |44140JA00A          |PERNO                         |5|189.49|947.45
+38526165       |25/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |480805KE2B          |JUNTA INF COLUM               |3|3025.40|9076.20
+38526165       |25/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |543203VA0A          |AISLAD/MONTA/AM               |2|326.03|652.06
+38526165       |25/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |543255FA0A          |BALERO AMORTIGU               |1|281.84|281.84
+38526165       |25/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |545004KH5A          |ESLABON DEL SUS               |1|2683.88|2683.88
+38526165       |25/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |545014KH5A          |ESLABON DEL SUS               |1|1696.10|1696.10
+38526165       |25/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |545244KH0A          |HORQ/DEL-SUSP/S               |1|905.07|905.07
+38526165       |25/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |545254KH0A          |HORQ/DEL-SUSP/S               |1|904.71|904.71
+38526165       |25/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |546186LB1A          |VARILLA ESTABLZ               |2|182.58|365.16
+38526165       |25/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |546686LB1A          |VARILLA ESTABLZ               |2|155.68|311.36
+38526165       |25/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |65771EL000          |VARILLA DE COFR               |1|98.71|98.71
+38526165       |25/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |657715RB0A          |VARILL/SOPORTE                |1|101.99|101.99
+38526165       |25/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |685105RB0A          |TAPA GUANTERA                 |1|542.07|542.07
+38526165       |25/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |822731HL0A          |SELL/HULE CRST/               |1|179.77|179.77
+38526165       |25/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |995017S200          |KIT DE HERRAMIE               |1|577.30|577.30
+38527268       |25/10/24|OTROS                         |F1        |GOLFO MOTRIZ                  |AJ                            |NISSANQ3FY24        |CODIGO PROMO TALL             |20|0.01|0.20
+38530081       |25/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |255544KH2C          |CABLE BOLSA AIR               |1|1409.64|1409.64
+38541124       |25/10/24|OTROS                         |6F        |NR FINANCE MEXICO SA DE CV    |6                             |NMXCNGEGR241        |GARANTIA EXTENDIDA            |1|3770.58|3770.58
+38542404       |25/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |926005RL1A          |COMPRESOR AIRE                |1|9079.11|9079.11
+38546291       |26/10/24|OTROS                         |6F        |NR FINANCE MEXICO SA DE CV    |D6                            |NMXCNGEGR252        |GARANTIA EXTENDIDA            |-1|9433.99|-9433.99
+38546380       |26/10/24|OTROS                         |6F        |NR FINANCE MEXICO SA DE CV    |D6                            |NMXCNGEGR141        |GARANTIA EXTENDIDA            |-1|2487.46|-2487.46
+38552901       |26/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |EML103TA7CDD        |AC 946 ML 10W30               |60|120.34|7220.40
+38552901       |26/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |EML20W50SNDD        |AC 946 ML 20W50               |60|110.04|6602.40
+38552901       |26/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |EML5W3TA7BDD        |AC 946 ML 5W30                |120|144.82|17378.40
+38552901       |26/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |EMPVN15WSNDD        |PROMOVERNPD23 1               |50|497.95|24897.50
+38552901       |26/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |EMT103TA7CDL        |LIT TALLER 10W3               |1040|121.54|126401.60
+38554570       |26/10/24|OTROS                         |6F        |NR FINANCE MEXICO SA DE CV    |D6                            |NMXCNGEGR141        |GARANTIA EXTENDIDA            |-1|2487.46|-2487.46
+38601320       |28/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |D10604KH0C          |KIT BALAT FREN/               |1|1634.01|1634.01
+38601320       |28/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |NIMEXSATRT3         |SERV ADD RT 3 A               |3|9754.72|29264.16
+38601320       |28/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |112101HS0A          |AISL/MONT/MOT/C               |1|4117.35|4117.35
+38601320       |28/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |112106LB0D          |AISL MONT MOTOR               |1|2339.10|2339.10
+38601320       |28/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |132644JM0C          |CUBRTA VAL BALA               |2|491.21|982.42
+38601320       |28/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |132703TS0A          |EMPAQ/TAP BALAN               |1|282.06|282.06
+38601320       |28/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |170405RB0A          |BOMBA COMPLETA-               |1|3851.25|3851.25
+38601320       |28/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |23731ED03A          |SENSOR POS CIGU               |1|152.64|152.64
+38601320       |28/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |237311KT0A          |SENS/POSICION C               |1|582.01|582.01
+38601320       |28/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |284195FA2B          |CAMARA VISTA LA               |1|7412.91|7412.91
+38601320       |28/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |3N3Q8A004GE3        |NCF 4G 3A SERV                |1|14307.87|14307.87
+38601320       |28/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |320018J29J          |ACEIT TM 75W85                |16|314.96|5039.36
+38601320       |28/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |806403SG0A          |MANIJA EXTER/PU               |1|663.59|663.59
+38602071       |28/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |272776RF0A          |KIT FILTRO AIRE               |3|445.22|1335.66
+38620287       |28/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |44140JA00A          |PERNO                         |3|189.49|568.47
+38621420       |28/10/24|OTROS                         |F1        |GOLFO MOTRIZ                  |AJ                            |30660BC00A          |VALANCIN CLUTCH               |1|681.79|681.79
+38631200       |29/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |HA2154518RDD        |LLANT 215 45R18               |2|3138.18|6276.36
+38631311       |29/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |CT1956515RDD        |LLANVOVERSA 195               |2|1916.25|3832.50
+38631311       |29/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |CT20560R16DD        |LLA KICKS 20560               |3|2125.32|6375.96
+38631311       |29/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |MA25565R17DD        |LLANTA 255 65R1               |1|3915.08|3915.08
+38633874       |29/10/24|OTROS                         |32482     |MARIA FERNANDA VELAZQUEZ GARCI|3                             |REDILALARR          |REDILA PTAS REF               |5|25515.74|127578.70
+38638160       |29/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |NIMEXU03Q2DD        |LIMP CUE DE ACE               |12|129.97|1559.64
+38638160       |29/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |NIMEXU04Q6DD        |SHAMP LIMPIA PA               |240|29.61|7106.40
+38640154       |29/10/24|OTROS                         |6F        |NR FINANCE MEXICO SA DE CV    |6                             |NMXCNGEGR141        |GARANTIA EXTENDIDA            |1|2487.46|2487.46
+38650243       |29/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |NIMEXKIT1ADD        |KIT AFINACI N E               |60|240.18|14410.80
+38650243       |29/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |NIMEXKIT2PDD        |KIT PROTECCI N                |210|366.37|76937.70
+38650243       |29/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |NIMEXU03Q3DD        |LIMPIADOR INT M               |12|134.04|1608.48
+38650243       |29/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |NIMEXU03Q9DD        |LIMP INYECTORES               |12|166.75|2001.00
+38650243       |29/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |NIMEXU15Q4DD        |ACEITE SUPER PE               |12|77.56|930.72
+38651613       |29/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |24410H5EFB          |BATERIA 510 60                |3|2718.68|8156.04
+38651613       |29/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |24410H5L2R          |BATERIA 550 63                |5|2315.61|11578.05
+38651668       |29/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |2441038SX1          |BATERIA-XT (KV)               |2|2318.26|4636.52
+38651744       |29/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |KP71000150          |EMPAQUE LIQUIDO               |1|982.53|982.53
+38651862       |29/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |2441038SX1          |BATERIA-XT (KV)               |8|2318.26|18546.08
+38651900       |29/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |24410ZW40C          |BATERIA N17X                  |7|2058.10|14406.70
+38651931       |29/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |24410ZW40C          |BATERIA N17X                  |1|2058.10|2058.10
+38658663       |30/10/24|OTROS                         |6F        |NR FINANCE MEXICO SA DE CV    |6                             |NMXCNGEGR161        |GARANTIA EXTENDIDA            |1|6117.29|6117.29
+38664671       |30/10/24|OTROS                         |F1        |GOLFO MOTRIZ                  |AJ                            |180024AF0A          |PALANCA ACEL-C/               |-1|965.99|-965.99
+38664671       |30/10/24|OTROS                         |F1        |GOLFO MOTRIZ                  |AJ                            |282B35EA1A          |SOPORTE ANTENA                |-2|332.74|-665.48
+38664671       |30/10/24|OTROS                         |F1        |GOLFO MOTRIZ                  |AJ                            |28932VN20A          |BOQUILL/LIMPIAD               |-2|155.38|-310.76
+38664671       |30/10/24|OTROS                         |F1        |GOLFO MOTRIZ                  |AJ                            |3N3F15EF00          |FAROS ANTINIEBL               |-1|3186.55|-3186.55
+38664671       |30/10/24|OTROS                         |F1        |GOLFO MOTRIZ                  |AJ                            |402220B005          |BIRLO                         |-1|24.18|-24.18
+38664671       |30/10/24|OTROS                         |F1        |GOLFO MOTRIZ                  |AJ                            |403159AA0C          |TAPACUBOS                     |-4|206.07|-824.28
+38664671       |30/10/24|OTROS                         |F1        |GOLFO MOTRIZ                  |AJ                            |403425JK0A          |ORNAMENTO DISC                |-4|29.19|-116.76
+38664671       |30/10/24|OTROS                         |F1        |GOLFO MOTRIZ                  |AJ                            |480011HK0C          |MECANISMO DIREC               |-2|6393.06|-12786.12
+38664671       |30/10/24|OTROS                         |F1        |GOLFO MOTRIZ                  |AJ                            |668945RB0B          |CUBRTA-PROTEC/D               |-1|38.44|-38.44
+38664671       |30/10/24|OTROS                         |F1        |GOLFO MOTRIZ                  |AJ                            |C1000F40XA          |KIT CLUTCH VA D               |-1|1213.61|-1213.61
+38664671       |30/10/24|OTROS                         |F1        |GOLFO MOTRIZ                  |AJ                            |H06003TU0A          |CILINDRO PUERTA               |-3|512.25|-1536.75
+38665042       |30/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |EML10W30DSDD        |AC DIES 946 10W               |60|91.92|5515.20
+38665160       |30/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |MA1657014RDD        |LLANMAMARCH 165               |6|1476.98|8861.88
+38665160       |30/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |NANOBIO120DD        |NANOBIOCIDA IND               |200|64.72|12944.00
+38666205       |30/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |E61105JJ0A          |AMORTIGUADOR DE               |2|1071.22|2142.44
+38666205       |30/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |1102601M02          |ARANDELA CARTER               |10|23.58|235.80
+38666205       |30/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |112101HS0A          |AISL/MONT/MOT/C               |1|4117.35|4117.35
+38666205       |30/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |112106LB0D          |AISL MONT MOTOR               |1|2339.10|2339.10
+38666205       |30/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |112201HA0B          |AISL/MONT/MOT/I               |1|482.42|482.42
+38666205       |30/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |132703TS0A          |EMPAQ/TAP BALAN               |1|282.06|282.06
+38666205       |30/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |1520865F0E          |FILTRO ACEITE                 |60|165.66|9939.60
+38666205       |30/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |165466LA0A          |ELEMT AIRE                    |8|219.78|1758.24
+38666205       |30/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |272775NA0A          |FILTRO AIRE ACO               |5|285.71|1428.55
+38666205       |30/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |92472N823A          |SELLO O-RING                  |2|84.72|169.44
+38674247       |30/10/24|OTROS                         |6F        |NR FINANCE MEXICO SA DE CV    |6                             |NMXCNGEGR141        |GARANTIA EXTENDIDA            |1|2487.46|2487.46
+38680526       |30/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |546134KH2A          |BUJE BARRA ESTA               |2|84.98|169.96
+38681563       |30/10/24|OTROS                         |6F        |NR FINANCE MEXICO SA DE CV    |6                             |NMXCNGEGR141        |GARANTIA EXTENDIDA            |1|2487.46|2487.46
+38690088       |31/10/24|OTROS                         |6F        |NR FINANCE MEXICO SA DE CV    |6                             |NMXCNGEGR161        |GARANTIA EXTENDIDA            |1|6117.29|6117.29
+38690610       |31/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |T99D96RR0A          |PROTECTORES DE MANIJA         |1|290.00|290.00
+38690610       |31/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |T99E87LG0A          |PROTECTOR DE IN               |1|850.00|850.00
+38690610       |31/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |T99F37LG30          |LUZ DE PANEL DE               |1|1899.00|1899.00
+38690610       |31/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |T99F64RA0A          |CONECTOR                      |2|455.03|910.06
+38690610       |31/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |T99F37LG00          |ESTRIBO DE LUZ                |1|6209.60|6209.60
+38690610       |31/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |T99B27LG0A          |PROTECTOR DE BU               |1|1252.13|1252.13
+38690610       |31/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |H08007LF0A          |DEFLECTORES DE                |1|1458.27|1458.27
+38690610       |31/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |T99R17LG0D          |BARRAS DE TECHO               |1|4889.00|4889.00
+38690871       |31/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |1102601M02          |ARANDELA CARTER               |250|23.58|5895.00
+38691070       |31/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |E43025EF0D          |AMORTIGUADOR DE               |1|1233.91|1233.91
+38691070       |31/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |E43035EF0D          |AMORTIGUADOR DE               |1|1233.91|1233.91
+38691070       |31/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |NIMEXPORPL          |PORTAPLACAS                   |2|518.37|1036.74
+38691070       |31/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |NIMEXSATRT2         |SERV ADD RT 2 A               |2|6661.13|13322.26
+38691070       |31/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |NIMEXSATRT3         |SERV ADD RT 3 A               |3|9754.72|29264.16
+38691070       |31/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |T99C35EE0A          |Tapete de cajue               |1|1290.20|1290.20
+38691070       |31/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |T99C36LB0A          |TAPETE HULE CAJ               |1|1009.80|1009.80
+38691070       |31/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |112106LB0D          |AISL MONT MOTOR               |1|2339.10|2339.10
+38691070       |31/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |112201HA0B          |AISL/MONT/MOT/I               |1|482.42|482.42
+38691070       |31/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |165464JM1A          |FILTRO DE AIRE                |25|200.34|5008.50
+38691070       |31/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |165465R70A          |ELEMENTO LIMP                 |1|350.05|350.05
+38691070       |31/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |224485RB0A          |BOBINA ENCENDID               |6|386.85|2321.10
+38691070       |31/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |2626189965          |BULBO PLAC LAMP               |10|81.03|810.30
+38691070       |31/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |284F15RY0A          |CAMARA VISTA DE               |1|2040.07|2040.07
+38691070       |31/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |3N3E16LE0A          |TAPETES DE HULE               |1|742.34|742.34
+38691070       |31/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |3N3E16RN0A          |TAPETES USO RUD               |1|833.33|833.33
+38691070       |31/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |3N3E392001          |TAP CAJUELA 2 V               |1|1187.52|1187.52
+38691070       |31/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |306106LA0C          |CILINDRO MAEST                |1|992.87|992.87
+38691070       |31/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |320018J29J          |ACEIT TM 75W85                |32|314.96|10078.72
+38691070       |31/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |407006LB0A          |SENSOR PRESION                |1|473.03|473.03
+38691070       |31/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |489354P00B          |TORN AISL TERM                |2|9.54|19.08
+38691070       |31/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |543203SH0C          |AISLAD/MONTA/AM               |1|1039.42|1039.42
+38691070       |31/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |543213SH0C          |AISLAD/MONTA/AM               |1|1038.88|1038.88
+38691070       |31/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |543257MA0A          |BALERO AMORTIGU               |2|397.62|795.24
+38691070       |31/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |545009KS1D          |HORQUILLA TRANS               |8|719.04|5752.32
+38691070       |31/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |545019KS1D          |HORQUILLA TRANS               |7|715.44|5008.08
+38691070       |31/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |546185RB0A          |VAR/CONECC-ESTA               |6|143.47|860.82
+38691070       |31/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |550345RB0A          |ASIENT/SUP/RESO               |1|118.88|118.88
+38691070       |31/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |562306LB0A          |ESTABILIZADOR T               |1|1038.60|1038.60
+38691070       |31/10/24|NISSAN MEXICANA               |6         |NISSAN MEXICANA               |2                             |963663AN0A          |LUNA ESPEJO IZQ               |1|218.12|218.12
+38701160       |31/10/24|OTROS                         |6F        |NR FINANCE MEXICO SA DE CV    |6                             |NMXCNGEGR141        |GARANTIA EXTENDIDA            |1|2487.46|2487.46
+38704893       |31/10/24|OTROS                         |6F        |NR FINANCE MEXICO SA DE CV    |6                             |NMXCNGEGR141        |GARANTIA EXTENDIDA            |1|2487.46|2487.46
+38713248       |31/10/24|OTROS                         |6F        |NR FINANCE MEXICO SA DE CV    |6                             |NMXCNGEGR141        |GARANTIA EXTENDIDA            |1|2487.46|2487.46
+38715493       |31/10/24|OTROS                         |6F        |NR FINANCE MEXICO SA DE CV    |6                             |NMXCNGEGR241        |GARANTIA EXTENDIDA            |1|3770.58|3770.58

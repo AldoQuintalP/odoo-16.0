@@ -1,0 +1,603 @@
+<odoo>
+
+<!-- Ocultar enlace "Contáctenos" -->
+    <template id="custom_hide_contact_link" inherit_id="website.layout">
+        <xpath expr="//head" position="inside">
+            <style>
+                a[href*="/contactus"] {
+                    display: none !important;
+                }
+            </style>
+        </xpath>
+    </template>
+
+    <!-- Ocultar el pie de página -->
+    <template id="custom_hide_footer" inherit_id="website.layout">
+        <xpath expr="//head" position="inside">
+            <style>
+                footer {
+                    display: none !important;
+                }
+            </style>
+        </xpath>
+    </template>
+
+    <!-- Importar FontAwesome -->
+    <template id="add_fontawesome" inherit_id="website.layout">
+        <xpath expr="//head" position="inside">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+        </xpath>
+    </template>
+
+    <!-- Agregar el título "Procesamiento de Archivos" y el cuadro para subir archivos -->
+    <template id="add_file_upload_to_homepage" inherit_id="website.homepage">
+        <xpath expr="//div" position="after">
+            <section class="sheet" style="background-color: #f9f9f9; padding: 50px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                <div class="container text-center" style="padding: 40px;">
+                    <h1>Procesamiento de Archivos</h1>
+                    <div style="margin-top: 30px; border: 2px dashed #007bff; padding: 20px; max-width: 500px; margin-left: auto; margin-right: auto; background-color: #fff; border-radius: 10px;">
+                        <h4 style="margin-bottom: 20px;">Arrastra y suelta un archivo aquí o haz clic para subir</h4>
+                        <form id="file-upload-form" enctype="multipart/form-data">
+                            <input type="file" name="file" id="fileInput" accept=".zip" style="display: block; margin: 20px auto;" />
+                            <button type="button" class="btn btn-primary" id="submitBtn" style="padding: 10px 30px;">
+                                <i class="fa fa-play"></i> Procesar
+                            </button>
+                        </form>
+                    </div>
+
+                    <div id="loading-spinner" style="display: none; text-align: center;">
+                        <i class="fa fa-spinner fa-spin" style="font-size: 50px; color: #8e44ad;"></i>
+                        <p>Procesando, por favor espera...</p>
+                    </div>
+
+                    <div id="progress-bar-container" style="display: none; margin-top: 30px;">
+                        <div id="progress-bar" style="height: 20px; width: 0%; background-color: #4caf50;"></div>
+                    </div>
+
+                    
+
+                    <!-- Mostrar resultados de la validación aquí -->
+                    <div id="validation-messages" style="margin-top: 20px; display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap;">
+                        <!-- Mensajes dinámicos aparecerán aquí -->
+                    </div>
+
+                    <div id="reportes-container" style="margin-top: 20px; background-color: #f9f9f9; padding: 20px; border-radius: 10px; display: block;">
+                        <h4 style="display: none;">Reportes Disponibles:</h4>
+                        <!-- Aquí se añadirán los reportes dinámicamente -->
+                    </div>
+
+                    <div id="logs-container" style="margin-top: 20px; background-color: #f9f9f9; padding: 20px; border-radius: 10px; display: none;">
+                        <!-- Aquí se mostrarán los logs cuando estén disponibles -->
+                        <h4>Logs del proceso</h4>
+                        <pre id="logs-content" style="background-color: #e0e0e0; padding: 15px; border-radius: 8px; overflow-y: auto; max-height: 400px; text-align: left;"></pre>
+                    </div>
+
+                </div>
+            </section>
+        </xpath>
+    </template>
+
+    <!-- Modal para mostrar los reportes -->
+    <template id="add_report_modal" inherit_id="website.layout">
+        <xpath expr="//body" position="before">
+            <!-- Modal de Reporte -->
+            <div class="modal fade" id="reportModal" tabindex="-1" aria-labelledby="reportModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="report-modal-title">Título del Reporte</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body" id="report-modal-body">
+                    <!-- Aquí se mostrará el contenido del reporte -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+                </div>
+            </div>
+            </div>
+
+        </xpath>
+    </template>
+
+
+    
+        
+   
+    
+
+   
+
+    <!-- Script para simular barra de progreso -->
+    <template id="add_alert_script" inherit_id="website.layout">
+    <xpath expr="//body" position="after">
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                if (!localStorage.getItem("reloaded")) {
+                    localStorage.setItem("reloaded", "true");
+                    location.reload();
+                } else {
+                    localStorage.removeItem("reloaded");
+                }
+            
+                var fileInput = document.getElementById("fileInput");
+                var submitBtn = document.getElementById("submitBtn");
+                var progressBar = document.getElementById("progress-bar");
+                var progressBarContainer = document.getElementById("progress-bar-container");
+                var validationMessages = document.getElementById("validation-messages");
+                var loadingSpinner = document.getElementById("loading-spinner");
+                var reportTitle = document.querySelector('#reportes-container h4'); // Title for reports
+            
+                // Track the current file name for deletion
+                var currentFileName = '';
+            
+                // Injecting CSS for the flip-clock style and animation
+                var style = document.createElement('style');
+                style.innerHTML = `
+                    #timer {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-family: 'Courier New', Courier, monospace;
+                        font-size: 24px;
+                        color: #333;
+                        margin-top: 10px;
+                    }
+                    #timer .digit, #timer .colon {
+                        width: 30px;
+                        height: 50px;
+                        background-color: #333;
+                        color: #fff;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-size: 24px;
+                        border-radius: 5px;
+                        margin: 0 2px;
+                        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+                        transform-style: preserve-3d;
+                        perspective: 300px;
+                    }
+                    #timer .colon {
+                        background-color: transparent;
+                        color: #333;
+                    }
+                    .flip {
+                        animation: flip 0.5s ease-in-out;
+                    }
+                    @keyframes flip {
+                        0% { transform: rotateX(0deg); }
+                        50% { transform: rotateX(-90deg); }
+                        100% { transform: rotateX(-180deg); }
+                    }
+                `;
+                document.head.appendChild(style);
+            
+                // Timer setup
+                var timerElement = document.createElement("div");
+                timerElement.id = "timer";
+                timerElement.style.display = "none"; // Hide initially
+                loadingSpinner.parentNode.insertBefore(timerElement, loadingSpinner.nextSibling);
+            
+                var timerInterval;
+                var elapsedTime = 0;
+            
+                // Helper function to create digit and colon elements for timer
+                function createDigitElement(content) {
+                    var digit = document.createElement("div");
+                    digit.classList.add("digit");
+                    digit.textContent = content;
+                    return digit;
+                }
+            
+                function createColonElement() {
+                    var colon = document.createElement("div");
+                    colon.classList.add("colon");
+                    colon.textContent = ":";
+                    return colon;
+                }
+            
+                // Store previous timer values for comparison
+                var previousTime = { hours: "00", minutes: "00", seconds: "00" };
+            
+                // Function to update the timer display with flip animation only on changing digits
+                function updateTimerDisplay(seconds) {
+                    timerElement.innerHTML = ''; // Clear the current display
+                    const hours = Math.floor(seconds / 3600).toString().padStart(2, '0');
+                    const minutes = Math.floor((seconds % 3600) / 60).toString().padStart(2, '0');
+                    const secs = (seconds % 60).toString().padStart(2, '0');
+            
+                    hours.split('').forEach((digit, index) => {
+                        var digitElement = createDigitElement(digit);
+                        if (digit !== previousTime.hours[index]) {
+                            digitElement.classList.add("flip");
+                        }
+                        timerElement.appendChild(digitElement);
+                    });
+                    timerElement.appendChild(createColonElement());
+            
+                    minutes.split('').forEach((digit, index) => {
+                        var digitElement = createDigitElement(digit);
+                        if (digit !== previousTime.minutes[index]) {
+                            digitElement.classList.add("flip");
+                        }
+                        timerElement.appendChild(digitElement);
+                    });
+                    timerElement.appendChild(createColonElement());
+            
+                    secs.split('').forEach((digit, index) => {
+                        var digitElement = createDigitElement(digit);
+                        if (digit !== previousTime.seconds[index]) {
+                            digitElement.classList.add("flip");
+                        }
+                        timerElement.appendChild(digitElement);
+                    });
+            
+                    previousTime = { hours, minutes, seconds: secs };
+                }
+            
+                // Start the timer
+                function startTimer() {
+                    elapsedTime = 0;
+                    timerElement.style.display = "flex";
+                    updateTimerDisplay(elapsedTime);
+                    timerInterval = setInterval(() => {
+                        elapsedTime++;
+                        updateTimerDisplay(elapsedTime);
+                    }, 1000);
+                }
+            
+                // Stop the timer without hiding it
+                function stopTimer() {
+                    clearInterval(timerInterval);
+                }
+            
+                reportTitle.style.display = "none"; // Hide report title initially
+            
+                // Show the loading spinner, start the timer, and move the file to the working folder
+                function showSpinner(file) {
+                    loadingSpinner.style.display = "block";
+                    startTimer(); // Start timer when spinner shows
+                    moveFileToWorkingFolder(file); // Move file to working folder
+                }
+            
+                // Hide the loading spinner, stop the timer, and delete the file from the server
+                function hideSpinner() {
+                    loadingSpinner.style.display = "none";
+                    stopTimer(); // Stop timer when spinner hides
+                    console.log(currentFileName);
+                    deleteZipFile(currentFileName); // Delete file from server
+                }
+            
+                // Function to simulate the progress bar
+                function simulateProgressBar(callback) {
+                    progressBarContainer.style.display = "block";
+                    var width = 0;
+                    var interval = setInterval(function() {
+                        if (width >= 100) {
+                            clearInterval(interval);
+                            showSpinner(fileInput.files[0]); // Show spinner when progress bar reaches 100% and move file
+                            callback();  // Execute the callback after the progress bar completes
+                        } else {
+                            width += 1;
+                            progressBar.style.width = width + "%";
+                        }
+                    }, 20);  // 2 seconds in total (100 * 20ms = 2000ms)
+                }
+            
+                // Function to move the file to the working folder
+                function moveFileToWorkingFolder(file) {
+                    var formData = new FormData();
+                    formData.append('file', file);
+                    currentFileName = file.name; // Store file name for later deletion
+            
+                    fetch('/move_to_working', {
+                        method: 'POST',
+                        body: formData
+                    })
+                    .then(response => {
+                        if (!response.ok) {
+                            console.error("Error moving file to working folder.");
+                        }
+                    })
+                    .catch(error => {
+                        console.error("Error:", error);
+                    });
+                }
+            
+                function deleteZipFile(fileName) {
+                    console.log("Attempting to delete file:", fileName);  // Log file name before sending
+                
+                    fetch('/delete_zip', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ file_name: fileName })
+                    })
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error(`Server error with status ${response.status}`);
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        // Check if the response contains 'result' and handle it accordingly
+                        if (data.result) {
+                            if (data.result.success) {
+                                console.log('File deleted successfully:', data.result.success);
+                            } else if (data.result.error) {
+                                console.error('Error deleting file:', data.result.error);
+                            } else {
+                                console.warn('No success or error information in response result:', data.result);
+                            }
+                        } else {
+                            console.error('Unexpected response format:', data);
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error.message || 'Unexpected error during file deletion');
+                    });
+                }
+                
+                
+                
+                
+            
+                // Form validation before submission (validate_zip_file)
+                submitBtn.addEventListener("click", function(event) {
+                    event.preventDefault();
+                    validationMessages.innerHTML = '';  // Clear previous messages
+            
+                    if (!fileInput.files.length) {
+                        showStickyAlert('Por favor, selecciona un archivo antes de procesar.', 'red');
+                        return;
+                    }
+            
+                    var file = fileInput.files[0];
+            
+                    if (!file.name.endsWith('.zip')) {
+                        showStickyAlert('El archivo debe ser de tipo .zip.', 'red');
+                        return;
+                    }
+            
+                    var formData = new FormData();
+                    formData.append('file', file);
+            
+                    // Simulate the progress bar and then validate the file
+                    simulateProgressBar(function() {
+                        fetch('/validate_zip_file', {
+                            method: 'POST',
+                            body: formData,
+                        })
+                        .then(response => response.json())
+                        .then(data => {
+                            validationMessages.innerHTML = '';  // Clear validation messages
+            
+                            if (data.error) {
+                                showStickyAlert(data.error, 'red');
+                                hideSpinner(); // Hide spinner if there’s an error
+                            } else {
+                                if (data.cliente_exists) {
+                                    validationMessages.innerHTML += `<p><i class="fa fa-check-circle" style="color: green;"></i> El cliente se encuentra registrado.</p>`;
+                                } else {
+                                    validationMessages.innerHTML += `<p><i class="fa fa-times-circle" style="color: red;"></i> El cliente no se encuentra registrado.</p>`;
+                                }
+                                if (data.branch_exists) {
+                                    validationMessages.innerHTML += `<p><i class="fa fa-check-circle" style="color: green;"></i> La sucursal se encuentra registrada.</p>`;
+                                } else {
+                                    validationMessages.innerHTML += `<p><i class="fa fa-times-circle" style="color: red;"></i> No se encontró ningún branch con ese número.</p>`;
+                                }
+                                if (data.is_today) {
+                                    validationMessages.innerHTML += `<p><i class="fa fa-check-circle" style="color: green;"></i> El paquete es del día de hoy.</p>`;
+                                } else {
+                                    validationMessages.innerHTML += `<p><i class="fa fa-exclamation-circle" style="color: orange;"></i> El paquete no es del día de hoy.</p>`;
+                                }
+            
+                                // Execute the Python script
+                                executePythonScript(file.name);
+                            }
+                        })
+                        .catch(error => {
+                            validationMessages.innerHTML = `<p style="color: red;"><i class="fa fa-times-circle"></i> Error en el servidor.</p>`;
+                            hideSpinner();  // Hide spinner if there’s an error
+                        });
+                    });
+                });
+            
+                // Function to execute the Python script
+                function executePythonScript(fileName) {
+                    var formData = new FormData();
+                    formData.append('file_name', fileName);
+            
+                    fetch('/execute_python', {
+                        method: 'POST',
+                        body: formData,
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            showStickyAlert('Script Python ejecutado correctamente.', 'green');
+                            getLogs(fileName);
+                            getReports();
+                        } else if (data.error) {
+                            showStickyAlert(data.error, 'red');
+                        }
+                        hideSpinner(); // Hide the spinner after execution completes
+                    })
+                    .catch(error => {
+                        showStickyAlert('Error en el servidor al ejecutar el script.', 'red');
+                        hideSpinner();  // Hide the spinner if there’s an error
+                    });
+                }
+
+    // Función para obtener los logs del servidor
+    function getLogs(zipFilename) {
+        fetch(`/get_logs?zip_filename=${zipFilename}`)
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    alert("Error al obtener logs: " + data.error);
+                } else {
+                    document.getElementById('logs-content').textContent = data.logs;
+                    document.getElementById('logs-container').style.display = 'block';
+                }
+            });
+    }
+
+    // Función para obtener los reportes disponibles
+    function getReports() {
+        fetch('/get_reports')
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    alert("Error al obtener los reportes: " + data.error);
+                } else {
+                    var reportContainer = document.getElementById('reportes-container');
+                    reportContainer.innerHTML = '';  // Limpiar contenedor
+
+                    if (data.reports.length > 0) {
+                        reportTitle.style.display = "block";
+                    } else {
+                        reportTitle.style.display = "none";
+                    }
+
+                    data.reports.forEach(report => {
+                        var cleanReportName = report.replace('.sql.dump', '');  // Eliminar sufijo
+                        var reportButton = document.createElement('button');
+                        reportButton.textContent = cleanReportName;
+                        reportButton.classList.add('btn', 'btn-info', 'mb-2');
+                        reportButton.style.width = "100%";  // Botón de ancho completo
+                    
+                        // Abrir modal con el contenido del reporte al hacer clic
+                        reportButton.addEventListener('click', function() {
+                            var modalTitle = document.getElementById('report-modal-title');
+                            var modalBody = document.getElementById('report-modal-body');
+                            console.log(cleanReportName)
+                            if (modalTitle) {
+                                modalTitle.textContent = cleanReportName; // Título del reporte
+                                console.log('Nombre del reporte:', cleanReportName);
+                                fetch('/get_report_content', {
+                                    method: 'POST',
+                                    headers: {
+                                        'Content-Type': 'application/json',
+                                    },
+                                    
+                                    body: JSON.stringify({ report: cleanReportName })  // Enviar el nombre del reporte en el cuerpo
+                                })
+                                
+                                .then(response => response.json())
+                                .then(data => {
+                                    console.log("Datos recibidos del servidor:", data);  // Ver qué datos se reciben
+                                    console.log(data.result.headers);
+                                    console.log(data.result.rows);
+                                    if (data.error) {
+                                        console.error('Error recibido del servidor:', data.error);  // Imprimir el error completo
+                                        alert('Error al cargar el reporte: ' + JSON.stringify(data.error, null, 2));  // Mostrar el error con más detalle
+                                    } else {
+                                        // Generar la tabla del reporte y mostrarla en el modal
+                                        modalBody.innerHTML = generateTable(data.result.rows, data.result.headers);
+                                        $('#reportModal').modal('show');  // Mostrar el modal
+                                    }
+                                })
+                                .catch(error => {
+                                    console.error('Error al obtener el reporte:', error);
+                                    alert('Error inesperado: ' + error);
+                                });
+                                
+                            } else {
+                                console.error('No se encontraron los elementos del modal.');
+                            }
+                        });
+                    
+                        reportContainer.appendChild(reportButton);
+                    });
+                    
+                }
+            });
+    }
+
+    // Función para generar tabla HTML con los datos del reporte
+    function generateTable(rows, headers) {
+        console.log('headers:', headers);
+        console.log('rows:', rows);
+    
+        if (!headers || !rows) {
+            console.error('Headers o rows no están definidos.');
+            return '<p>Error: Datos incompletos.</p>';
+        }
+    
+        var table = '<table class="table table-striped">';
+    
+        // Add table headers
+        table += '<thead style="position: sticky; top: 0; background-color: #f1f1f1; z-index: 1;"><tr>';
+        headers.forEach(header => {
+            table += `<th>${header}</th>`;
+        });
+        table += '</tr></thead>';
+    
+        // Add table rows
+        table += '<tbody>';
+    
+        // Join all rows into a single string and split based on the "), (" pattern
+        let allRowsString = rows.join(",");
+        let separatedRows = allRowsString.split(/\),\s*\(/);
+    
+        separatedRows.forEach(row => {
+            table += '<tr>';
+    
+            // Clean the row data by removing any remaining parentheses and quotes
+            let cleanedRow = row.replace(/[()'"]/g, '').trim();
+            let rowCells = cleanedRow.split(',');
+    
+            // Add each cell to the table
+            rowCells.forEach(cell => {
+                table += `<td>${cell.trim()}</td>`;
+            });
+    
+            table += '</tr>';
+        });
+    
+        table += '</tbody></table>';
+        return table;
+    }
+    
+
+
+    // Función para mostrar alerta sticky
+    function showStickyAlert(message, color) {
+        var alertDiv = document.createElement("div");
+        alertDiv.textContent = message;
+        alertDiv.style.position = "fixed";
+        alertDiv.style.top = "10px";
+        alertDiv.style.right = "10px";
+        alertDiv.style.backgroundColor = color;
+        alertDiv.style.color = "white";
+        alertDiv.style.padding = "15px";
+        alertDiv.style.zIndex = "9999";
+        alertDiv.style.borderRadius = "5px";
+        alertDiv.style.boxShadow = "0 2px 8px rgba(0,0,0,0.1)";
+        alertDiv.style.cursor = "pointer";
+
+        alertDiv.addEventListener("click", function() {
+            alertDiv.remove();
+        });
+
+        document.body.appendChild(alertDiv);
+        setTimeout(function() {
+            if (alertDiv) {
+                alertDiv.remove();
+            }
+        }, 5000);
+    }
+});
+
+
+
+
+
+        </script>
+    </xpath>
+    </template>
+</odoo>

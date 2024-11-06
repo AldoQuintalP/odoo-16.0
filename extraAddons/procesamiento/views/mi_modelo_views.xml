@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    
+    <!-- Vista en modo lista (tree) -->
+    <record id="view_modelo_dms_tree" model="ir.ui.view">
+        <field name="name">modelo.dms.tree</field>
+        <field name="model">modelo.dms</field>
+        <field name="arch" type="xml">
+            <tree string="Modelo DMS">
+                <field name="nombre_dms"/>
+                <field name="activo"/>
+            </tree>
+        </field>
+    </record>
+
+     <record id="view_modelo_dms_form" model="ir.ui.view">
+        <field name="name">modelo.dms.form</field>
+        <field name="model">modelo.dms</field>
+        <field name="arch" type="xml">
+            <form string="Modelo DMS" class="oe_form">
+                <style>
+                    .o-form-buttonbox {
+                        display: flex;
+                        justify-content: flex-end;  /* Alinea los botones a la derecha */
+                    }
+                </style>
+                <sheet>
+                    <div class="o-form-buttonbox oe_button_box position-relative text-end o_full">
+                        <button name="action_open_reports" type="object"
+                            string="REPORTES"
+                            class="btn oe_stat_button btn-light flex-shrink-0 mb-0 py-0 border-0 border-start border-bottom rounded-0 text-start text-nowrap text-capitalize"
+                            icon="fa-book"/>
+                        <!-- Añadir aquí otros botones si es necesario -->
+                    </div>
+                    <field name="es_favorito" widget="boolean_favorite" nolabel="1" style="margin-right: 8px;"/>
+                    <div class="oe_title">
+                        <label for="nombre_dms" string="Nombre del DMS" class="oe_edit_only"/>
+                        <h1>
+                            <field name="nombre_dms" placeholder="Nombre del DMS"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <field name="activo" string="Activo"/>
+                    </group>
+                    <!-- Añadir más grupos y campos según necesidad -->
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Vista Tree para Reportes DMS -->
+    <record id="view_reportes_dms_tree" model="ir.ui.view">
+        <field name="name">reportes.dms.tree</field>
+        <field name="model">reportes.dms</field>
+        <field name="arch" type="xml">
+            <tree string="Reportes DMS">
+                <field name="nombre_reporte"/>
+                <field name="descripcion"/>
+                <field name="nombre_dms_origen"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_reporte_dms_form" model="ir.ui.view">
+    <field name="name">reporte.dms.form</field>
+    <field name="model">reporte.dms</field>
+    <field name="arch" type="xml">
+        <form string="Reporte DMS">
+            <sheet>
+                <div class="o-form-buttonbox oe_button_box position-relative text-end o_full">
+                    <button name="order_export" type="object"
+                        string="Orden Export"
+                        class="btn oe_stat_button btn-light flex-shrink-0 mb-0 py-0 border-0 border-start border-bottom rounded-0 text-start text-nowrap text-capitalize"
+                        icon="fa-sort"/>
+
+
+                    <button name="action_open_formulas" type="object"
+                        string="Formulas"
+                        class="btn oe_stat_button btn-light flex-shrink-0 mb-0 py-0 border-0 border-start border-bottom rounded-0 text-start text-nowrap text-capitalize"
+                        icon="fa-calculator"
+                        context="{'default_reporte_id': active_id}"/>
+                    
+                    <button name="action_open_filter" type="object"
+                        string="Filtros"
+                        class="btn oe_stat_button btn-light flex-shrink-0 mb-0 py-0 border-0 border-start border-bottom rounded-0 text-start text-nowrap text-capitalize"
+                        icon="fa-filter"/>
+                </div>
+                <group>
+                    <group>
+                        <field name="nombre" string="Nombre del Reporte"/>
+                        <field name="nombre_dms_origen" string="Nombre DMS Origen"/>
+                        <field name="dms_id"/>
+                        <!-- Campo para cargar el archivo -->
+                        <field name="file_data" filename="file_name" string="
+                        ¿Cuentas con el archivo?"/>
+                    </group>
+                    <!-- Botón de procesar archivo, controlado con attrs -->
+                    <div class="o_form_button_box" style="padding-top: 100px;">
+                        <button name="procesar_archivo" type="object" string="Procesar Archivo"
+                                class="btn btn-primary" icon="fa-upload"
+                                attrs="{'invisible': [('file_data', '=', False)]}"/>
+                    </div> 
+                </group>
+
+               <notebook>
+                    <page string="Detalles">
+                        <field name="detalle_ids">
+                            <tree editable="bottom" default_order="sequence">
+                                <field name="sequence" widget="handle"/>
+                                <field name="ordenamiento" readonly="1"/>
+                                <field name="columna"/>
+                                <field name="tipo_dato" required="1"/>
+                                <field name="longitud" 
+                                    attrs="{
+                                        'invisible': [('tipo_dato', '=', 'date')],
+                                        'required': [('tipo_dato', 'in', ['varchar', 'decimal'])]
+                                    }" 
+                                    style="text-align:left;"/>
+                                <field name="invisible" widget="boolean_button"/>
+                                <field name="compute_field" widget="boolean_button"/> 
+                            </tree>
+                        </field>
+                    </page>
+                    <page string="Orden Export">
+                        <field name="detalle_export_ids">
+                            <tree editable="bottom" default_order="orden_export" create="false" delete="false">
+                                <field name="orden_export" widget="handle"/>
+                                <field name="columna" readonly="1"/>
+                                <field name="tipo_dato" readonly="1"/>
+                                <field name="longitud" readonly="1"/>
+                            </tree>
+                        </field>
+                    </page>
+                </notebook>
+            </sheet>
+        </form>
+    </field>
+</record>
+
+    <!-- Form view  para ordenar las columnas en exportación -->
+    <record id="view_reporte_dms_detalle_order_export_tree" model="ir.ui.view">
+        <field name="name">reporte.dms.detalle.order.export.tree</field>
+        <field name="model">reporte.dms.detalle</field>
+        <field name="arch" type="xml">
+            <tree string="Ordenar Columnas de Exportación" editable="bottom">
+                <field name="orden_export" widget="handle"/>
+                <field name="columna" readonly="1"/>
+                <field name="tipo_dato" readonly="1"/>
+                <field name="longitud" readonly="1"/>
+            </tree>
+        </field>
+    </record>
+
+
+
+<record id="view_reporte_dms_detalle_modal_tree" model="ir.ui.view">
+        <field name="name">reporte.dms.detalle.modal.tree</field>
+        <field name="model">reporte.dms.detalle</field>
+        <field name="arch" type="xml">
+            <tree string="Detalles del Reporte DMS" editable="bottom">
+                <field name="columna" readonly="1"/>
+                <field name="tipo_dato" required="1"/>
+                <field name="longitud" required="1"/>
+            </tree>
+        </field>
+    </record>
+
+            
+
+
+    <record id="action_open_detalles_modal" model="ir.actions.act_window">
+        <field name="name">Importar Columnas</field>
+        <field name="res_model">reporte.dms.detalle</field>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="view_reporte_dms_detalle_modal_tree"/>
+        <field name="target">new</field> <!-- new para abrir el modal -->
+        <field name="context">{'default_reporte_id': active_id}</field>
+    </record>
+
+
+
+
+
+
+    <!-- Vista Tree para Reportes DMS -->
+    <record id="view_reporte_dms_tree" model="ir.ui.view">
+        <field name="name">reporte.dms.tree</field>
+        <field name="model">reporte.dms</field>
+        <field name="arch" type="xml">
+            <tree string="Lista de Reportes DMS">
+                <field name="nombre" string="Reporte"/>
+                <field name="nombre_dms_origen" string="DMS"/>
+                <field name="count_detalle_ids" string="# Columnas"/>
+                
+                <button name="duplicate_report" type="object" class="btn-primary oe_stat_button"
+                    icon="fa-copy"/>
+
+            </tree>
+        </field>
+    </record>
+    
+    <!-- Vista form para los filtros -->
+    <record id="filtros_reportes_form_view" model="ir.ui.view">
+        <field name="name">filtros.reportes.form</field>
+        <field name="model">filtros.reportes</field>
+        <field name="arch" type="xml">
+            <form string="Filtros Reportes">
+                <sheet>
+                    <group string="Condición Filtro">
+                        <group>
+                            <field name="reporte_id" readonly="1"/>
+                            <field name="columnas_reporte_ids" string=""/>
+                        </group>
+                        <group>
+                            <field name="expresion" widget="ace" options="{'mode': 'python'}"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Vista Tree para Filtros -->
+    <record id="view_filtro_reporte_tree" model="ir.ui.view">
+        <field name="name">filtro.reporte.tree</field>
+        <field name="model">filtros.reportes</field>
+        <field name="arch" type="xml">
+            <tree string="Lista de Filtros">
+                <field name="reporte_id"/>
+                <field name="expresion"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Vista form para las formulas -->
+    <record id="formulas_reportes_form_view" model="ir.ui.view">
+        <field name="name">formulas.reportes.form</field>
+        <field name="model">formulas.reportes</field>
+        <field name="arch" type="xml">
+            <form string="Fórmulas de Reportes">
+
+                <sheet>
+                    <!-- Reorganizamos los campos en columnas -->
+                    <group>
+                        <!-- Primer grupo con los campos del reporte -->
+                        <group>
+                            <field name="reporte_id" readonly="1"/>
+                            <field name="cliente"/>
+                            <field name="branch"/>
+                        </group>
+
+                        <!-- Botón de procesar alineado al campo branch -->
+                        <div class="o_form_button_box">
+                            <button name="action_procesar" 
+                                    type="object" 
+                                    string="Procesar" 
+                                    class="btn-primary"
+                                    icon="fa-play"/>
+                        </div>
+                    </group>
+
+                    <group string="" col="1">
+                        <div style="overflow-x: auto; width: 100%;"> <!-- Alto ajustado -->
+                            <field name="tabla_html" readonly="1" widget="html" style="width: 100%; white-space: nowrap;" nolabel="1"/>
+                        </div>
+                    </group>
+
+
+
+                    <!-- Aquí se aplican las propiedades flexibles para ajustar el tamaño de los campos dinámicamente -->
+                    <div style="display: flex; width: 100%; justify-content: space-between;">
+                        
+                        <!-- Campo Expresión con un ancho fijo o menor para ajustar mejor a la pantalla -->
+                        <div style="flex-grow: 3;">
+                            <group string="Expresión">
+                                <field name="columna_seleccionada" options="{'no_create': True, 'no_open': True}"/>
+                                <field name="expresion" widget="ace" options="{'mode': 'python'}"/>
+                            </group>
+                        </div>
+                    </div>
+                    <div class="o_form_button_box" style="text-align: left;">
+                        <div style="display: inline-block;">
+                            <!-- Botón Aplicar -->
+                            <button name="aplicar_formula" 
+                                    type="object" 
+                                    string="Aplicar" 
+                                    class="btn-primary"
+                                    icon="fa-play"
+                                    />
+                        </div>
+                        <div style="display: inline-block;">
+                            <!-- Botón Guardar -->
+                            <button name="action_guardar" 
+                                    type="object" 
+                                    string="Guardar" 
+                                    class="btn-primary"
+                                    icon="fa-save"/>
+                        </div>
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- vista tree para formulas.reportes -->
+    <record id="formulas_reportes_tree_view" model="ir.ui.view">
+        <field name="name">formulas.reportes.tree</field>
+        <field name="model">formulas.reportes</field>
+        <field name="arch" type="xml">
+            <tree string="Fórmulas de Reportes">
+                <field name="reporte_id"/>
+                <field name="columna_seleccionada"/>
+                <field name="expresion"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="formulas_reportes_action" model="ir.actions.act_window">
+        <field name="name">Fórmulas de Reportes</field>
+        <field name="res_model">formulas.reportes</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="formulas_reportes_tree_view"/>
+        <!-- Aplicamos un dominio que filtra las fórmulas según el reporte actual -->
+        <field name="domain">[('reporte_id', '=', context.get('default_reporte_id'))]</field>
+        <field name="context">{'default_reporte_id': active_id}</field>
+    </record>
+    
+    
+    
+
+
+
+    <!-- Vista tipo árbol (tree) para listar todos los reportes DMS -->
+    <record id="view_reporte_dms_tree" model="ir.ui.view">
+        <field name="name">reporte.dms.tree</field>
+        <field name="model">reporte.dms</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="nombre"/>
+                <field name="nombre_dms_origen"/>
+                <field name="count_detalle_ids"/>
+                <button name="duplicate_report" type="object" class="btn-primary oe_stat_button"
+                    icon="fa-copy"/>
+
+            </tree>
+        </field>
+    </record>
+
+
+    <!-- Acción para abrir la vista de Reportes DMS -->
+    <record id="action_reportes_dms" model="ir.actions.act_window">
+        <field name="name">Reportes DMS</field>
+        <field name="res_model">reportes.dms</field>
+        <field name="view_mode">tree,form</field>
+        <field name="target">current</field>
+    </record>
+
+    <!-- Acción para abrir la vista de todos los Reportes DMS -->
+    <record id="action_all_reportes_dms" model="ir.actions.act_window">
+        <field name="name">Todos los Reportes</field>
+        <field name="res_model">reporte.dms</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_reporte_dms_tree"/>
+    </record>
+
+    <!-- Acción para mostrar la vista de "Modelo DMS" en modo tree -->
+    <record id="action_modelo_dms_tree" model="ir.actions.act_window">
+        <field name="name">Modelos DMS</field>
+        <field name="res_model">modelo.dms</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_modelo_dms_tree"/>
+    </record>
+
+   
+
+
+    <!-- Acción para el modelo modelo.dms -->
+    <record id="action_modelo_dms" model="ir.actions.act_window">
+        <field name="name">Modelo DMS</field>
+        <field name="res_model">modelo.dms</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menú principal de la aplicación -->
+    <menuitem id="menu_mi_app_root" name="Configuración" sequence="10"/>
+
+    <!-- Menú del modelo DMS -->
+    <menuitem id="menu_modelo_dms" parent="menu_mi_app_root" name="Modelo DMS" action="action_modelo_dms" sequence="10"/>
+
+    <menuitem id="menu_modelo_dms_reportes"
+              name="Todos los Reportes"
+              parent="menu_modelo_dms"  
+              action="action_all_reportes_dms"
+              sequence="30"/>
+
+    <!-- Submenú para "Modelo DMS Tree" -->
+    <menuitem id="menu_modelo_dms_tree"
+              name="Configuración DMS"
+              parent="menu_modelo_dms"
+              action="action_modelo_dms_tree"
+              sequence="20"/>
+
+</odoo>

@@ -1,0 +1,9 @@
+/* static/src/css/custom_styles.css */
+.oe_highlight {
+    background-color: #875A7B; /* Ejemplo: color de fondo */
+    color: white; /* color del texto */
+}
+
+.oe_form .oe_title h1 {
+    margin-top: 0; /* Ajustar el margen superior si es necesario */
+}

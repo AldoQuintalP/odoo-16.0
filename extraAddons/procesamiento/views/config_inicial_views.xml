@@ -1,0 +1,58 @@
+<odoo>
+    <!-- Vista Tree para Configuración Inicial -->
+    <record id="view_config_inicial_tree" model="ir.ui.view">
+        <field name="name">config.inicial.tree</field>
+        <field name="model">config.inicial</field>
+        <field name="arch" type="xml">
+            <tree string="Configuración Inicial">
+                <field name="nombre_archivo"/>
+                
+            </tree>
+        </field>
+    </record>
+    
+
+    <!-- Vista Form para Configuración Inicial -->
+    <record id="view_config_inicial_form" model="ir.ui.view">
+        <field name="name">config.inicial.form</field>
+        <field name="model">config.inicial</field>
+        <field name="arch" type="xml">
+            <form string="Configuración Inicial">
+                <sheet>
+                    <group>
+                        <field name="archivo_zip" filename="nombre_archivo"/>
+                        <field name="nombre_archivo" invisible="1"/>
+                        <field name="cliente" attrs="{'invisible': [('archivo_zip', '=', False)]}"/>
+                    </group>
+                    <group string="Reportes en ZIP" attrs="{'invisible': [('archivo_zip', '=', False)]}">
+                        <field name="archivos_listados">
+                            <tree create="false" delete="false" editable="bottom">
+                                <field name="nombre_archivo"/>
+                                <field name="comentario"/>
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    
+
+
+
+
+    <!-- Acción para abrir Configuración Inicial -->
+    <record id="action_config_inicial" model="ir.actions.act_window">
+        <field name="name">Configuración Inicial</field>
+        <field name="res_model">config.inicial</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_config_inicial_tree"/>
+    </record>
+
+    <!-- Menú para Configuración Inicial bajo el menú principal -->
+    <menuitem id="menu_config_inicial"
+              name="00-Despu"
+              parent="menu_mi_app_root"
+              action="action_config_inicial"
+              sequence="30"/>
+</odoo>

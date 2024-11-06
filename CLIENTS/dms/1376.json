@@ -1,0 +1,210 @@
+{
+    "name": "1376",
+    "reportes": [
+        "REFMOS01"
+    ],
+    "columnas_esperadas": {
+        "REFMOS01": {
+            "columnas": [
+                "FechaFactura",
+                "Factura",
+                "TipoPago",
+                "TipoVenta",
+                "TipoParte",
+                "NumeroParte",
+                "Descripcion",
+                "Cantidad",
+                "VentaUnit$",
+                "Venta$",
+                "CostoUnit$",
+                "Costo$",
+                "Descuento$",
+                "NumeroAsesor",
+                "NombreAsesor",
+                "RFC",
+                "NumeroCliente",
+                "NombreCliente",
+                "Direccion",
+                "Telefono",
+                "CP",
+                "Email",
+                "PermiteContactar",
+                "MotivoContacto",
+                "Utilidad$ (computed)",
+                "Margen (computed)",
+                "Sucursal (computed)"
+            ],
+            "columnas_export": [
+                "Sucursal (computed)",
+                "FechaFactura",
+                "Factura",
+                "TipoPago",
+                "TipoVenta",
+                "TipoParte",
+                "NumeroParte",
+                "Descripcion",
+                "Cantidad",
+                "VentaUnit$",
+                "Venta$",
+                "CostoUnit$",
+                "Costo$",
+                "Descuento$",
+                "NumeroAsesor",
+                "NombreAsesor",
+                "RFC",
+                "NumeroCliente",
+                "NombreCliente",
+                "Direccion",
+                "Telefono",
+                "CP",
+                "Email",
+                "PermiteContactar",
+                "MotivoContacto",
+                "Utilidad$ (computed)",
+                "Margen (computed)"
+            ],
+            "formulas": {
+                "FechaFactura": false,
+                "Factura": "LimpiaTexto(Factura)",
+                "TipoPago": "LimpiaTexto(TipoPago)",
+                "TipoVenta": "LimpiaTexto(TipoVenta)",
+                "TipoParte": "LimpiaTexto(TipoParte)",
+                "NumeroParte": "LimpiaTexto(NumeroParte)",
+                "Descripcion": "LimpiaTexto(Descripcion)",
+                "Cantidad": "LimpiaCodigos(Cantidad)",
+                "VentaUnit$": "LimpiaCodigos(VentaUnit$)",
+                "Venta$": "Venta$ - Descuento$",
+                "CostoUnit$": "LimpiaCodigos(CostoUnit$)",
+                "Costo$": "LimpiaCodigos(Costo$)",
+                "Descuento$": "LimpiaCodigos(Descuento$)",
+                "NumeroAsesor": "LimpiaTexto(NumeroAsesor)",
+                "NombreAsesor": "LimpiaTexto(NombreAsesor)",
+                "Direccion": "LimpiaTexto(Direccion)",
+                "Telefono": "LimpiaTexto(Telefono)",
+                "CP": "LimpiaTexto(CP)",
+                "Email": "LimpiaEmail(Email)",
+                "PermiteContactar": "LimpiaTexto(PermiteContactar)",
+                "MotivoContacto": "LimpiaTexto(MotivoContacto)",
+                "Utilidad$ (computed)": "FormulaUtilidad(Utilidad$)",
+                "Margen (computed)": "FormulaMargen(Margen)",
+                "Sucursal (computed)": "if sucursal == \"01\":\r\n  return \"TULANSINGO\"\r\nelif sucursal == \"02\":\r\n  return \"DEPORTIVA\"\r\nelse:\r\n  return \"\"",
+                "RFC": "LimpiaTexto(RFC)",
+                "NumeroCliente": "LimpiaTexto(NumeroCliente)",
+                "NombreCliente": "LimpiaTexto(NombreCliente)"
+            },
+            "filtros": [
+                "Factura == '' or Factura == None"
+            ],
+            "data_types": {
+                "FechaFactura": {
+                    "tipo": "date",
+                    "length": null
+                },
+                "Factura": {
+                    "tipo": "varchar",
+                    "length": 50
+                },
+                "TipoPago": {
+                    "tipo": "varchar",
+                    "length": 50
+                },
+                "TipoVenta": {
+                    "tipo": "varchar",
+                    "length": 50
+                },
+                "TipoParte": {
+                    "tipo": "varchar",
+                    "length": 50
+                },
+                "NumeroParte": {
+                    "tipo": "varchar",
+                    "length": 50
+                },
+                "Descripcion": {
+                    "tipo": "varchar",
+                    "length": 50
+                },
+                "Cantidad": {
+                    "tipo": "decimal",
+                    "length": "18, 2"
+                },
+                "VentaUnit$": {
+                    "tipo": "decimal",
+                    "length": "18, 2"
+                },
+                "Venta$": {
+                    "tipo": "decimal",
+                    "length": "18, 2"
+                },
+                "CostoUnit$": {
+                    "tipo": "decimal",
+                    "length": "18, 2"
+                },
+                "Costo$": {
+                    "tipo": "decimal",
+                    "length": "18, 2"
+                },
+                "Descuento$": {
+                    "tipo": "decimal",
+                    "length": "18, 2"
+                },
+                "NumeroAsesor": {
+                    "tipo": "varchar",
+                    "length": 50
+                },
+                "NombreAsesor": {
+                    "tipo": "varchar",
+                    "length": 50
+                },
+                "RFC": {
+                    "tipo": "varchar",
+                    "length": 50
+                },
+                "NumeroCliente": {
+                    "tipo": "varchar",
+                    "length": 50
+                },
+                "NombreCliente": {
+                    "tipo": "varchar",
+                    "length": 50
+                },
+                "Direccion": {
+                    "tipo": "varchar",
+                    "length": 100
+                },
+                "Telefono": {
+                    "tipo": "varchar",
+                    "length": 50
+                },
+                "CP": {
+                    "tipo": "varchar",
+                    "length": 50
+                },
+                "Email": {
+                    "tipo": "varchar",
+                    "length": 80
+                },
+                "PermiteContactar": {
+                    "tipo": "varchar",
+                    "length": 50
+                },
+                "MotivoContacto": {
+                    "tipo": "varchar",
+                    "length": 50
+                },
+                "Utilidad$": {
+                    "tipo": "decimal",
+                    "length": "18, 2"
+                },
+                "Margen": {
+                    "tipo": "decimal",
+                    "length": "18, 2"
+                },
+                "Sucursal": {
+                    "tipo": "varchar",
+                    "length": 50
+                }
+            }
+        }
+    }
+}

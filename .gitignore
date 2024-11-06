@@ -1,0 +1,18 @@
+# Ignorar todas las carpetas y archivos
+/*
+
+# Permitir el seguimiento de la carpeta extraAddons
+!extraAddons/
+!extraAddons/**
+!.gitignore
+!procesamiento.bat
+
+
+# Ignorar todas las carpetas __pycache__ dentro de extraAddons
+extraAddons/**/__pycache__/
+CLIENTS/**/Logs
+
+# Permitir las carpetas CLIENTS, 2-Working y 3-Sandbox
+!CLIENTS/
+!2-Working/
+!3-Sandbox/
