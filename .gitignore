@@ -6,6 +6,7 @@
 !extraAddons/**
 !.gitignore
 !procesamiento.bat
+!configuracion.json
 
 
 # Ignorar todas las carpetas __pycache__ dentro de extraAddons
