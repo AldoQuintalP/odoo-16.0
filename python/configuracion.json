@@ -1,0 +1,10 @@
+{
+    "clients_dir": "C:\\Users\\Aldo Quintal\\OneDrive - Simetrical SA de CV\\Escritorio\\odoo-16.0\\CLIENTS",
+    "working_dir": "C:\\Users\\Aldo Quintal\\OneDrive - Simetrical SA de CV\\Escritorio\\odoo-16.0\\2-Working",
+    "sandbox_dir": "C:\\Users\\Aldo Quintal\\OneDrive - Simetrical SA de CV\\Escritorio\\odoo-16.0\\3-Sandbox",
+    "core_dir": "C:\\Users\\Aldo Quintal\\OneDrive - Simetrical SA de CV\\Escritorio\\odoo-16.0\\python",
+    "host": "localhost",
+    "user": "root",
+    "bd_name": "simdata",
+    "password": "abcd1234"
+}

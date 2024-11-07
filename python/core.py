@@ -11,6 +11,7 @@ import subprocess
 from funcionesExternas import *
 import mysql.connector
 from mysql.connector import Error
+import sys
 
 # Variables globales
 workng_dir = None
@@ -174,26 +175,28 @@ def procesar_archivo_zip():
 
     if config:
         db_config = {
-            'host': config.get('my_module.host'),
-            'usuario': config.get('my_module.user'),
-            'contrasena': config.get('my_module.password'),
-            'base_de_datos': config.get('my_module.bd_name')
+            'host': config.get('host'),
+            'usuario': config.get('user'),
+            'contrasena': config.get('password'),
+            'base_de_datos': config.get('bd_name')
         }
 
-        clients_path = config.get('my_module.clients_folder_path')
-        workng_dir = config.get('my_module.working_folder_path')
-        sandbx = config.get('my_module.sandbox_folder_path')
+        clients_path = config.get('clients_dir')
+        workng_dir = config.get('working_dir')
+        sandbx = config.get('sandbox_dir')
 
+        # Validar que todas las variables requeridas estén presentes y no sean None
         if not all([db_config['host'], db_config['usuario'], db_config['contrasena'], db_config['base_de_datos'], workng_dir, sandbx]):
             raise ValueError("Algunas variables de configuración faltan o están incompletas.")
 
-        print(f"DB Config: {db_config}")
-        print(f"Working Directory: {workng_dir}")
-        print(f"Sandbox Directory: {sandbx}")
-        print(f'Clients_path: {clients_path}')
+        # print(f"DB Config: {db_config}")
+        # print(f"Working Directory: {workng_dir}")
+        # print(f"Sandbox Directory: {sandbx}")
+        # print(f'Clients Directory: {clients_path}')
 
     else:
-        logging.error("No se pudo obtener la configuración de Odoo.")
+        logging.error("No se pudo obtener la configuración del JSON.")
+
 
     limpiar_carpeta(sandbx)
     
@@ -806,6 +809,7 @@ def obtener_column_lengths(archivo_sql):
 
 # Función para limpiar el contenido de una carpeta
 def limpiar_carpeta(carpeta):
+    print(f'Carpeta: {carpeta}')
     for archivo in os.listdir(carpeta):
         ruta_archivo = os.path.join(carpeta, archivo)
         try:
@@ -1123,37 +1127,33 @@ def generar_query_alter_table(reporte, columnas_date, sucursal):
 
 def get_odoo_config():
     try:
-        # Conectar a la base de datos de Odoo
-        connection = psycopg2.connect(
-            host="localhost",       
-            database="simdata",  
-            user="odoo",    
-            password="abcd1234"
-        )
-        cursor = connection.cursor()
+        # Obtener la ruta del archivo JSON de configuración
+        script_dir = os.path.dirname(os.path.abspath(__file__))
 
-        # Consultar los valores de configuración desde ir.config_parameter
-        cursor.execute("""
-            SELECT key, value FROM ir_config_parameter
-            WHERE key IN (
-                'my_module.host', 'my_module.user', 'my_module.password',
-                'my_module.bd_name', 'my_module.working_folder_path', 
-                'my_module.sandbox_folder_path', 'my_module.clients_folder_path'
-            );
-        """)
+        config_path = os.path.join(script_dir, 'configuracion.json')
         
-        # Convertir el resultado en un diccionario de configuración
-        config = {key: value for key, value in cursor.fetchall()}
+        # Verificar si el archivo JSON existe
+        if not os.path.isfile(config_path):
+            logging.error("Archivo de configuración JSON 'configuracion.json' no encontrado en la ruta especificada.")
+            sys.exit("Terminando el programa: 'configuracion.json' no encontrado.")
+        
+        # Leer y cargar la configuración desde el archivo JSON
+        with open(config_path, 'r') as config_file:
+            config = json.load(config_file)
+        
+        # Validar que se hayan cargado todas las claves necesarias
+        required_keys = ["host", "user", "bd_name", "password", "clients_dir", "working_dir", "sandbox_dir", "core_dir"]
+        missing_keys = [key for key in required_keys if key not in config]
+        
+        if missing_keys:
+            logging.error(f"Faltan claves en la configuración JSON: {', '.join(missing_keys)}")
+            sys.exit("Terminando el programa: Configuración JSON incompleta.")
+        
         return config
 
     except Exception as error:
-        logging.error(f"Error al obtener la configuración de Odoo: {error}")
-        return None
-
-    finally:
-        if connection:
-            cursor.close()
-            connection.close()
+        logging.error(f"Error al obtener la configuración de Odoo desde el archivo JSON: {error}")
+        sys.exit("Terminando el programa debido a un error inesperado.")
 
 def ejecutar_query_alter_table(db_config, query):
     """

@@ -11,9 +11,11 @@
 
 # Ignorar todas las carpetas __pycache__ dentro de extraAddons
 extraAddons/**/__pycache__/
+python/**/__pycache__/
 CLIENTS/**/Logs
 
 # Permitir las carpetas CLIENTS, 2-Working y 3-Sandbox
 !CLIENTS/
 !2-Working/
 !3-Sandbox/
+!python
