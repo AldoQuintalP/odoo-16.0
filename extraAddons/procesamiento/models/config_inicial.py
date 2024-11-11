@@ -29,17 +29,26 @@ class ConfigInicial(models.Model):
                 self.archivo_zip = False
                 self.nombre_archivo = False
                 raise models.ValidationError("El archivo debe ser un archivo ZIP válido.")
+            
             try:
                 zip_file = zipfile.ZipFile(BytesIO(base64.b64decode(self.archivo_zip)))
                 zip_file.testzip()  # Verifica que el ZIP no esté corrupto
 
-                # Limpiar registros anteriores de archivos listados y llenar con los nuevos archivos
-                archivos = [
-                    (0, 0, {
-                        'nombre_archivo': archivo,
-                        'comentario': ''  # Deja el comentario vacío inicialmente
-                    }) for archivo in zip_file.namelist()
-                ]
+                # Extraer los números únicos de los nombres de archivo
+                nombres_unicos = set()
+                archivos = []
+                
+                for archivo in zip_file.namelist():
+                    # Extraer solo el número del nombre de archivo (por ejemplo, "001" de "REFCOM001.txt")
+                    numero = ''.join(filter(str.isdigit, archivo))
+                    if numero and numero not in nombres_unicos:
+                        nombres_unicos.add(numero)
+                        archivos.append((0, 0, {
+                            'nombre_archivo': numero,
+                            'comentario': ''
+                        }))
+                
+                # Limpiar registros anteriores y agregar solo los archivos únicos
                 self.archivos_listados = archivos
 
             except zipfile.BadZipFile:
@@ -47,51 +56,52 @@ class ConfigInicial(models.Model):
                 self.nombre_archivo = False
                 raise models.ValidationError("El archivo ZIP está corrupto o no es válido.")
 
-    def write(self, vals):
-        # Guardar el nombre del archivo si se sube un nuevo ZIP
-        if 'archivo_zip' in vals:
-            vals['nombre_archivo'] = self.nombre_archivo or vals.get('nombre_archivo')
-            
-            # Reprocesar archivos ZIP para mantener los registros extraídos
-            zip_file = zipfile.ZipFile(BytesIO(base64.b64decode(vals['archivo_zip'])))
-            archivos_nuevos = zip_file.namelist()
-            
-            # Preservar comentarios existentes
-            archivos_actualizados = []
-            for archivo in self.archivos_listados:
-                if archivo.nombre_archivo in archivos_nuevos:
-                    archivos_actualizados.append((1, archivo.id, {'comentario': archivo.comentario}))
-                    archivos_nuevos.remove(archivo.nombre_archivo)
-            
-            # Agregar archivos nuevos sin comentario
-            archivos_actualizados += [
-                (0, 0, {
-                    'nombre_archivo': archivo,
-                    'comentario': ''
-                }) for archivo in archivos_nuevos
-            ]
-            
-            vals['archivos_listados'] = archivos_actualizados
 
-        return super(ConfigInicial, self).write(vals)
-
-    @api.model
-    def create(self, vals):
-        # Guardar el nombre del archivo al crear un nuevo registro si tiene un ZIP
-        if 'archivo_zip' in vals:
-            vals['nombre_archivo'] = vals.get('nombre_archivo')
+    # def write(self, vals):
+    #     # Guardar el nombre del archivo si se sube un nuevo ZIP
+    #     if 'archivo_zip' in vals:
+    #         vals['nombre_archivo'] = self.nombre_archivo or vals.get('nombre_archivo')
             
-            # Procesar archivos ZIP para extraer los nombres de archivos al crear el registro
-            zip_file = zipfile.ZipFile(BytesIO(base64.b64decode(vals['archivo_zip'])))
-            archivos = [
-                (0, 0, {
-                    'nombre_archivo': archivo,
-                    'comentario': ''
-                }) for archivo in zip_file.namelist()
-            ]
-            vals['archivos_listados'] = archivos
+    #         # Reprocesar archivos ZIP para mantener los registros extraídos
+    #         zip_file = zipfile.ZipFile(BytesIO(base64.b64decode(vals['archivo_zip'])))
+    #         archivos_nuevos = zip_file.namelist()
+            
+    #         # Preservar comentarios existentes
+    #         archivos_actualizados = []
+    #         for archivo in self.archivos_listados:
+    #             if archivo.nombre_archivo in archivos_nuevos:
+    #                 archivos_actualizados.append((1, archivo.id, {'comentario': archivo.comentario}))
+    #                 archivos_nuevos.remove(archivo.nombre_archivo)
+            
+    #         # Agregar archivos nuevos sin comentario
+    #         archivos_actualizados += [
+    #             (0, 0, {
+    #                 'nombre_archivo': archivo,
+    #                 'comentario': ''
+    #             }) for archivo in archivos_nuevos
+    #         ]
+            
+    #         vals['archivos_listados'] = archivos_actualizados
 
-        return super(ConfigInicial, self).create(vals)
+    #     return super(ConfigInicial, self).write(vals)
+
+    # @api.model
+    # def create(self, vals):
+    #     # Guardar el nombre del archivo al crear un nuevo registro si tiene un ZIP
+    #     if 'archivo_zip' in vals:
+    #         vals['nombre_archivo'] = vals.get('nombre_archivo')
+            
+    #         # Procesar archivos ZIP para extraer los nombres de archivos al crear el registro
+    #         zip_file = zipfile.ZipFile(BytesIO(base64.b64decode(vals['archivo_zip'])))
+    #         archivos = [
+    #             (0, 0, {
+    #                 'nombre_archivo': archivo,
+    #                 'comentario': ''
+    #             }) for archivo in zip_file.namelist()
+    #         ]
+    #         vals['archivos_listados'] = archivos
+
+    #     return super(ConfigInicial, self).create(vals)
 
     def name_get(self):
         result = []

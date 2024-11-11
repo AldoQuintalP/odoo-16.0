@@ -1,0 +1,122 @@
+{
+    "name": "4001",
+    "reportes": [
+        "REFCOM01"
+    ],
+    "columnas_esperadas": {
+        "REFCOM01": {
+            "columnas": [
+                "Factura",
+                "FechaFactura",
+                "TipoProveedor",
+                "NumeroProveedor",
+                "NombreProveedor",
+                "TipoParte",
+                "NumeroParte",
+                "Descripcion",
+                "Cantidad",
+                "CostoUnit$",
+                "Costo$",
+                "Delear",
+                "Sucursal",
+                "Date (computed)"
+            ],
+            "columnas_export": [
+                "Date (computed)",
+                "Cantidad",
+                "CostoUnit$",
+                "Factura",
+                "FechaFactura",
+                "TipoProveedor",
+                "NumeroProveedor",
+                "NombreProveedor",
+                "TipoParte",
+                "NumeroParte",
+                "Descripcion",
+                "Costo$",
+                "Delear",
+                "Sucursal"
+            ],
+            "formulas": {
+                "F1": "LimpiaTexto(F1)",
+                "Factura": "LimpiaTexto(Factura)",
+                "FechaFactura": false,
+                "NumeroParte": "LimpiaTexto(NumeroParte)",
+                "Descripcion": "LimpiaTexto(Descripcion)",
+                "Cantidad": "LimpiaCodigos(Cantidad)",
+                "CostoUnit$": "LimpiaCodigos(CostoUnit$)",
+                "Costo$": "LimpiaCodigos(Costo$)",
+                "TipoProveedor": "LimpiaTexto(TipoProveedor)",
+                "TipoCompra": "LimpiaTexto(TipoCompra)",
+                "NumeroProveedor": "LimpiaTexto(NumeroProveedor)",
+                "NombreProveedor": "LimpiaTexto(NombreProveedor)",
+                "Date (computed)": "Ctod(\"d/m/y\")",
+                "Sucursal (computed)": "if sucursal == \"01\":\r\n  return \"TULANSINGO\"\r\nelif sucursal == \"02\":\r\n  return \"DEPORTIVA\"\r\nelse:\r\n  return \"\"",
+                "TipoParte": "LimpiaTexto(TipoParte)",
+                "Delear": "LimpiaTexto(Delear)",
+                "Sucursal": "LimpiaTexto(Sucursal)"
+            },
+            "filtros": [
+                "Factura == '' or Factura == None"
+            ],
+            "data_types": {
+                "Factura": {
+                    "tipo": "varchar",
+                    "length": 15
+                },
+                "FechaFactura": {
+                    "tipo": "date",
+                    "length": null
+                },
+                "TipoProveedor": {
+                    "tipo": "varchar",
+                    "length": 30
+                },
+                "NumeroProveedor": {
+                    "tipo": "varchar",
+                    "length": 50
+                },
+                "NombreProveedor": {
+                    "tipo": "varchar",
+                    "length": 30
+                },
+                "TipoParte": {
+                    "tipo": "varchar",
+                    "length": 30
+                },
+                "NumeroParte": {
+                    "tipo": "varchar",
+                    "length": 30
+                },
+                "Descripcion": {
+                    "tipo": "varchar",
+                    "length": 30
+                },
+                "Cantidad": {
+                    "tipo": "decimal",
+                    "length": "18, 2"
+                },
+                "CostoUnit$": {
+                    "tipo": "decimal",
+                    "length": "18, 2"
+                },
+                "Costo$": {
+                    "tipo": "decimal",
+                    "length": "18, 2"
+                },
+                "Delear": {
+                    "tipo": "varchar",
+                    "length": 30
+                },
+                "Sucursal": {
+                    "tipo": "varchar",
+                    "length": 2
+                },
+                "Date": {
+                    "tipo": "date",
+                    "length": null
+                }
+            }
+        }
+    }
+}

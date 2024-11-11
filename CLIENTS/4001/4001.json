@@ -1,0 +1,13 @@
+{
+    "registros": [
+        {
+            "sucursal": "DINIISSAN",
+            "branch": "01",
+            "dms": {
+                "4001": [
+                    "REFCOM01"
+                ]
+            }
+        }
+    ]
+}

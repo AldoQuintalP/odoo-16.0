@@ -266,6 +266,12 @@ class ClienteConfiguracion(models.Model):
         client_folder = os.path.join(clients_folder_path, str(cliente.num_cliente))
         if not os.path.exists(client_folder):
             os.makedirs(client_folder)
+            
+            # Crear subcarpetas Logs y Scripts dentro de la carpeta del cliente
+            logs_folder = os.path.join(client_folder, 'Logs')
+            scripts_folder = os.path.join(client_folder, 'Scripts')
+            os.makedirs(logs_folder)
+            os.makedirs(scripts_folder)
 
         # Guardar el JSON del cliente en la carpeta del cliente
         json_filename = os.path.join(client_folder, f"{cliente.num_cliente}.json")

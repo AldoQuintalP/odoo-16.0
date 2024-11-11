@@ -1,0 +1,11 @@
+.o_list_view.compact_tree .o_data_row {
+    padding: 4px 8px !important; /* Reduce el espaciado de las filas */
+}
+
+.o_list_view.compact_tree .o_data_cell {
+    padding: 4px 8px !important; /* Reduce el espaciado de las celdas */
+}
+
+.o_list_view.compact_tree th {
+    padding: 4px 8px !important; /* Reduce el espaciado de las celdas de encabezado */
+}
