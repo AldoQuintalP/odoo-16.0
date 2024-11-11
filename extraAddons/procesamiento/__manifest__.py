@@ -24,8 +24,11 @@
         
 
     ],
-    
-
+    'assets': {
+        'web.assets_backend': [
+            'procesamiento/static/src/css/custom_style.css',
+        ],
+    },
 
     'demo': [],
     'installable': True,

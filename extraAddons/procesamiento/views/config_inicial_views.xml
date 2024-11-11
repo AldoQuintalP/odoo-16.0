@@ -26,7 +26,7 @@
                     </group>
                     <group string="Reportes en ZIP" attrs="{'invisible': [('archivo_zip', '=', False)]}">
                         <field name="archivos_listados">
-                            <tree create="false" delete="false" editable="bottom">
+                            <tree create="false" delete="false" editable="bottom" limit="50" class="compact_tree">
                                 <field name="nombre_archivo"/>
                                 <field name="comentario"/>
                             </tree>
@@ -51,7 +51,7 @@
 
     <!-- Menú para Configuración Inicial bajo el menú principal -->
     <menuitem id="menu_config_inicial"
-              name="00-Despu"
+              name="00-Descom"
               parent="menu_mi_app_root"
               action="action_config_inicial"
               sequence="30"/>

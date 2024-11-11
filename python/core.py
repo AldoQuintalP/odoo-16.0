@@ -154,18 +154,31 @@ def inferir_tipo_dato(nombre_columna, dms_name, reporte_name, clients_path):
 
 
 # Extraer información del archivo ZIP
-def extraer_info_zip(nombre_zip):
+def extraer_info_zip(nombre_zip, sandbx):
     nombre_sin_ext = os.path.splitext(os.path.basename(nombre_zip))[0]
     cliente = nombre_sin_ext[:4]
     sucursal = nombre_sin_ext[4:6]
     fecha_zip = nombre_sin_ext[6:]
-    fecha_actual = datetime.now().strftime('%d/%m/%Y')
+    fecha_actual = datetime.now().strftime('%d%m%y')
+    
+    print(f'Fecha actual ... {fecha_actual}')
+
+    # Escribir el archivo Client.txt
     with open(os.path.join(sandbx, 'Client.txt'), 'w', encoding='utf-8') as f:
         f.write(cliente)
+    
+    # Escribir el archivo Branch.txt
     with open(os.path.join(sandbx, 'Branch.txt'), 'w', encoding='utf-8') as f:
         f.write(sucursal)
-    with open(os.path.join(sandbx, 'Fecha.txt'), 'w', encoding='utf-8') as f:
-        f.write(fecha_actual)
+    
+    # Escribir el archivo Fecha.txt solo si no existe
+    fecha_path = os.path.join(sandbx, 'Fecha.txt')
+    if not os.path.exists(fecha_path):
+        with open(fecha_path, 'w', encoding='utf-8') as f:
+            f.write(fecha_actual)
+    else:
+        logging.info("El archivo Fecha.txt ya existe, no se creará uno nuevo.")
+
     return cliente, sucursal, fecha_actual
 
 def procesar_archivo_zip():
@@ -198,7 +211,7 @@ def procesar_archivo_zip():
         logging.error("No se pudo obtener la configuración del JSON.")
 
 
-    limpiar_carpeta(sandbx)
+    limpiar_carpeta(sandbx) #Comentar para que no se vuele la bandera Fecha.txt 
     
     for file_name in os.listdir(workng_dir):
         if file_name.endswith('.zip'):
@@ -238,7 +251,7 @@ def procesar_archivo_zip():
     # Obtener la información
     try:
         workng = encontrar_zip(workng_dir)
-        cliente, sucursal, fecha_actual = extraer_info_zip(workng)
+        cliente, sucursal, fecha_actual = extraer_info_zip(workng, sandbx)
         cliente = cliente.lstrip('0')
     except FileNotFoundError as e:
         logging.error(e)

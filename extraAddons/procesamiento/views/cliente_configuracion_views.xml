@@ -19,31 +19,66 @@
         <field name="model">cliente.configuracion</field>
         <field name="arch" type="xml">
             <form string="Configuración del Cliente">
-                <header>
-                    <button name="action_generar_json" string="Generar JSON" type="object" class="btn-primary" />
-                    <!-- <button name="cargar_json_a_odoo" string="Leer JSON" type="object" class="btn-primary" />   Descomentar para leer json tarea programada con cron en construcción-->
-                </header>
                 <sheet>
                     <div class="o-form-buttonbox oe_button_box position-relative text-end o_full">
-                            <button name="action_open_config" type="object"
-                                string="Configuración"
-                                class="btn oe_stat_button btn-light flex-shrink-0 mb-0 py-0 border-0 border-start border-bottom rounded-0 text-start text-nowrap text-capitalize"
-                                icon="fa-gears"/>
-                            <!-- Añadir aquí otros botones si es necesario -->
+                        <!-- Botón "00-descom" que aparece cuando show_button_descom es True -->
+                        <button name="action_open_modal" string="00-descom" type="object"
+                        class="btn oe_stat_button btn-light flex-shrink-0 mb-0 py-0 border-0 border-start border-bottom rounded-0 text-start text-nowrap text-capitalize"
+                        attrs="{'invisible': [('show_button_descom', '=', False)]}" icon="fa-list"/>
+
+                        <button name="action_generar_json" string="Generar JSON" type="object" 
+                        class="btn oe_stat_button btn-light flex-shrink-0 mb-0 py-0 border-0 border-start border-bottom rounded-0 text-start text-nowrap text-capitalize"
+                        icon="fa-code" />
+
+                        <button name="action_open_config" type="object"
+                            string="Configuración"
+                            class="btn oe_stat_button btn-light flex-shrink-0 mb-0 py-0 border-0 border-start border-bottom rounded-0 text-start text-nowrap text-capitalize"
+                            icon="fa-gears"/>
+                        
                     </div>
+                    
                     <group>
                         <field name="nombre"/>
                         <field name="num_cliente"/>
                         <field name="branch"/>
+                        <field name="one_zip" widget="boolean_toggle"/>
                     </group>
                     <group string="Carga Cliente">
                         <field name="archivo_zip" filename="nombre_archivo"/>
+                        <field name="show_button_descom" invisible="1"/>
                     </group>
                 </sheet>
             </form>
         </field>
     </record>
+    
 
+
+    <record id="config_inicial_blank_modal_view" model="ir.ui.view">
+        <field name="name">config.inicial.blank.modal</field>
+        <field name="model">config.inicial</field>
+        <field name="arch" type="xml">
+            <form string="Configuración Inicial - Modal en Blanco" class="config_inicial_blank_modal_view">
+                <sheet>
+                    <group>
+                        <field name="num_cliente" invisible="1"/>
+                        <field name="branch" invisible="1"/>
+                        <field name="archivo_zip" filename="nombre_archivo" invisible="1"/>
+                        <field name="archivos_listados">
+                            <tree editable="bottom" limit="50">
+                                <field name="nombre_archivo" string="Nombre del Archivo" readonly="1"/>
+                                <field name="comentario" string="Comentario"/>
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    
+    
+    
+    
 
     
 
