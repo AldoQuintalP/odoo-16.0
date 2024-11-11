@@ -18,10 +18,49 @@ class ClienteConfiguracion(models.Model):
     branch = fields.Char(string='Branch')
     dms_id = fields.Many2one('modelo.dms', string="DMS", required=True)
     reportes_dms_ids = fields.Many2many('reporte.dms', string='Reportes del DMS')
+    one_zip = fields.Boolean(string='¿Un solo zip?', default= False)
 
     archivo_zip = fields.Binary(string="Archivo ZIP")
     nombre_archivo = fields.Char(string="Nombre del Archivo")
+
+    show_button_descom = fields.Boolean(string="Mostrar botón descom", compute='_compute_show_button_descom')
     
+
+    @api.depends('one_zip', 'archivo_zip')
+    def _compute_show_button_descom(self):
+        for record in self:
+            # Mostrar el botón solo si `one_zip` es True y `archivo_zip` tiene contenido
+            record.show_button_descom = bool(record.one_zip and record.archivo_zip)
+
+     # Método para abrir el modal en blanco de `config.inicial`
+    def action_open_modal(self):
+        # Buscar si ya existe una configuración en `config.inicial` para el cliente y sucursal actual
+        config_inicial = self.env['config.inicial'].search([
+            ('num_cliente', '=', self.num_cliente),
+            ('branch', '=', self.branch)
+        ], limit=1)
+
+        # Si no existe una configuración, crear una nueva
+        if not config_inicial:
+            # Crear el nuevo registro con los valores por defecto
+            config_inicial = self.env['config.inicial'].create({
+                'archivo_zip': self.archivo_zip,
+                'nombre_archivo': self.nombre_archivo,
+                'num_cliente': self.num_cliente,
+                'branch': self.branch,
+            })
+            # Procesar el archivo ZIP
+            config_inicial.procesar_zip_archivo()
+
+        # Abrir el registro existente o recién creado en el modal
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'Configuración Inicial',
+            'res_model': 'config.inicial',
+            'view_mode': 'form',
+            'target': 'new',
+            'res_id': config_inicial.id,
+        }
 
     @api.onchange('archivo_zip')
     def _onchange_archivo_zip(self):
@@ -199,7 +238,6 @@ class ClienteConfiguracion(models.Model):
         print(f"Archivo {dms_filename} generado con éxito")
 
 
-    # Método para generar y guardar JSON
     def generar_json(self):
         registros = []
 
@@ -241,10 +279,11 @@ class ClienteConfiguracion(models.Model):
                         dms_reportes[reporte.nombre_dms_origen] = []
                     dms_reportes[reporte.nombre_dms_origen].append(reporte.nombre)
 
-            # Crear el registro para el JSON del cliente
+            # Crear el registro para el JSON del cliente, incluyendo el campo "zip"
             registros.append({
                 'sucursal': cliente.nombre,
                 'branch': cliente.branch,
+                'zip': cliente.one_zip,  # Agrega el campo "zip" según el valor de `one_zip`
                 'dms': dms_reportes  # Agrega los reportes configurados
             })
 
@@ -259,6 +298,48 @@ class ClienteConfiguracion(models.Model):
             # Para cada DMS, generar y guardar su JSON correspondiente
             for dms_name, reportes in dms_reportes.items():
                 self.generar_json_dms(dms_name, reportes, clients_folder_path)
+
+            # Si el campo zip es True, generar el archivo DESCOM.json en la carpeta Scripts
+            if cliente.one_zip:
+                self.generar_descom_json(cliente.num_cliente, cliente.branch, clients_folder_path)
+
+    def generar_descom_json(self, num_cliente, branch, clients_folder_path):
+        # Buscar la configuración inicial (config.inicial) por num_cliente y branch
+        config_inicial = self.env['config.inicial'].search([
+            ('num_cliente', '=', num_cliente),
+            ('branch', '=', branch)
+        ], limit=1)
+
+        # Verificar si existe config_inicial
+        if not config_inicial:
+            raise UserError(f"No se encontró una configuración inicial para el cliente {num_cliente} y la sucursal {branch}.")
+
+        # Obtener los archivos relacionados en config.inicial.archivo
+        archivos = self.env['config.inicial.archivo'].search([('config_id', '=', config_inicial.id)])
+
+        # Estructura del JSON DESCOM
+        descom_data = {
+            'archivos': [
+                {
+                    'nombre_archivo': archivo.nombre_archivo,
+                    'comentario': archivo.comentario
+                } for archivo in archivos
+            ]
+        }
+
+        # Crear la ruta del archivo DESCOM.json en la carpeta CLIENTS > # Cliente > Scripts
+        client_folder_path = os.path.join(clients_folder_path, str(num_cliente), 'Scripts')
+        if not os.path.exists(client_folder_path):
+            os.makedirs(client_folder_path)
+
+        # Guardar el JSON en un archivo DESCOM.json dentro de la carpeta Scripts
+        descom_filename = os.path.join(client_folder_path, "DESCOM.json")
+        with open(descom_filename, 'w') as json_file:
+            json.dump(descom_data, json_file, indent=4)
+
+        print(f"Archivo {descom_filename} generado con éxito")
+
+
 
     # Método para guardar el JSON del cliente
     def guardar_json_cliente(self, json_cliente, cliente, clients_folder_path):

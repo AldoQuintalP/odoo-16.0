@@ -23,8 +23,6 @@
             ],
             "columnas_export": [
                 "Date (computed)",
-                "Cantidad",
-                "CostoUnit$",
                 "Factura",
                 "FechaFactura",
                 "TipoProveedor",
@@ -33,6 +31,8 @@
                 "TipoParte",
                 "NumeroParte",
                 "Descripcion",
+                "Cantidad",
+                "CostoUnit$",
                 "Costo$",
                 "Delear",
                 "Sucursal"
