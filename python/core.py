@@ -12,6 +12,7 @@ from funcionesExternas import *
 import mysql.connector
 from mysql.connector import Error
 import sys
+import glob
 
 # Variables globales
 workng_dir = None
@@ -229,10 +230,11 @@ def procesar_archivo_zip():
     logging.info("<--------------- Inicia el proceso --------------->")
     
     cargar_reportes(cliente_numero, clients_path)
-    
-    ruta_config = os.path.join(clients_path, cliente_numero,  cliente_numero + '.json')
+
+    ruta_config = os.path.join(clients_path, cliente_numero, cliente_numero + '.json')
     with open(ruta_config, 'r') as file:
         config_data = json.load(file)
+        print(f'Config_data- ---- {config_data}')
 
     for registro in config_data['registros']:
         dms_data = registro.get('dms', {})
@@ -241,18 +243,83 @@ def procesar_archivo_zip():
                 columnas = obtener_columnas_esperadas(dms_name, reporte_name, clients_path)
                 columnas_esperadas[reporte_name] = columnas
 
-
     reportes_selec = list(columnas_esperadas.keys())
-    
+
     if not workng_dir or not sandbx or not reportes or not db_config:
         logging.error("Configuración incompleta en 'config.json'.")
         exit()
 
+    # Validar la clave 'zip' en config_data
+    # Validar la clave 'zip' en config_data
+    zip_flag = config_data.get("registros", [{}])[0].get("zip", False)
+    print(f'ZIP FLAG: {zip_flag}')
+
     # Obtener la información
     try:
         workng = encontrar_zip(workng_dir)
-        cliente, sucursal, fecha_actual = extraer_info_zip(workng, sandbx)
-        cliente = cliente.lstrip('0')
+        
+        if zip_flag:
+            cliente, sucursal, fecha_actual = extraer_info_zip(workng, sandbx)
+            cliente = cliente.lstrip('0')
+            # Cargar el archivo DESCOM.json
+            descom_json_path = os.path.join(clients_path, cliente_numero, 'Scripts', 'DESCOM.json')
+            if os.path.exists(descom_json_path):
+                with open(descom_json_path, 'r') as descom_file:
+                    descom_data = json.load(descom_file)
+                    archivo_map = {item["nombre_archivo"]: item["comentario"] for item in descom_data["archivos"]}
+                    print("Archivo de mapeo cargado:", archivo_map)
+            else:
+                logging.error(f"No se encontró el archivo DESCOM.json en la ruta especificada: {descom_json_path}")
+                return
+
+            # Descomprimir y renombrar archivos basados en DESCOM.json
+            with zipfile.ZipFile(workng, 'r') as zip_ref:
+                for archivo in zip_ref.namelist():
+                    numero_archivo = ''.join(filter(str.isdigit, archivo))
+                    if numero_archivo in archivo_map:
+                        # Extrae las letras hasta la primera aparición del número para evitar "txt"
+                        nombre_base = re.split(r'\d+', archivo)[0]  
+                        nuevo_nombre = f"{nombre_base}{archivo_map[numero_archivo]}.txt"
+                        ruta_nueva = os.path.join(sandbx, nuevo_nombre)
+                        
+                        with zip_ref.open(archivo) as extracted_file:
+                            with open(ruta_nueva, 'wb') as out_file:
+                                out_file.write(extracted_file.read())
+                        
+                        logging.info(f"Archivo {archivo} renombrado y extraído como {nuevo_nombre}")
+                    else:
+                        logging.warning(f"No se encontró mapeo para el archivo {archivo} con número {numero_archivo}")
+
+
+
+        else:
+            # Si zip_flag es False, proceder con la extracción y renombrado habitual
+            cliente, sucursal, fecha_actual = extraer_info_zip(workng, sandbx)
+            cliente = cliente.lstrip('0')
+
+            # Intentar descomprimir el archivo ZIP
+            try:
+                with zipfile.ZipFile(workng, 'r') as zip_ref:
+                    zip_ref.extractall(sandbx)
+                    logging.info(f"Archivo descomprimido en {sandbx}")
+            except FileNotFoundError:
+                logging.error(f"El archivo ZIP no se encontró en la ruta especificada: {workng}")
+            except PermissionError:
+                logging.error(f"Permiso denegado para acceder al archivo ZIP o a la carpeta de destino.")
+            except Exception as e:
+                logging.error(f"Se produjo un error al descomprimir el archivo: {e}")
+
+            # Renombrar los archivos extraídos
+            for archivo in os.listdir(sandbx):
+                for reporte in reportes:
+                    if archivo.startswith(reporte):
+                        nuevo_nombre_base = filtrar_letras(archivo)
+                        nuevo_nombre = f"{reporte}{sucursal}.txt"
+                        ruta_antigua = os.path.join(sandbx, archivo)
+                        ruta_nueva = os.path.join(sandbx, nuevo_nombre)
+                        os.rename(ruta_antigua, ruta_nueva)
+                        logging.info(f"Archivo renombrado de {archivo} a {nuevo_nombre}")
+
     except FileNotFoundError as e:
         logging.error(e)
         exit()
@@ -277,30 +344,6 @@ def procesar_archivo_zip():
             logging.error(f"Se produjo un error al crear la carpeta: {e}")
             exit()
 
-    # Intentar descomprimir el archivo ZIP
-    try:
-        with zipfile.ZipFile(workng, 'r') as zip_ref:
-            zip_ref.extractall(sandbx)
-            logging.info(f"Archivo descomprimido en {sandbx}")
-    except FileNotFoundError:
-        logging.error(f"El archivo ZIP no se encontró en la ruta especificada: {workng}")
-    except PermissionError:
-        logging.error(f"Permiso denegado para acceder al archivo ZIP o a la carpeta de destino.")
-    except Exception as e:
-        logging.error(f"Se produjo un error al descomprimir el archivo: {e}")
-
-    
-    # Renombrar los archivos extraídos
-    for archivo in os.listdir(sandbx):
-        
-        for reporte in reportes:
-            if archivo.startswith(reporte):
-                nuevo_nombre_base = filtrar_letras(archivo)
-                nuevo_nombre = f"{reporte}{sucursal}.txt"
-                ruta_antigua = os.path.join(sandbx, archivo)
-                ruta_nueva = os.path.join(sandbx, nuevo_nombre)
-                os.rename(ruta_antigua, ruta_nueva)
-                logging.info(f"Archivo renombrado de {archivo} a {nuevo_nombre}")
 
     try:
         # Conectar a la base de datos
@@ -312,313 +355,325 @@ def procesar_archivo_zip():
         else:
             version_servidor = "Desconocida"
 
+            # Verifica si `zip_flag` es verdadero
+        if zip_flag:
+            # Cargar el archivo DESCOM.json
+            descom_json_path = os.path.join(clients_path, cliente_numero, 'Scripts', 'DESCOM.json')
+            if os.path.exists(descom_json_path):
+                with open(descom_json_path, 'r') as descom_file:
+                    descom_data = json.load(descom_file)
+                    archivo_map = {item["nombre_archivo"]: item["comentario"] for item in descom_data["archivos"]}
+                    print("Archivo de mapeo cargado:", archivo_map)
+
         # Iterar sobre cada reporte y realizar las operaciones de creación de tabla e inserción
         for reporte in reportes:
+            archivos_coincidentes = [archivo for archivo in os.listdir(sandbx) if archivo.startswith(filtrar_letras(reporte))]
 
             for item in reportes_selec:
                 if reporte in item and reporte == ''.join([i for i in item if not i.isdigit()]):
                     reporte = item
                     break
-            #Tomamos el nombre del dms
-            dms_name = obtener_dms_por_reporte(reporte, config_data)
 
-            nombre_tabla = f"{filtrar_letras(reporte)}{sucursal}"
-            ruta_archivo = os.path.join(sandbx, f'{filtrar_letras(reporte)}{sucursal}.txt')
-
-            # Verificar existencia del archivo TXT
-            if not os.path.isfile(ruta_archivo):
-                logging.warning(f"El archivo TXT no se encontró en la ruta especificada: {ruta_archivo}. Omitiendo este reporte.")
-                continue
-
-            # Intentar leer el archivo con diferentes codificaciones
-            codificaciones = ['utf-8', 'ISO-8859-1', 'latin1', 'Windows-1252']
-
-            raw_data = None
-            for codificacion in codificaciones:
-                try:
-                    with open(ruta_archivo, 'r', encoding=codificacion) as f:
-                        raw_data = f.read()
-                    break
-                except UnicodeDecodeError:
+            # Iterar sobre cada archivo que coincida con el reporte actual
+            for archivo in archivos_coincidentes:
+                
+                sucursal = ''.join(filter(str.isdigit, archivo))
+                print(F'número Archivo .................... {sucursal}')
+                # Determina el nombre completo de la tabla y la ruta del archivo para este reporte específico
+                nombre_tabla = f"{filtrar_letras(reporte)}{sucursal}"
+                ruta_archivo = os.path.join(sandbx, archivo)
+                # Determina el nombre del DMS asociado al reporte
+                dms_name = obtener_dms_por_reporte(reporte, config_data)
+        
+                # Verificar existencia del archivo TXT
+                if not os.path.isfile(ruta_archivo):
+                    logging.warning(f"El archivo TXT no se encontró en la ruta especificada: {ruta_archivo}. Omitiendo este reporte.")
                     continue
 
-            if raw_data is None:
-                logging.error(f"No se pudo leer el archivo TXT {ruta_archivo} con ninguna de las codificaciones probadas.")
-                continue
+                # Intentar leer el archivo con diferentes codificaciones
+                codificaciones = ['utf-8', 'ISO-8859-1', 'latin1', 'Windows-1252']
 
-            # Se limpia el reporte de la basura
-            raw_data_clean = limpiar_encabezado(raw_data)
-
-            # Procesar el contenido del archivo TXT
-            data = [row.split('|') for row in raw_data_clean.strip().split('\n')]
-
-            # Usar encabezados esperados del archivo de configuración
-            encabezados_esperados = columnas_esperadas.get(reporte, [])
-            headers = encabezados_esperados
-            rows = data
-            #print(f'rows : ......... {rows}')
-            
-            # Comparar las columnas actuales con las esperadas
-            columnas = [col.lower() for col in data[0]]  # Convertir todas las columnas actuales a minúsculas
-
-            #print(f'Columnas esperadas .... {columnas_esperadas}')
-            # Convertir columnas esperadas a minúsculas
-            # Acceder a la lista de columnas esperadas (primera parte de la tupla)
-            columnas_esperadas_reporte = set([col.lower() for col in columnas_esperadas.get(reporte, ([], []))[0]])
-            #print(f'Col reporte: {columnas_esperadas_reporte}')
-
-            # Verificar si al menos una columna coincide
-            if columnas_esperadas_reporte.intersection(columnas):
-                rows = data[1:] 
-                logging.info(f"Al menos una columna de {nombre_tabla} coincide con las columnas esperadas en la configuración.")
-            else:
-                logging.info(f"El documento {nombre_tabla} no trae columnas.")
-        
-            headers, columnas_export = columnas_esperadas[reporte]
-            print(f'Columnas: {columnas}')
-            print(f'Columnas export: {columnas_export}')
-
-            print(f'Headers: {headers}')
-            headers = renombrar_columnas(headers)
-
-            # Ajustar el número de columnas en las filas
-            max_columns = len(headers)
-            adjusted_rows = []
-            for row in rows:
-                if len(row) < max_columns:
-                    row.extend([''] * (max_columns - len(row)))
-                elif len(row) > max_columns:
-                    row = row[:max_columns] 
-                adjusted_rows.append(row)
-
-            # Paso 1: Filtrar los campos que contienen '(computed)'
-            campos_computed = [campo for campo in headers if '(computed)' in campo]
-            print(f'Campos Computed: {campos_computed}')
-            encabezados2 = [campo for campo in headers if '(computed)' not in campo]
-
-            # Paso 2: Verificar y ajustar el número de columnas en adjusted_rows
-            adjusted_rows = [row[:len(encabezados2)] for row in adjusted_rows]
-
-            # Paso 3: Crear el DataFrame sin los campos calculados
-            df = pd.DataFrame(adjusted_rows, columns=encabezados2)
-            
-            # Identificar y eliminar columnas marcadas con asteriscos
-            columns_to_hide = [col for col in df.columns if col.startswith('*') and col.endswith('*')]
-            df.drop(columns=columns_to_hide, inplace=True) 
-    
-            # Paso de la muerte : Infiere tipos de datos 
-            #df = asignar_tipos_de_datos(df, dms_name, reporte) #Si tenemos problemas futuros para formulas descomentar el paso de la muerte
-
-            # Paso 4: Aplicar las fórmulas para las columnas calculadas (computed)
-            for campo_calculado in campos_computed:
-                print(f'Campo_calculador: {campo_calculado}, dms_name: {dms_name}, Reporte: {reporte}, Clients_path: {clients_path}')
-                formula = obtener_formula(dms_name, reporte, campo_calculado, clients_path)
-                print(f'Formula: {formula}')
-                
-                filtro = obtener_filtro(dms_name,reporte,clients_path)
-                print(f'Filtriño en el reporte..... {filtro}')
-
-                if formula:
-                    # Reemplaza "branch" por "sucursal"
-                    if "branch" in formula:
-                        formula = formula.replace("branch", "sucursal")
-                        logging.info("Se reemplazó 'branch' por 'sucursal' en la fórmula.")
-
-                    # Reemplaza "return" por "result =" en la fórmula para que funcione con exec
-                    formula_ajustada = formula.replace("return", "result =")
-
+                raw_data = None
+                for codificacion in codificaciones:
                     try:
-                        # Crear una copia de los nombres de las columnas originales
-                        columnas_originales = df.columns.tolist()
-                        columnas_sin_simbolo = [col.replace('$', '') for col in columnas_originales]
+                        with open(ruta_archivo, 'r', encoding=codificacion) as f:
+                            raw_data = f.read()
+                        break
+                    except UnicodeDecodeError:
+                        continue
 
-                        # Reemplazar temporalmente las columnas con símbolo $ quitando el $
-                        formula_sin_simbolo = formula_ajustada.replace('$', '')
+                if raw_data is None:
+                    logging.error(f"No se pudo leer el archivo TXT {ruta_archivo} con ninguna de las codificaciones probadas.")
+                    continue
 
-                        # Ajustar la fórmula solo para columnas que coincidan exactamente con los nombres de las columnas sin símbolo $
-                        for col_original, col_sin_simbolo in zip(columnas_originales, columnas_sin_simbolo):
-                            formula_sin_simbolo = re.sub(rf'\b{col_sin_simbolo}\b', f"df['{col_original}']", formula_sin_simbolo)
+                # Se limpia el reporte de la basura
+                raw_data_clean = limpiar_encabezado(raw_data)
 
-                        # Si la fórmula contiene '(computed)', eliminarlo y ajustar la fórmula
-                        formula_final = formula_sin_simbolo.replace(' (computed)', '')
-                        nuevo_nombre = campo_calculado.replace(' (computed)', '')
-                        print(f'Formula Final ... {formula_final}')
-                        print(f'Campo calcula2: {nuevo_nombre}')
+                # Procesar el contenido del archivo TXT
+                data = [row.split('|') for row in raw_data_clean.strip().split('\n')]
 
-                        # Comprobamos si la fórmula es FormulaUtilidad y la aplicamos
-                        if 'FormulaUtilidad' in formula_final:
-                            if 'Venta$' in df.columns:
-                                df['Venta$'] = pd.to_numeric(df['Venta$'], errors='coerce').fillna(0)
-                            if 'Costo$' in df.columns:
-                                df['Costo$'] = pd.to_numeric(df['Costo$'], errors='coerce').fillna(0)
-                            
-                            # Aplicar la fórmula fila por fila usando FormulaUtilidad
-                            df[nuevo_nombre] = df.apply(lambda row: FormulaUtilidad(row['Venta$'], row['Costo$']), axis=1)
-                            logging.info(f"Fórmula FormulaUtilidad aplicada a la columna '{nuevo_nombre}'.")
+                # Usar encabezados esperados del archivo de configuración
+                encabezados_esperados = columnas_esperadas.get(reporte, [])
+                headers = encabezados_esperados
+                rows = data
+                #print(f'rows : ......... {rows}')
+                
+                # Comparar las columnas actuales con las esperadas
+                columnas = [col.lower() for col in data[0]]  # Convertir todas las columnas actuales a minúsculas
 
-                        # Comprobamos si la fórmula es FormulaMargen y la aplicamos
-                        elif 'FormulaMargen' in formula_final:
-                            if 'Venta$' in df.columns:
-                                df['Venta$'] = pd.to_numeric(df['Venta$'], errors='coerce').fillna(0)
-                            if 'Costo$' in df.columns:
-                                df['Costo$'] = pd.to_numeric(df['Costo$'], errors='coerce').fillna(0)
-                            
-                            # Aplicar la fórmula fila por fila usando FormulaMargen
-                            df[nuevo_nombre] = df.apply(lambda row: FormulaMargen(row['Venta$'], row['Costo$']), axis=1)
-                            logging.info(f"Fórmula FormulaMargen aplicada a la columna '{nuevo_nombre}'.")
+                #print(f'Columnas esperadas .... {columnas_esperadas}')
+                # Convertir columnas esperadas a minúsculas
+                # Acceder a la lista de columnas esperadas (primera parte de la tupla)
+                columnas_esperadas_reporte = set([col.lower() for col in columnas_esperadas.get(reporte, ([], []))[0]])
+                #print(f'Col reporte: {columnas_esperadas_reporte}')
 
-                        # Verificar si la fórmula es Ctod y aplicarla
-                        elif 'Ctod' in formula_final:
-                            match = re.search(r'Ctod\("([^"]+)"\)', formula_final)
-                            if match:
-                                orden = match.group(1).strip()
-                                fecha_actual = datetime.now().strftime('%d/%m/%Y')
-                                df[nuevo_nombre] = Ctod(fecha_actual, orden)
-                                logging.info(f"Fórmula Ctod aplicada en la columna '{nuevo_nombre}' con formato '{orden}' usando la fecha actual.")
-                                continue
-                            else:
-                                logging.warning(f"No se pudieron extraer los parámetros de la fórmula Ctod en la columna {nuevo_nombre}.")
-
-                        # Evaluar cualquier fórmula escrita en Python
-                        else:
-                            def evaluar_formula_python(row):
-                                local_vars = row.to_dict()  
-                                local_vars['result'] = None 
-
-                                # Añadir la variable `sucursal` directamente al contexto local
-                                local_vars['sucursal'] = sucursal
-
-                                try:
-                                    exec(formula_final, {}, local_vars)  
-                                    return local_vars['result'] 
-                                except Exception as e:
-                                    logging.error(f"Error al evaluar la fórmula Python para {campo_calculado}: {e}")
-                                    return None
-
-                            # Aplica la fórmula a cada fila del DataFrame
-                            df[nuevo_nombre] = df.apply(evaluar_formula_python, axis=1)
-                            logging.info(f"Fórmula Python aplicada a la columna '{nuevo_nombre}'.")
-
-                        # Renombrar la columna quitando '(computed)' si es necesario
-                        df.rename(columns={campo_calculado: nuevo_nombre}, inplace=True)
-                        logging.info(f"El encabezado de la columna '{campo_calculado}' fue cambiado a '{nuevo_nombre}'.")
-
-                    except Exception as e:
-                        logging.error(f"Error al aplicar la fórmula en la columna calculada '{campo_calculado}': {e}")
-
-            # Paso Mata viejitas: Aplica el filtro y elimina las filas que se encuntren en el JSON
-            df = aplica_filtros(df, dms_name, reporte_name, clients_path) # El Filtro solo tiene logica para eliminar registros con valores vacios de momento
-            
-            # Paso 5: Aplicar las fórmulas a todas las columnas que tengan fórmulas en encabezados2
-            aplicar_formulas(df, dms_name, reporte)
-
-            # Paso 6: Reordenar las columnas para respetar la posición original de las columnas exportadas        
-            if columnas_export:
-                nuevos_encabezados_export = [campo.replace('(computed)', '').strip() for campo in columnas_export]  # Tomar columnas_export
-            else:
-                nuevos_encabezados_export = [campo.replace('(computed)', '').strip() for campo in encabezados2]  # Fallback a encabezados2
-
-            columnas_actuales = list(df.columns)  # Columnas actuales después de eliminar o modificar
-            print(f'Columnas Actuales: {columnas_actuales}')
-            # Mapear el orden original al DataFrame actual, ajustando solo si las columnas están presentes
-            orden_final_export = [col for col in nuevos_encabezados_export if col in columnas_actuales]
-            print(f'Orden_final_export: {orden_final_export}')
-
-            try:
-                df = df[orden_final_export]
-            except KeyError as e:
-                logging.error(f"Una o más columnas especificadas en columnas_export no están presentes en el DataFrame: {e}")
-
-            # Obtener los nuevos encabezados después de aplicar las fórmulas y reordenar
-            nuevos_encabezados = df.columns.to_list()
-            print(f'Nuevos Encabezados : {nuevos_encabezados}')
-            
-            # Paso 7: Comprobamos si es un SERVTA
-            if re.sub(r'\d+', '', reporte) == 'SERVTA': 
-                # Generar el DataFrame SERVTC
-                generar_servtc(df, sucursal, nuevos_encabezados, sandbx)
-                        
-            # Añadir columnas Client, Branch, Date
-            df.insert(0, 'Client', cliente)
-            df.insert(1, 'Branch', sucursal)
-            #df.insert(2, 'Date', fecha_actual)
-
-            # Limpiar datos (si es necesario)
-            #df = df.replace({np.nan: ''})
-            # Rellenar valores nulos con cadenas vacías
-
-            # Crear la consulta SQL para crear la tabla
-            create_table_query = f"CREATE TABLE {nombre_tabla} (\n"
-            create_table_query += "    Client varchar(5) DEFAULT NULL,\n"
-            create_table_query += "    Branch varchar(5) DEFAULT NULL,\n"
-            #create_table_query += "    Date varchar(20),\n"
-            
-            for a in nuevos_encabezados:
-                tipo_dato = inferir_tipo_dato(a, dms_name, reporte, clients_path)
-                create_table_query += f"    {a} {tipo_dato} DEFAULT NULL,\n"
-            create_table_query = create_table_query.rstrip(',\n') + "\n)"
-
-            # Añadir ENGINE y CHARSET a la consulta SQL
-            create_table_query += "\nENGINE=InnoDB CHARSET=utf8mb4;\n"
-
-            # Crear la consulta SQL para eliminar la tabla si existe
-            drop_query = f"DROP TABLE IF EXISTS {nombre_tabla};"
-        
-            #####################################################
-            #               PEDAZO AJUSTAR                      #
-            #####################################################
-
-            # Obtener las columnas de tipo datetime
-            datetime_columns = df.select_dtypes(include=['datetime64']).columns
-
-            # Convertir los encabezados a una lista
-            encabezados_datetime = datetime_columns.tolist()
-
-            # Mostrar la lista de encabezados de las columnas datetime
-            query_alter = generar_query_alter_table(reporte, encabezados_datetime, sucursal)
-
-            # Convertir columnas de fecha a formato 'YYYY-MM-DD' antes de la inserción
-            for col in df.columns:
-                if pd.api.types.is_datetime64_any_dtype(df[col]):
-                    # Convertir a formato 'YYYY-MM-DD' y reemplazar NaT con None (que será convertido a NULL en SQL)
-                    df[col] = df[col].dt.strftime('%Y-%m-%d').replace({pd.NaT: None, 'None': None, None: None})
-                elif pd.api.types.is_numeric_dtype(df[col]):
-                    # Para las columnas numéricas, reemplazar NaN o None con 0
-                    df[col] = df[col].replace({np.nan: 0, None: 0, 'None': 0})
+                # Verificar si al menos una columna coincide
+                if columnas_esperadas_reporte.intersection(columnas):
+                    rows = data[1:] 
+                    logging.info(f"Al menos una columna de {nombre_tabla} coincide con las columnas esperadas en la configuración.")
                 else:
-                    # Para las demás columnas, reemplazar NaN y None con una cadena vacía
-                    df[col] = df[col].replace({np.nan: '', None: '', 'None': ''})
-
-            # Al generar la consulta SQL, asegurarse de que los valores None se sustituyan por NULL en la cadena SQL
-            insert_query = f"INSERT INTO {nombre_tabla} ({', '.join(df.columns)}) VALUES "
-            insert_query = insert_query.replace("None", "NULL")
-            values_list = df.apply(lambda x: tuple('NULL' if v is None else v for v in x), axis=1).tolist()
-            values_query = ', '.join([str(v).replace("'NULL'", "NULL") for v in values_list])  # Reemplazar 'NULL' con NULL sin comillas
-            insert_query += values_query + ";"
-
-            # Guardar las consultas SQL en un archivo .sql.dump
-            consultas = [
-                f"-- Table structure for table {nombre_tabla}",
-                drop_query,
-                create_table_query,
-                f"-- Dumping data for table {nombre_tabla}",
-                insert_query
-            ]
-            archivo_sql = os.path.join(sandbx, f"{nombre_tabla}.sql.dump")
-            guardar_sql_dump(archivo_sql, consultas, version_servidor)
+                    logging.info(f"El documento {nombre_tabla} no trae columnas.")
             
-            if conexion:
-                # Verificar si alguna columna excede la longitud permitida antes de insertar
-                longitudes_maximas = obtener_column_lengths(archivo_sql)
-                print(F'Ejecuta drop Query')
-                ejecutar_consulta(conexion, drop_query)
-                print("Ejecuta Create Query")
-                ejecutar_consulta(conexion, create_table_query)
-                # Ejecutamos la consulta una vez la tabla ya creada 
-                # if encabezados_datetime:
-                #     ejecutar_query_alter_table(db_config, query_alter)
-                print("Ejecuta Insert Query")
-                ejecutar_consulta_insert(conexion, insert_query, df=df, max_lengths=longitudes_maximas, nombre_tabla=nombre_tabla, version_servidor=version_servidor, archivo_sql=archivo_sql, drop_query=drop_query,create_table_query=create_table_query)
+                headers, columnas_export = columnas_esperadas[reporte]
+                print(f'Columnas: {columnas}')
+                print(f'Columnas export: {columnas_export}')
+
+                print(f'Headers: {headers}')
+                headers = renombrar_columnas(headers)
+
+                # Ajustar el número de columnas en las filas
+                max_columns = len(headers)
+                adjusted_rows = []
+                for row in rows:
+                    if len(row) < max_columns:
+                        row.extend([''] * (max_columns - len(row)))
+                    elif len(row) > max_columns:
+                        row = row[:max_columns] 
+                    adjusted_rows.append(row)
+
+                # Paso 1: Filtrar los campos que contienen '(computed)'
+                campos_computed = [campo for campo in headers if '(computed)' in campo]
+                print(f'Campos Computed: {campos_computed}')
+                encabezados2 = [campo for campo in headers if '(computed)' not in campo]
+
+                # Paso 2: Verificar y ajustar el número de columnas en adjusted_rows
+                adjusted_rows = [row[:len(encabezados2)] for row in adjusted_rows]
+
+                # Paso 3: Crear el DataFrame sin los campos calculados
+                df = pd.DataFrame(adjusted_rows, columns=encabezados2)
+                
+                # Identificar y eliminar columnas marcadas con asteriscos
+                columns_to_hide = [col for col in df.columns if col.startswith('*') and col.endswith('*')]
+                df.drop(columns=columns_to_hide, inplace=True) 
+        
+                # Paso de la muerte : Infiere tipos de datos 
+                df = asignar_tipos_de_datos(df, dms_name, reporte) #Si tenemos problemas futuros para formulas descomentar el paso de la muerte
+
+                # Paso 4: Aplicar las fórmulas para las columnas calculadas (computed)
+                for campo_calculado in campos_computed:
+                    print(f'Campo_calculador: {campo_calculado}, dms_name: {dms_name}, Reporte: {reporte}, Clients_path: {clients_path}')
+                    formula = obtener_formula(dms_name, reporte, campo_calculado, clients_path)
+                    print(f'Formula: {formula}')
+                    
+                    filtro = obtener_filtro(dms_name, reporte, clients_path)
+                    print(f'Filtriño en el reporte..... {filtro}')
+
+                    if formula:
+                        # Reemplaza "branch" por "sucursal"
+                        if "branch" in formula:
+                            formula = formula.replace("branch", "sucursal")
+                            logging.info("Se reemplazó 'branch' por 'sucursal' en la fórmula.")
+
+                        # Reemplaza "return" por "result =" en la fórmula para que funcione con exec
+                        formula_ajustada = formula.replace("return", "result =")
+
+                        try:
+                            # Crear una copia de los nombres de las columnas originales
+                            columnas_originales = df.columns.tolist()
+                            columnas_sin_simbolo = [col.replace('$', '') for col in columnas_originales]
+
+                            # Reemplazar temporalmente las columnas con símbolo $ quitando el $
+                            formula_sin_simbolo = formula_ajustada.replace('$', '')
+
+                            # Ajustar la fórmula solo para columnas que coincidan exactamente con los nombres de las columnas sin símbolo $
+                            for col_original, col_sin_simbolo in zip(columnas_originales, columnas_sin_simbolo):
+                                formula_sin_simbolo = re.sub(rf'\b{col_sin_simbolo}\b', f"row['{col_original}']", formula_sin_simbolo)
+
+                            # Si la fórmula contiene '(computed)', eliminarlo y ajustar la fórmula
+                            formula_final = formula_sin_simbolo.replace(' (computed)', '')
+                            nuevo_nombre = campo_calculado.replace(' (computed)', '')
+                            print(f'Formula Final ... {formula_final}')
+                            print(f'Campo calcula2: {nuevo_nombre}')
+
+                            # Comprobamos si la fórmula es FormulaUtilidad y la aplicamos
+                            if 'FormulaUtilidad' in formula_final:
+                                if 'Venta$' in df.columns:
+                                    df['Venta$'] = pd.to_numeric(df['Venta$'], errors='coerce').fillna(0)
+                                if 'Costo$' in df.columns:
+                                    df['Costo$'] = pd.to_numeric(df['Costo$'], errors='coerce').fillna(0)
+                                
+                                # Aplicar la fórmula fila por fila usando FormulaUtilidad
+                                df[nuevo_nombre] = df.apply(lambda row: FormulaUtilidad(row['Venta$'], row['Costo$']), axis=1)
+                                logging.info(f"Fórmula FormulaUtilidad aplicada a la columna '{nuevo_nombre}'.")
+
+                            # Comprobamos si la fórmula es FormulaMargen y la aplicamos
+                            elif 'FormulaMargen' in formula_final:
+                                if 'Venta$' in df.columns:
+                                    df['Venta$'] = pd.to_numeric(df['Venta$'], errors='coerce').fillna(0)
+                                if 'Costo$' in df.columns:
+                                    df['Costo$'] = pd.to_numeric(df['Costo$'], errors='coerce').fillna(0)
+                                
+                                # Aplicar la fórmula fila por fila usando FormulaMargen
+                                df[nuevo_nombre] = df.apply(lambda row: FormulaMargen(row['Venta$'], row['Costo$']), axis=1)
+                                logging.info(f"Fórmula FormulaMargen aplicada a la columna '{nuevo_nombre}'.")
+
+                            # Verificar si la fórmula es Ctod y aplicarla
+                            elif 'Ctod' in formula_final:
+                                match = re.search(r'Ctod\("([^"]+)"\)', formula_final)
+                                if match:
+                                    orden = match.group(1).strip()
+                                    fecha_actual = datetime.now().strftime('%d/%m/%Y')
+                                    df[nuevo_nombre] = Ctod(fecha_actual, orden)
+                                    logging.info(f"Fórmula Ctod aplicada en la columna '{nuevo_nombre}' con formato '{orden}' usando la fecha actual.")
+                                    continue
+                                else:
+                                    logging.warning(f"No se pudieron extraer los parámetros de la fórmula Ctod en la columna {nuevo_nombre}.")
+
+                            # Evaluar cualquier fórmula escrita en Python
+                            else:
+                                # Aplica la fórmula a cada fila del DataFrame
+                                df[nuevo_nombre] = df.apply(
+                                    lambda row: eval(formula_final, {"row": row.to_dict(), "sucursal": sucursal}),
+                                    axis=1
+                                )
+                                logging.info(f"Fórmula Python aplicada a la columna '{nuevo_nombre}'.")
+
+                                # Renombrar la columna quitando '(computed)' si es necesario
+                                df.rename(columns={campo_calculado: nuevo_nombre}, inplace=True)
+                                logging.info(f"El encabezado de la columna '{campo_calculado}' fue cambiado a '{nuevo_nombre}'.")
+
+                        except Exception as e:
+                            logging.error(f"Error al aplicar la fórmula en la columna calculada '{campo_calculado}': {e}")
+
+
+
+                # Paso Mata viejitas: Aplica el filtro y elimina las filas que se encuntren en el JSON
+                df = aplica_filtros(df, dms_name, reporte_name, clients_path) # El Filtro solo tiene logica para eliminar registros con valores vacios de momento
+                
+                # Paso 5: Aplicar las fórmulas a todas las columnas que tengan fórmulas en encabezados2
+                aplicar_formulas(df, dms_name, reporte)
+
+                # Paso 6: Reordenar las columnas para respetar la posición original de las columnas exportadas        
+                if columnas_export:
+                    nuevos_encabezados_export = [campo.replace('(computed)', '').strip() for campo in columnas_export]  # Tomar columnas_export
+                else:
+                    nuevos_encabezados_export = [campo.replace('(computed)', '').strip() for campo in encabezados2]  # Fallback a encabezados2
+
+                columnas_actuales = list(df.columns)  # Columnas actuales después de eliminar o modificar
+                print(f'Columnas Actuales: {columnas_actuales}')
+                # Mapear el orden original al DataFrame actual, ajustando solo si las columnas están presentes
+                orden_final_export = [col for col in nuevos_encabezados_export if col in columnas_actuales]
+                print(f'Orden_final_export: {orden_final_export}')
+
+                try:
+                    df = df[orden_final_export]
+                except KeyError as e:
+                    logging.error(f"Una o más columnas especificadas en columnas_export no están presentes en el DataFrame: {e}")
+
+                # Obtener los nuevos encabezados después de aplicar las fórmulas y reordenar
+                nuevos_encabezados = df.columns.to_list()
+                print(f'Nuevos Encabezados : {nuevos_encabezados}')
+                
+                # Paso 7: Comprobamos si es un SERVTA
+                if re.sub(r'\d+', '', reporte) == 'SERVTA': 
+                    # Generar el DataFrame SERVTC
+                    generar_servtc(df, sucursal, nuevos_encabezados, sandbx)
+                            
+                # Añadir columnas Client, Branch, Date
+                df.insert(0, 'Client', cliente)
+                df.insert(1, 'Branch', sucursal)
+                #df.insert(2, 'Date', fecha_actual)
+
+                # Limpiar datos (si es necesario)
+                #df = df.replace({np.nan: ''})
+                # Rellenar valores nulos con cadenas vacías
+
+                # Crear la consulta SQL para crear la tabla
+                create_table_query = f"CREATE TABLE {nombre_tabla} (\n"
+                create_table_query += "    Client varchar(5) DEFAULT NULL,\n"
+                create_table_query += "    Branch varchar(5) DEFAULT NULL,\n"
+                #create_table_query += "    Date varchar(20),\n"
+                
+                for a in nuevos_encabezados:
+                    tipo_dato = inferir_tipo_dato(a, dms_name, reporte, clients_path)
+                    create_table_query += f"    {a} {tipo_dato} DEFAULT NULL,\n"
+                create_table_query = create_table_query.rstrip(',\n') + "\n)"
+
+                # Añadir ENGINE y CHARSET a la consulta SQL
+                create_table_query += "\nENGINE=InnoDB CHARSET=utf8mb4;\n"
+
+                # Crear la consulta SQL para eliminar la tabla si existe
+                drop_query = f"DROP TABLE IF EXISTS {nombre_tabla};"
+            
+                #####################################################
+                #               PEDAZO AJUSTAR                      #
+                #####################################################
+
+                # Obtener las columnas de tipo datetime
+                datetime_columns = df.select_dtypes(include=['datetime64']).columns
+
+                # Convertir los encabezados a una lista
+                encabezados_datetime = datetime_columns.tolist()
+
+                # Mostrar la lista de encabezados de las columnas datetime
+                query_alter = generar_query_alter_table(reporte, encabezados_datetime, sucursal)
+
+                # Convertir columnas de fecha a formato 'YYYY-MM-DD' antes de la inserción
+                for col in df.columns:
+                    if pd.api.types.is_datetime64_any_dtype(df[col]):
+                        # Convertir a formato 'YYYY-MM-DD' y reemplazar NaT con None (que será convertido a NULL en SQL)
+                        df[col] = df[col].dt.strftime('%Y-%m-%d').replace({pd.NaT: None, 'None': None, None: None})
+                    elif pd.api.types.is_numeric_dtype(df[col]):
+                        # Para las columnas numéricas, reemplazar NaN o None con 0
+                        df[col] = df[col].replace({np.nan: 0, None: 0, 'None': 0})
+                    else:
+                        # Para las demás columnas, reemplazar NaN y None con una cadena vacía
+                        df[col] = df[col].replace({np.nan: '', None: '', 'None': ''})
+
+                # Al generar la consulta SQL, asegurarse de que los valores None se sustituyan por NULL en la cadena SQL
+                insert_query = f"INSERT INTO {nombre_tabla} ({', '.join(df.columns)}) VALUES "
+                insert_query = insert_query.replace("None", "NULL")
+                values_list = df.apply(lambda x: tuple('NULL' if v is None else v for v in x), axis=1).tolist()
+                values_query = ', '.join([str(v).replace("'NULL'", "NULL") for v in values_list])  # Reemplazar 'NULL' con NULL sin comillas
+                insert_query += values_query + ";"
+
+                # Guardar las consultas SQL en un archivo .sql.dump
+                consultas = [
+                    f"-- Table structure for table {nombre_tabla}",
+                    drop_query,
+                    create_table_query,
+                    f"-- Dumping data for table {nombre_tabla}",
+                    insert_query
+                ]
+                archivo_sql = os.path.join(sandbx, f"{nombre_tabla}.sql.dump")
+                guardar_sql_dump(archivo_sql, consultas, version_servidor)
+                
+                if conexion:
+                    # Verificar si alguna columna excede la longitud permitida antes de insertar
+                    longitudes_maximas = obtener_column_lengths(archivo_sql)
+                    print(F'Ejecuta drop Query')
+                    ejecutar_consulta(conexion, drop_query)
+                    print("Ejecuta Create Query")
+                    ejecutar_consulta(conexion, create_table_query)
+                    # Ejecutamos la consulta una vez la tabla ya creada 
+                    # if encabezados_datetime:
+                    #     ejecutar_query_alter_table(db_config, query_alter)
+                    print("Ejecuta Insert Query")
+                    ejecutar_consulta_insert(conexion, insert_query, df=df, max_lengths=longitudes_maximas, nombre_tabla=nombre_tabla, version_servidor=version_servidor, archivo_sql=archivo_sql, drop_query=drop_query,create_table_query=create_table_query)
+        
+            
+        for reporte in reportes:
+            combinar_archivos_sql_con_valores(reporte, sandbx, sucursal) # Comentar si se desea 
 
     finally:
         if conexion:
@@ -1076,26 +1131,28 @@ def asignar_tipos_de_datos(df, dms_name, reporte_name):
         # Asignar el tipo de dato correcto según la inferencia
         try:
             if 'VARCHAR' in tipo_dato.upper() or 'varchar' in tipo_dato:
-                df[col] = df[col].astype(str)  # Convertir a string
+                df[col] = df[col].astype(str).replace({'nan': None, '': None})  # Convertir a string, reemplazando NaN y vacío con None
                 logging.info(f"Columna '{col}' convertida a string")
                 
             elif 'DATE' in tipo_dato.upper() or 'datetime' in tipo_dato.lower():
-                # Verificar si es el reporte SERVTC para usar formato YYYY-MM-DD
+                # Convertir al formato datetime con manejo de errores
                 if reporte_name == "SERVTC":
-                    # Convertir la columna a formato datetime con formato YYYY-MM-DD
-                    df[col] = pd.to_datetime(df[col], format='%Y-%m-%d', errors='coerce')
-                    logging.info(f"Columna '{col}' convertida a formato datetime con formato '%Y-%m-%d' para SERVTC")
+                    # Convertir a formato YYYY-MM-DD para SERVTC
+                    df[col] = pd.to_datetime(df[col], errors='coerce', format='%Y-%m-%d')
                 else:
-                    # Convertir la columna a formato datetime con formato dd/mm/yyyy para otros reportes
-                    df[col] = pd.to_datetime(df[col], format='%d-%m-%Y', errors='coerce')
-                    logging.info(f"Columna '{col}' convertida a formato datetime con formato '%d/%m/%Y'")
+                    # Convertir a formato dd/mm/yyyy para otros reportes
+                    df[col] = pd.to_datetime(df[col], errors='coerce', dayfirst=True, format='%d/%m/%Y')
+
+                # Asegurarse de que valores `NaT` se conviertan a `None`
+                df[col] = df[col].where(df[col].notna(), None)
+                logging.info(f"Columna '{col}' convertida a formato 'YYYY-MM-DD' o NULL para valores inválidos o vacíos")
 
             elif 'decimal' in tipo_dato.lower():  # Manejo para decimal
-                df[col] = pd.to_numeric(df[col], errors='coerce')  # Convertir a numérico de doble precisión
+                df[col] = pd.to_numeric(df[col], errors='coerce').fillna(0)  # Convertir a numérico y llenar NaN con 0
                 logging.info(f"Columna '{col}' convertida a decimal")
                 
             elif 'int' in tipo_dato.lower() or 'integer' in tipo_dato.lower():
-                df[col] = pd.to_numeric(df[col], errors='coerce', downcast='integer')  # Convertir a entero
+                df[col] = pd.to_numeric(df[col], errors='coerce', downcast='integer').fillna(0).astype(int)  # Convertir a entero y llenar NaN con 0
                 logging.info(f"Columna '{col}' convertida a integer")
 
             elif isinstance(df[col].iloc[0], pd.Timedelta):
@@ -1234,6 +1291,74 @@ def aplica_filtros(df, dms_name, reporte_name, clients_path):
             logging.warning(f"La columna '{columna}' no existe en el DataFrame. Saltando este filtro.")
     
     return df
+
+def combinar_archivos_sql_con_valores(reporte, sandbx, sucursal):
+    """
+    Combina todos los archivos .sql.dump de un mismo reporte en un archivo único,
+    manteniendo la estructura de `CREATE TABLE` y concatenando todos los `VALUES` de `INSERT INTO`.
+
+    :param reporte: El nombre base del reporte.
+    :param sandbx: Ruta al directorio donde se almacenan los archivos `.sql.dump`.
+    :param sucursal: El sufijo o número que representa la sucursal, usado en el nombre final del archivo combinado.
+    """
+    # Buscar todos los archivos .sql.dump del reporte en el directorio de sandbox
+    archivos_sql = glob.glob(os.path.join(sandbx, f"{reporte}*.sql.dump"))
+    archivo_combinado = os.path.join(sandbx, f"{reporte}{sucursal}.sql.dump")
+
+    # Inicializar variables para almacenar las partes necesarias
+    create_table_structure = ""
+    insert_into_header = f"INSERT INTO {reporte}{sucursal}"  # Usar consistentemente el nombre de la tabla
+    all_values = []
+
+    # Procesar cada archivo .sql.dump del reporte
+    for archivo in archivos_sql:
+        with open(archivo, 'r', encoding='utf-8') as file:
+            contenido = file.read()
+
+            # Extraer el `CREATE TABLE` (solo del primer archivo)
+            if not create_table_structure:
+                create_match = re.search(r"(CREATE TABLE\s+\w+\s*\(.*?;\n)", contenido, re.DOTALL)
+                if create_match:
+                    # Reemplaza el nombre de la tabla con el formato correcto
+                    create_table_structure = create_match.group(1).replace(create_match.group(1).split()[2], f"{reporte}{sucursal}")
+
+            # Extraer el encabezado `INSERT INTO` y los valores de cada archivo
+            values_match = re.search(r"INSERT INTO.*?VALUES\s*(\(.*\));", contenido, re.DOTALL)
+            if values_match:
+                # Agregar los valores al listado total de valores
+                values_part = values_match.group(1)
+                all_values.append(values_part)
+
+    # Combinar todas las partes en un solo archivo
+    with open(archivo_combinado, 'w', encoding='utf-8') as output_file:
+        # Escribir el encabezado general
+        output_file.write("-- PostgreSQL dump\n")
+        output_file.write("--\n")
+        output_file.write("-- Host: localhost    Database: simdata\n")
+        output_file.write("-- ------------------------------------------------------\n")
+        output_file.write("-- Server version 9.0.1\n\n")
+        
+        # Escribir la estructura de `CREATE TABLE` y el DROP TABLE
+        output_file.write(f"-- Table structure for table {reporte}{sucursal}\n")
+        output_file.write(f"DROP TABLE IF EXISTS {reporte}{sucursal};\n")
+        output_file.write(create_table_structure)
+        output_file.write("\n")
+
+        # Escribir el encabezado `INSERT INTO` y los valores combinados
+        output_file.write(f"{insert_into_header} VALUES ")
+        output_file.write(",\n".join(all_values))
+        output_file.write(";\n")
+
+    # Log
+    print(f"Archivos combinados en: {archivo_combinado}")
+
+    for archivo in archivos_sql:
+        # Si el archivo no es el archivo combinado, entonces elimínalo
+        if archivo != archivo_combinado:
+            os.remove(archivo)
+            #print(f"Archivo eliminado: {archivo}")
+
+
 
     
 procesar_archivo_zip()

@@ -1,120 +1,685 @@
 {
     "name": "4001",
     "reportes": [
-        "REFCOM01"
+        "SERVTA01",
+        "Servtc"
     ],
     "columnas_esperadas": {
-        "REFCOM01": {
+        "SERVTA01": {
             "columnas": [
-                "Factura",
                 "FechaFactura",
-                "TipoProveedor",
-                "NumeroProveedor",
-                "NombreProveedor",
-                "TipoParte",
-                "NumeroParte",
+                "FechaApertura",
+                "FechaEntrega",
+                "FechaCierre",
+                "Factura",
+                "Taller",
+                "TipoOrden",
+                "TipoPago",
+                "NumeroOt",
+                "CodigoOperacion",
                 "Descripcion",
-                "Cantidad",
-                "CostoUnit$",
-                "Costo$",
-                "Delear",
+                "VentaMo$",
+                "Descuentomo$",
+                "CostoMo$",
+                "VentaMateriales$",
+                "DescuentoMateriales$",
+                "CostoMateriales$",
+                "VentaTOT$",
+                "DescuentoTOT$",
+                "CostoTOT$",
+                "VentaPartes$",
+                "DescuentoPartes$",
+                "CostoPartes$",
+                "VentaTotal$",
+                "CostoTotal$",
+                "NumeroAsesor",
+                "NombreAsesor",
+                "NumeroCliente",
+                "NombreCliente",
+                "Direccion",
+                "Telefono",
+                "CP",
+                "Email",
+                "Odometro",
+                "Vin",
+                "Ano",
+                "Marca",
+                "Modelo",
+                "Color",
+                "Interior",
+                "Date (computed)",
+                "Servicio",
                 "Sucursal",
-                "Date (computed)"
+                "Dealer",
+                "Margen (computed)",
+                "Utilidad$ (computed)",
+                "Venta$ (computed)",
+                "VentasNetas (computed)",
+                "Costo$ (computed)"
             ],
             "columnas_export": [
-                "Date (computed)",
-                "Factura",
                 "FechaFactura",
-                "TipoProveedor",
-                "NumeroProveedor",
-                "NombreProveedor",
-                "TipoParte",
-                "NumeroParte",
+                "FechaApertura",
+                "FechaEntrega",
+                "FechaCierre",
+                "Factura",
+                "Taller",
+                "TipoOrden",
+                "TipoPago",
+                "NumeroOt",
+                "CodigoOperacion",
+                "VentaMo$",
+                "Descuentomo$",
+                "VentaMateriales$",
+                "DescuentoMateriales$",
+                "CostoMateriales$",
+                "VentaTOT$",
+                "CP",
                 "Descripcion",
-                "Cantidad",
-                "CostoUnit$",
-                "Costo$",
-                "Delear",
+                "CostoMo$",
+                "DescuentoTOT$",
+                "CostoTOT$",
+                "VentaPartes$",
+                "DescuentoPartes$",
+                "CostoPartes$",
+                "VentaTotal$",
+                "CostoTotal$",
+                "NumeroAsesor",
+                "NumeroCliente",
+                "Telefono",
+                "Email",
+                "Odometro",
+                "Vin",
+                "Ano",
+                "Marca",
+                "Modelo",
+                "Color",
+                "Interior",
+                "Date (computed)",
+                "Servicio",
+                "Dealer",
+                "Margen (computed)",
+                "VentasNetas (computed)",
+                "Costo$ (computed)",
+                "Utilidad$ (computed)",
+                "Venta$ (computed)",
+                "NombreAsesor",
+                "NombreCliente",
+                "Direccion",
                 "Sucursal"
             ],
             "formulas": {
                 "F1": "LimpiaTexto(F1)",
                 "Factura": "LimpiaTexto(Factura)",
                 "FechaFactura": false,
-                "NumeroParte": "LimpiaTexto(NumeroParte)",
+                "NumeroOT": "LimpiaTexto(NumeroOT)",
+                "FechaApertura": false,
+                "FechaEntrega": false,
+                "CodigoOperacion": "LimpiaTexto(CodigoOperacion)",
                 "Descripcion": "LimpiaTexto(Descripcion)",
-                "Cantidad": "LimpiaCodigos(Cantidad)",
-                "CostoUnit$": "LimpiaCodigos(CostoUnit$)",
-                "Costo$": "LimpiaCodigos(Costo$)",
-                "TipoProveedor": "LimpiaTexto(TipoProveedor)",
-                "TipoCompra": "LimpiaTexto(TipoCompra)",
-                "NumeroProveedor": "LimpiaTexto(NumeroProveedor)",
-                "NombreProveedor": "LimpiaTexto(NombreProveedor)",
+                "TipoOperacion": "LimpiaTexto(TipoOperacion)",
+                "CostoMO$": "LimpiaCodigos(CostoMO$)",
+                "CostoMateriales$": "LimpiaCodigos(CostoMateriales$)",
+                "CostoTOT$": "LimpiaCodigos(CostoTOT$)",
+                "CostoPartes$": "LimpiaCodigos(CostoPartes$)",
+                "VentaMO$": "LimpiaCodigos(VentaMO$)",
+                "VentaMateriales$": "LimpiaCodigos(VentaMateriales$)",
+                "VentaTOT$": "LimpiaCodigos(VentaTOT$)",
+                "VentaPartes$": "LimpiaCodigos(VentaPartes$)",
+                "DescuentoMO$": "LimpiaCodigos(DescuentoMO$)",
+                "DescuentoMateriales$": "LimpiaCodigos(DescuentoMateriales$)",
+                "DescuentoTOT$": "LimpiaCodigos(DescuentoTOT$)",
+                "DescuentoPartes$": "LimpiaCodigos(DescuentoPartes$)",
+                "CostoTotal$": "LimpiaCodigos(CostoTotal$)",
+                "VentaTotal$": "LimpiaCodigos(VentaTotal$)",
+                "Utilidad$": "FormulaUtilidad(Utilidad$)",
+                "Margen": "FormulaMargen(Margen)",
+                "Taller": "LimpiaTexto(Taller)",
+                "NumeroAsesor": "LimpiaTexto(NumeroAsesor)",
+                "NombreAsesor": "LimpiaTexto(NombreAsesor)",
+                "NombreCliente": "LimpiaTexto(NombreCliente)",
+                "RFC": "LimpiaTexto(RFC)",
+                "Direccion": "LimpiaTexto(Direccion)",
+                "Telefono": "LimpiaTexto(Telefono)",
+                "CP": "LimpiaTexto(CP)",
+                "Email": "LimpiaEmail(Email)",
+                "Odometro": "LimpiaTexto(Odometro)",
+                "Vin": "LimpiaTexto(Vin)",
+                "Ano": "LimpiaTexto(Ano)",
+                "Marca": "LimpiaTexto(Marca)",
+                "Modelo": "LimpiaTexto(Modelo)",
+                "Color": "LimpiaTexto(Color)",
+                "Interior": "LimpiaTexto(Interior)",
+                "TipoOrden": "LimpiaTexto(TipoOrden)",
+                "TipoPago": "LimpiaTexto(TipoPago)",
                 "Date (computed)": "Ctod(\"d/m/y\")",
-                "Sucursal (computed)": "if sucursal == \"01\":\r\n  return \"TULANSINGO\"\r\nelif sucursal == \"02\":\r\n  return \"DEPORTIVA\"\r\nelse:\r\n  return \"\"",
-                "TipoParte": "LimpiaTexto(TipoParte)",
-                "Delear": "LimpiaTexto(Delear)",
-                "Sucursal": "LimpiaTexto(Sucursal)"
+                "Dias (computed)": "FechaFactura - FechaApertura",
+                "FechaCierre": false,
+                "NumeroOt": "LimpiaTexto(NumeroOt)",
+                "VentaMo$": "LimpiaCodigos(VentaMo$)",
+                "Descuentomo$": "LimpiaCodigos(Descuentomo$)",
+                "CostoMo$": "LimpiaCodigos(CostoMo$)",
+                "NumeroCliente": "LimpiaTexto(NumeroCliente)",
+                "Servicio": "LimpiaTexto(Servicio)",
+                "Sucursal": "LimpiaTexto(Sucursal)",
+                "Dealer": "LimpiaTexto(Dealer)",
+                "Margen (computed)": "FormulaMargen(Margen)",
+                "Utilidad$ (computed)": "FormulaUtilidad$(Utilidad)",
+                "Venta$ (computed)": "VentaMateriales$+VentaMO$+VentaToT$-DescuentoMateriales$-DescuentoMO$-DescuentoTOT$",
+                "VentasNetas (computed)": "VentasNetas(VentasNetas)",
+                "Costo$ (computed)": "CostoMateriales$+CostoMO$+CostoTOT$"
             },
             "filtros": [
-                "Factura == '' or Factura == None"
+                "Factura<>''.and.factura<>'FACTURA'"
             ],
             "data_types": {
-                "Factura": {
-                    "tipo": "varchar",
-                    "length": 15
-                },
                 "FechaFactura": {
                     "tipo": "date",
                     "length": null
                 },
-                "TipoProveedor": {
+                "FechaApertura": {
+                    "tipo": "date",
+                    "length": null
+                },
+                "FechaEntrega": {
+                    "tipo": "date",
+                    "length": null
+                },
+                "FechaCierre": {
+                    "tipo": "date",
+                    "length": null
+                },
+                "Factura": {
                     "tipo": "varchar",
                     "length": 30
                 },
-                "NumeroProveedor": {
-                    "tipo": "varchar",
-                    "length": 50
-                },
-                "NombreProveedor": {
+                "Taller": {
                     "tipo": "varchar",
                     "length": 30
                 },
-                "TipoParte": {
+                "TipoOrden": {
                     "tipo": "varchar",
                     "length": 30
                 },
-                "NumeroParte": {
+                "TipoPago": {
+                    "tipo": "varchar",
+                    "length": 30
+                },
+                "NumeroOt": {
+                    "tipo": "varchar",
+                    "length": 30
+                },
+                "CodigoOperacion": {
                     "tipo": "varchar",
                     "length": 30
                 },
                 "Descripcion": {
                     "tipo": "varchar",
-                    "length": 30
+                    "length": 70
                 },
-                "Cantidad": {
+                "VentaMo$": {
                     "tipo": "decimal",
                     "length": "18, 2"
                 },
-                "CostoUnit$": {
+                "Descuentomo$": {
+                    "tipo": "decimal",
+                    "length": "18, 2"
+                },
+                "CostoMo$": {
+                    "tipo": "decimal",
+                    "length": "18, 2"
+                },
+                "VentaMateriales$": {
+                    "tipo": "decimal",
+                    "length": "18, 2"
+                },
+                "DescuentoMateriales$": {
+                    "tipo": "decimal",
+                    "length": "18, 2"
+                },
+                "CostoMateriales$": {
+                    "tipo": "decimal",
+                    "length": "18, 2"
+                },
+                "VentaTOT$": {
+                    "tipo": "decimal",
+                    "length": "18, 2"
+                },
+                "DescuentoTOT$": {
+                    "tipo": "decimal",
+                    "length": "18, 2"
+                },
+                "CostoTOT$": {
+                    "tipo": "decimal",
+                    "length": "18, 2"
+                },
+                "VentaPartes$": {
+                    "tipo": "decimal",
+                    "length": "18, 2"
+                },
+                "DescuentoPartes$": {
+                    "tipo": "decimal",
+                    "length": "18, 2"
+                },
+                "CostoPartes$": {
+                    "tipo": "decimal",
+                    "length": "18, 2"
+                },
+                "VentaTotal$": {
+                    "tipo": "decimal",
+                    "length": "18, 2"
+                },
+                "CostoTotal$": {
+                    "tipo": "decimal",
+                    "length": "18, 2"
+                },
+                "NumeroAsesor": {
+                    "tipo": "varchar",
+                    "length": 30
+                },
+                "NombreAsesor": {
+                    "tipo": "varchar",
+                    "length": 90
+                },
+                "NumeroCliente": {
+                    "tipo": "varchar",
+                    "length": 30
+                },
+                "NombreCliente": {
+                    "tipo": "varchar",
+                    "length": 90
+                },
+                "Direccion": {
+                    "tipo": "varchar",
+                    "length": 90
+                },
+                "Telefono": {
+                    "tipo": "varchar",
+                    "length": 30
+                },
+                "CP": {
+                    "tipo": "varchar",
+                    "length": 30
+                },
+                "Email": {
+                    "tipo": "varchar",
+                    "length": 30
+                },
+                "Odometro": {
+                    "tipo": "varchar",
+                    "length": 30
+                },
+                "Vin": {
+                    "tipo": "varchar",
+                    "length": 20
+                },
+                "Ano": {
+                    "tipo": "varchar",
+                    "length": 7
+                },
+                "Marca": {
+                    "tipo": "varchar",
+                    "length": 30
+                },
+                "Modelo": {
+                    "tipo": "varchar",
+                    "length": 30
+                },
+                "Color": {
+                    "tipo": "varchar",
+                    "length": 30
+                },
+                "Interior": {
+                    "tipo": "varchar",
+                    "length": 30
+                },
+                "Date": {
+                    "tipo": "date",
+                    "length": null
+                },
+                "Servicio": {
+                    "tipo": "varchar",
+                    "length": 30
+                },
+                "Sucursal": {
+                    "tipo": "varchar",
+                    "length": 20
+                },
+                "Dealer": {
+                    "tipo": "varchar",
+                    "length": 30
+                },
+                "Margen": {
+                    "tipo": "decimal",
+                    "length": "18, 2"
+                },
+                "Utilidad$": {
+                    "tipo": "decimal",
+                    "length": "18, 2"
+                },
+                "Venta$": {
+                    "tipo": "decimal",
+                    "length": "18, 2"
+                },
+                "VentasNetas": {
                     "tipo": "decimal",
                     "length": "18, 2"
                 },
                 "Costo$": {
                     "tipo": "decimal",
                     "length": "18, 2"
+                }
+            }
+        },
+        "Servtc": {
+            "columnas": [
+                "FechaFactura",
+                "FechaAperturaa",
+                "FechaEntrega",
+                "FechaCierre",
+                "Factura",
+                "Taller",
+                "TipoOrden",
+                "TipoPago",
+                "NumeroOT",
+                "NumeroAsesor",
+                "NombreAsesor",
+                "*vacio*",
+                "NombreCliente",
+                "Direccion",
+                "Telefono",
+                "CP",
+                "Email",
+                "Odometro",
+                "Vin",
+                "Ano",
+                "Marca",
+                "Modelo",
+                "Color",
+                "Dias",
+                "Venta$",
+                "Costo",
+                "Utilidad$",
+                "Margen",
+                "VentaMO$",
+                "DescuentoMO$",
+                "CostoMO$",
+                "VentaMateriales$",
+                "DescuentoMateriales$",
+                "CostoMateriales$",
+                "VentaTOT$",
+                "DescuentoTOT$",
+                "CostoTOT$",
+                "VentaPartes$",
+                "DescuentoPartes$",
+                "CostoPartes$",
+                "VentaTotal$",
+                "CostoTotal$",
+                "VentasNetas (computed)"
+            ],
+            "columnas_export": [
+                "FechaFactura",
+                "FechaAperturaa",
+                "FechaEntrega",
+                "FechaCierre",
+                "Factura",
+                "Taller",
+                "TipoOrden",
+                "TipoPago",
+                "NumeroOT",
+                "NumeroAsesor",
+                "NombreAsesor",
+                "vacio",
+                "NombreCliente",
+                "Direccion",
+                "Telefono",
+                "CP",
+                "Email",
+                "Odometro",
+                "Vin",
+                "Ano",
+                "Marca",
+                "Modelo",
+                "Color",
+                "Dias",
+                "Venta$",
+                "Costo",
+                "Utilidad$",
+                "Margen",
+                "VentaMO$",
+                "DescuentoMO$",
+                "CostoMO$",
+                "VentaMateriales$",
+                "DescuentoMateriales$",
+                "CostoMateriales$",
+                "VentaTOT$",
+                "DescuentoTOT$",
+                "CostoTOT$",
+                "VentaPartes$",
+                "DescuentoPartes$",
+                "CostoPartes$",
+                "VentaTotal$",
+                "CostoTotal$",
+                "VentasNetas (computed)"
+            ],
+            "formulas": {
+                "FechaFactura": false,
+                "FechaAperturaa": false,
+                "FechaEntrega": false,
+                "FechaCierre": false,
+                "Factura": "LimpiaTexto(Factura)",
+                "Taller": "LimpiaTexto(Taller)",
+                "TipoOrden": "LimpiaTexto(TipoOrden)",
+                "TipoPago": "LimpiaTexto(TipoPago)",
+                "NumeroOT": "LimpiaTexto(NumeroOT)",
+                "NumeroAsesor": "LimpiaTexto(NumeroAsesor)",
+                "NombreAsesor": "LimpiaTexto(NombreAsesor)",
+                "vacio": "LimpiaTexto(vacio)",
+                "NombreCliente": "LimpiaTexto(NombreCliente)",
+                "Direccion": "LimpiaTexto(Direccion)",
+                "Telefono": "LimpiaTexto(Telefono)",
+                "CP": "LimpiaTexto(CP)",
+                "Email": "LimpiaEmail(Email)",
+                "Odometro": "LimpiaTexto(Odometro)",
+                "Vin": "LimpiaTexto(Vin)",
+                "Ano": "LimpiaTexto(Ano)",
+                "Marca": "LimpiaTexto(Marca)",
+                "Modelo": "LimpiaTexto(Modelo)",
+                "Color": "LimpiaTexto(Color)",
+                "Dias": "LimpiaTexto(Dias)",
+                "Venta$": "LimpiaCodigos(Venta$)",
+                "Costo": "LimpiaCodigos(Costo)",
+                "Utilidad$": "LimpiaCodigos(Utilidad$)",
+                "Margen": "LimpiaCodigos(Margen)",
+                "VentaMO$": "LimpiaCodigos(VentaMO$)",
+                "DescuentoMO$": "LimpiaCodigos(DescuentoMO$)",
+                "CostoMO$": "LimpiaCodigos(CostoMO$)",
+                "VentaMateriales$": "LimpiaCodigos(VentaMateriales$)",
+                "DescuentoMateriales$": "LimpiaCodigos(DescuentoMateriales$)",
+                "CostoMateriales$": "LimpiaCodigos(CostoMateriales$)",
+                "VentaTOT$": "LimpiaCodigos(VentaTOT$)",
+                "DescuentoTOT$": "LimpiaCodigos(DescuentoTOT$)",
+                "CostoTOT$": "LimpiaCodigos(CostoTOT$)",
+                "VentaPartes$": "LimpiaCodigos(VentaPartes$)",
+                "DescuentoPartes$": "LimpiaCodigos(DescuentoPartes$)",
+                "CostoPartes$": "LimpiaCodigos(CostoPartes$)",
+                "VentaTotal$": "LimpiaCodigos(VentaTotal$)",
+                "CostoTotal$": "LimpiaCodigos(CostoTotal$)",
+                "VentasNetas (computed)": "VentasNetas(VentasNetas)"
+            },
+            "filtros": [],
+            "data_types": {
+                "FechaFactura": {
+                    "tipo": "date",
+                    "length": null
                 },
-                "Delear": {
+                "FechaAperturaa": {
+                    "tipo": "date",
+                    "length": null
+                },
+                "FechaEntrega": {
+                    "tipo": "date",
+                    "length": null
+                },
+                "FechaCierre": {
+                    "tipo": "date",
+                    "length": null
+                },
+                "Factura": {
                     "tipo": "varchar",
                     "length": 30
                 },
-                "Sucursal": {
+                "Taller": {
                     "tipo": "varchar",
-                    "length": 2
+                    "length": 30
                 },
-                "Date": {
-                    "tipo": "date",
-                    "length": null
+                "TipoOrden": {
+                    "tipo": "varchar",
+                    "length": 30
+                },
+                "TipoPago": {
+                    "tipo": "varchar",
+                    "length": 30
+                },
+                "NumeroOT": {
+                    "tipo": "varchar",
+                    "length": 30
+                },
+                "NumeroAsesor": {
+                    "tipo": "varchar",
+                    "length": 30
+                },
+                "NombreAsesor": {
+                    "tipo": "varchar",
+                    "length": 30
+                },
+                "vacio": {
+                    "tipo": "varchar",
+                    "length": 10
+                },
+                "NombreCliente": {
+                    "tipo": "varchar",
+                    "length": 20
+                },
+                "Direccion": {
+                    "tipo": "varchar",
+                    "length": 50
+                },
+                "Telefono": {
+                    "tipo": "varchar",
+                    "length": 30
+                },
+                "CP": {
+                    "tipo": "varchar",
+                    "length": 30
+                },
+                "Email": {
+                    "tipo": "varchar",
+                    "length": 30
+                },
+                "Odometro": {
+                    "tipo": "varchar",
+                    "length": 30
+                },
+                "Vin": {
+                    "tipo": "varchar",
+                    "length": 30
+                },
+                "Ano": {
+                    "tipo": "varchar",
+                    "length": 30
+                },
+                "Marca": {
+                    "tipo": "varchar",
+                    "length": 30
+                },
+                "Modelo": {
+                    "tipo": "varchar",
+                    "length": 30
+                },
+                "Color": {
+                    "tipo": "varchar",
+                    "length": 30
+                },
+                "Dias": {
+                    "tipo": "varchar",
+                    "length": 10
+                },
+                "Venta$": {
+                    "tipo": "decimal",
+                    "length": "18, 2"
+                },
+                "Costo": {
+                    "tipo": "decimal",
+                    "length": "18, 2"
+                },
+                "Utilidad$": {
+                    "tipo": "decimal",
+                    "length": "18, 2"
+                },
+                "Margen": {
+                    "tipo": "decimal",
+                    "length": "18, 2"
+                },
+                "VentaMO$": {
+                    "tipo": "decimal",
+                    "length": "18, 2"
+                },
+                "DescuentoMO$": {
+                    "tipo": "decimal",
+                    "length": "18, 2"
+                },
+                "CostoMO$": {
+                    "tipo": "decimal",
+                    "length": "18, 2"
+                },
+                "VentaMateriales$": {
+                    "tipo": "decimal",
+                    "length": "18, 2"
+                },
+                "DescuentoMateriales$": {
+                    "tipo": "decimal",
+                    "length": "18, 2"
+                },
+                "CostoMateriales$": {
+                    "tipo": "decimal",
+                    "length": "18, 2"
+                },
+                "VentaTOT$": {
+                    "tipo": "decimal",
+                    "length": "18, 2"
+                },
+                "DescuentoTOT$": {
+                    "tipo": "decimal",
+                    "length": "18, 2"
+                },
+                "CostoTOT$": {
+                    "tipo": "decimal",
+                    "length": "18, 2"
+                },
+                "VentaPartes$": {
+                    "tipo": "decimal",
+                    "length": "18, 2"
+                },
+                "DescuentoPartes$": {
+                    "tipo": "decimal",
+                    "length": "18, 2"
+                },
+                "CostoPartes$": {
+                    "tipo": "decimal",
+                    "length": "18, 2"
+                },
+                "VentaTotal$": {
+                    "tipo": "decimal",
+                    "length": "18, 2"
+                },
+                "CostoTotal$": {
+                    "tipo": "decimal",
+                    "length": "18, 2"
+                },
+                "VentasNetas": {
+                    "tipo": "decimal",
+                    "length": "18, 2"
                 }
             }
         }

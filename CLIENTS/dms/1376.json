@@ -71,7 +71,7 @@
                 "TipoParte": "LimpiaTexto(TipoParte)",
                 "NumeroParte": "LimpiaTexto(NumeroParte)",
                 "Descripcion": "LimpiaTexto(Descripcion)",
-                "Cantidad": "LimpiaCodigos(Cantidad)",
+                "Cantidad": "LimpiaTexto(Cantidad)",
                 "VentaUnit$": "LimpiaCodigos(VentaUnit$)",
                 "Venta$": "Venta$ - Descuento$",
                 "CostoUnit$": "LimpiaCodigos(CostoUnit$)",
@@ -90,7 +90,15 @@
                 "Sucursal (computed)": "if sucursal == \"01\":\r\n  return \"TULANSINGO\"\r\nelif sucursal == \"02\":\r\n  return \"DEPORTIVA\"\r\nelse:\r\n  return \"\"",
                 "RFC": "LimpiaTexto(RFC)",
                 "NumeroCliente": "LimpiaTexto(NumeroCliente)",
-                "NombreCliente": "LimpiaTexto(NombreCliente)"
+                "NombreCliente": "LimpiaTexto(NombreCliente)",
+                "Date (computed)": "Ctod(\"d/m/y\")",
+                "Venta$ (computed)": "Cantidad*VentaUnit$",
+                "NumeroVendedor": "LimpiaTexto(NumeroVendedor)",
+                "NombreVendedor": "LimpiaTexto(NombreVendedor)",
+                "Cp": "LimpiaTexto(Cp)",
+                "PermiteCOntactar": "LimpiaTexto(PermiteCOntactar)",
+                "Sucursal": "LimpiaTexto(Sucursal)",
+                "Costounit$": "LimpiaCodigos(Costounit$)"
             },
             "filtros": [
                 "Factura == '' or Factura == None"

@@ -17,5 +17,5 @@ CLIENTS/**/Logs
 # Permitir las carpetas CLIENTS, 2-Working y 3-Sandbox
 !CLIENTS/
 !2-Working/
-!3-Sandbox/
+#!3-Sandbox/
 !python

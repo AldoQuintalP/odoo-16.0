@@ -6,7 +6,8 @@
             "zip": true,
             "dms": {
                 "4001": [
-                    "REFCOM01"
+                    "SERVTA01",
+                    "Servtc"
                 ]
             }
         }
